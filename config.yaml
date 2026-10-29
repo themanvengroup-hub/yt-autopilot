@@ -59,14 +59,14 @@ trends:
     - "India IPO"
     - "Indian brand strategy"
     - "quick commerce India"
-  reddit_subs: ["IndiaBusiness", "indianstartups", "IndiaInvestments"]
+  reddit_subs: []   # Reddit blocks GitHub Actions IPs (403); Google Trends + News are enough
   max_candidates: 40
 
 llm:
   # $0 default: Google Gemini free tier (key from aistudio.google.com).
   # Set provider: anthropic and add ANTHROPIC_API_KEY to switch to Claude.
   provider: "gemini"
-  gemini_model: "gemini-2.5-flash"
+  gemini_model: "gemini-flash-latest"   # auto-falls back to the best available Flash model
   anthropic_model: "claude-sonnet-4-5"
   temperature: 0.8
 

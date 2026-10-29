@@ -35,18 +35,59 @@ def _extract_json(text: str) -> Any:
     return json.loads(text[start:])
 
 
+GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
+_gemini_model: str | None = None
+_SKIP = ("lite", "image", "tts", "audio", "live", "embedding", "vision", "learnlm", "gemma", "robotics", "computer")
+
+
+def _model_rank(name: str) -> tuple:
+    """Higher is better: stable > preview/exp, flash > pro (free-tier quota), newer version first."""
+    m = re.search(r"gemini-(\d+(?:\.\d+)?)", name)
+    version = float(m.group(1)) if m else 0.0
+    stable = not any(t in name for t in ("preview", "exp"))
+    flash = "flash" in name
+    return (stable, flash, version, "latest" in name)
+
+
+def _resolve_gemini_model() -> str:
+    """Use the configured model if this key can see it; otherwise the best available Flash model.
+
+    Google retires model names regularly (a hard-coded name eventually 404s), so the
+    model list is read from the API once per run.
+    """
+    global _gemini_model
+    if _gemini_model:
+        return _gemini_model
+    wanted = cfg()["llm"]["gemini_model"]
+    r = requests.get(f"{GEMINI_BASE}/models", headers={"x-goog-api-key": secret("GEMINI_API_KEY")},
+                     params={"pageSize": 1000}, timeout=30)
+    r.raise_for_status()
+    names = [m["name"].removeprefix("models/") for m in r.json().get("models", [])
+             if "generateContent" in m.get("supportedGenerationMethods", [])]
+    if wanted in names:
+        _gemini_model = wanted
+    else:
+        candidates = [n for n in names if n.startswith("gemini") and not any(s in n for s in _SKIP)]
+        if not candidates:
+            raise LLMError(f"no usable Gemini model for this key; available: {names[:20]}")
+        _gemini_model = max(candidates, key=_model_rank)
+        log.warning("configured model %r unavailable; using %r", wanted, _gemini_model)
+    return _gemini_model
+
+
 def _gemini(system: str, user: str) -> str:
     c = cfg()["llm"]
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{c['gemini_model']}:generateContent"
+    url = f"{GEMINI_BASE}/models/{_resolve_gemini_model()}:generateContent"
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": user}]}],
         "generationConfig": {"temperature": c["temperature"], "responseMimeType": "application/json"},
     }
-    r = requests.post(url, params={"key": secret("GEMINI_API_KEY")}, json=body, timeout=120)
+    r = requests.post(url, headers={"x-goog-api-key": secret("GEMINI_API_KEY")}, json=body, timeout=180)
     if r.status_code == 429:
         raise LLMError("rate limited (429)")
-    r.raise_for_status()
+    if r.status_code >= 400:
+        raise LLMError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
     data = r.json()
     try:
         return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
