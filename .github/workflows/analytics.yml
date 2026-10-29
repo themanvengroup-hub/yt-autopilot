@@ -1,0 +1,38 @@
+# Sundays 09:53 IST: pull YouTube Analytics, update insights the writer learns from,
+# and send the weekly progress-to-monetization report.
+name: analytics
+on:
+  schedule:
+    - cron: "23 4 * * 0"          # 04:23 UTC Sunday = 09:53 IST
+  workflow_dispatch:
+
+concurrency:
+  group: autopilot-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests PyYAML feedparser google-api-python-client google-auth
+      - env:
+          PYTHONPATH: src
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python -m autopilot analytics
+      - uses: ./.github/actions/commit-state
+        if: always()
+        with:
+          message: "analytics: weekly insights"

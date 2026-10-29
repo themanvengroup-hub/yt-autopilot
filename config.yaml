@@ -1,0 +1,91 @@
+# ─────────────────────────────────────────────────────────────
+#  yt-autopilot configuration
+#  Everything channel-specific lives here. Secrets live in
+#  GitHub Actions secrets (see docs/SETUP.md), never in this file.
+# ─────────────────────────────────────────────────────────────
+
+channel:
+  name: "Paisa Decoded"            # working name - change freely
+  handle: "@paisadecoded"
+  language: "en-IN"
+  timezone: "Asia/Kolkata"
+  # Who the videos are for. Fed verbatim into every script prompt.
+  audience: >
+    Indians aged 18-35: students, young professionals and first-time
+    investors who want to understand how Indian companies, brands and
+    the economy actually make (and lose) money.
+  niche: >
+    Indian business & money decoded: how Indian companies make money,
+    why brands win or collapse, the economics behind everyday things in
+    India (quick commerce, IPL, UPI, real estate, airline fares, ed-tech),
+    and practical money concepts explained through those stories.
+  # Hard rules for the writer. SEBI finfluencer regulations apply in India:
+  # education is fine, specific buy/sell recommendations are not.
+  guardrails:
+    - "Never recommend buying or selling a specific stock, fund or crypto."
+    - "Never promise returns. No 'get rich' framing."
+    - "Every number must come from the provided source headlines or be a widely known public figure; list each in facts_to_verify."
+    - "No defamation: criticise business decisions, not individuals' character."
+    - "Educational framing only. Add 'Not financial advice' where money decisions are discussed."
+  voice_style: >
+    Conversational Indian English, like explaining to a smart friend over chai.
+    Short sentences. Occasional natural Hindi words (yaar, paisa, jugaad) are fine,
+    but the script must be fully understandable in English.
+
+schedule:
+  shorts_per_day: 1
+  # Long-form days (0=Mon ... 6=Sun). 3/week is sustainable with your own voice.
+  longform_days: [0, 2, 4]
+  # Default publish slots (IST) used by /publish when no time is given.
+  shorts_slot: "19:00"
+  longform_slot: "18:00"
+
+content:
+  shorts:
+    target_seconds: 45            # 35-55s performs best for retention
+    max_words: 130
+  longform:
+    target_minutes: 9             # 8-12 min: enough for mid-roll later, still bingeable
+    max_words: 1500
+    min_sections: 4
+
+trends:
+  # Free sources, no API keys required.
+  google_trends_geo: "IN"
+  news_queries:
+    - "India startup funding"
+    - "Indian company revenue loss"
+    - "RBI policy"
+    - "India IPO"
+    - "Indian brand strategy"
+    - "quick commerce India"
+  reddit_subs: ["IndiaBusiness", "indianstartups", "IndiaInvestments"]
+  max_candidates: 40
+
+llm:
+  # $0 default: Google Gemini free tier (key from aistudio.google.com).
+  # Set provider: anthropic and add ANTHROPIC_API_KEY to switch to Claude.
+  provider: "gemini"
+  gemini_model: "gemini-2.5-flash"
+  anthropic_model: "claude-sonnet-4-5"
+  temperature: 0.8
+
+render:
+  whisper_model: "small.en"       # better with Indian accents than base/tiny
+  caption_font: "Poppins ExtraBold"
+  caption_font_file: "assets/fonts/Poppins-ExtraBold.ttf"
+  caption_highlight: "&H0000E5FF"   # ASS BGR: yellow
+  shorts_shot_seconds: 2.6          # fast cuts keep Shorts retention up
+  longform_shot_seconds: 5.5
+  music_volume: 0.10
+  # Pauses longer than this are tightened (jump-cut effect).
+  max_pause_seconds: 0.35
+  fallback_broll_query: "india city"
+
+youtube:
+  category_id: "27"               # Education
+  default_tags: ["india", "business", "finance", "explained", "paisa decoded"]
+  # Flip to true once Google approves your API compliance audit.
+  # Until then every upload is private and you publish from YouTube Studio.
+  api_audited: false
+  made_for_kids: false

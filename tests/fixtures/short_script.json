@@ -1,0 +1,15 @@
+{
+  "title": "Why Zepto loses money on every order #shorts",
+  "hook_text": "₹10 delivery? Really?",
+  "segments": [
+    {"text": "Zepto delivers your milk in ten minutes, and loses money doing it.", "broll": "delivery scooter india"},
+    {"text": "Every dark store costs lakhs in rent, staff and cold storage.", "broll": "warehouse shelves"},
+    {"text": "On a two hundred rupee order, the margin barely covers the rider.", "broll": "rupee notes"},
+    {"text": "So why keep going? Because habits are the real product.", "broll": "phone shopping app"},
+    {"text": "Once you stop visiting the kirana, they can raise fees slowly.", "broll": "small grocery shop"}
+  ],
+  "loop_line": "And that's exactly why that ten minute delivery feels so cheap.",
+  "description": "How quick commerce economics really work. #zepto #business #india",
+  "tags": ["zepto", "quick commerce", "blinkit"],
+  "facts_to_verify": [{"claim": "Dark store costs", "source_url": "common knowledge"}]
+}

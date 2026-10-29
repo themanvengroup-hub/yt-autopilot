@@ -1,0 +1,25 @@
+name: Commit pipeline state
+description: Commit content/ and state/ back to the repo, rebasing on concurrent pushes.
+inputs:
+  message:
+    description: Commit message
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        git config user.name  "yt-autopilot[bot]"
+        git config user.email "yt-autopilot@users.noreply.github.com"
+        git add content state
+        if git diff --cached --quiet; then
+          echo "no state changes"; exit 0
+        fi
+        git commit -m "${{ inputs.message }}"
+        for i in 1 2 3 4 5; do
+          if git push; then exit 0; fi
+          echo "push rejected, rebasing (attempt $i)"
+          git pull --rebase --strategy-option=theirs || { git rebase --abort; git pull --rebase; }
+          sleep $((i * 3))
+        done
+        echo "::error::could not push state after 5 attempts"; exit 1

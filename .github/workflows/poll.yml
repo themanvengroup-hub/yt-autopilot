@@ -1,0 +1,49 @@
+# Every 30 min, 07:37–00:07 IST: read Telegram (recordings + commands).
+# If a recording arrived, chain straight into the render job.
+name: poll
+on:
+  schedule:
+    - cron: "7,37 2-18 * * *"     # UTC → roughly 07:37–00:07 IST
+  workflow_dispatch:
+
+concurrency:
+  group: autopilot-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      render: ${{ steps.poll.outputs.render }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests PyYAML feedparser google-api-python-client google-auth
+      - id: poll
+        env:
+          PYTHONPATH: src
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python -m autopilot poll
+      - uses: ./.github/actions/commit-state
+        if: always()
+        with:
+          message: "poll: telegram updates"
+
+  render:
+    needs: poll
+    if: needs.poll.outputs.render == 'true'
+    uses: ./.github/workflows/render.yml
+    secrets: inherit

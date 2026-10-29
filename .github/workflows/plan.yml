@@ -1,0 +1,50 @@
+# Daily at 06:47 IST: scan trends, write today's scripts and send them to Telegram.
+name: plan
+on:
+  schedule:
+    - cron: "17 1 * * *"          # 01:17 UTC = 06:47 IST
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "short | long (blank = today's schedule)"
+        required: false
+      topic:
+        description: "Force a topic (optional)"
+        required: false
+
+concurrency:
+  group: autopilot-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests PyYAML feedparser
+      - name: Write scripts
+        env:
+          PYTHONPATH: src
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          KIND: ${{ inputs.kind }}
+          TOPIC: ${{ inputs.topic }}
+        run: |
+          args=()
+          [ -n "$KIND" ]  && args+=(--kind "$KIND")
+          [ -n "$TOPIC" ] && args+=(--topic "$TOPIC")
+          python -m autopilot plan "${args[@]}"
+      - uses: ./.github/actions/commit-state
+        if: always()
+        with:
+          message: "plan: daily scripts"
