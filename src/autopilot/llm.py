@@ -36,8 +36,13 @@ def _extract_json(text: str) -> Any:
 
 
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
-_gemini_model: str | None = None
+_gemini_models: list[str] = []
+_gemini_idx = 0
 _SKIP = ("lite", "image", "tts", "audio", "live", "embedding", "vision", "learnlm", "gemma", "robotics", "computer")
+
+
+class Overloaded(LLMError):
+    """Model busy (503/429/timeout): worth switching to another model."""
 
 
 def _model_rank(name: str) -> tuple:
@@ -49,50 +54,58 @@ def _model_rank(name: str) -> tuple:
     return (stable, flash, version, "latest" in name)
 
 
-def _resolve_gemini_model() -> str:
-    """Use the configured model if this key can see it; otherwise the best available Flash model.
+def _gemini_model_list() -> list[str]:
+    """Ranked models this key can use: the configured one first (if available), then the best Flash models.
 
-    Google retires model names regularly (a hard-coded name eventually 404s), so the
-    model list is read from the API once per run.
+    Google retires model names regularly and the free tier is sometimes overloaded,
+    so the list is read from the API once per run and used for fallback.
     """
-    global _gemini_model
-    if _gemini_model:
-        return _gemini_model
+    global _gemini_models
+    if _gemini_models:
+        return _gemini_models
     wanted = cfg()["llm"]["gemini_model"]
     r = requests.get(f"{GEMINI_BASE}/models", headers={"x-goog-api-key": secret("GEMINI_API_KEY")},
                      params={"pageSize": 1000}, timeout=30)
     r.raise_for_status()
     names = [m["name"].removeprefix("models/") for m in r.json().get("models", [])
              if "generateContent" in m.get("supportedGenerationMethods", [])]
+    ranked = sorted((n for n in names if n.startswith("gemini") and not any(s in n for s in _SKIP)),
+                    key=_model_rank, reverse=True)
     if wanted in names:
-        _gemini_model = wanted
-    else:
-        candidates = [n for n in names if n.startswith("gemini") and not any(s in n for s in _SKIP)]
-        if not candidates:
-            raise LLMError(f"no usable Gemini model for this key; available: {names[:20]}")
-        _gemini_model = max(candidates, key=_model_rank)
-        log.warning("configured model %r unavailable; using %r", wanted, _gemini_model)
-    return _gemini_model
+        ranked = [wanted] + [n for n in ranked if n != wanted]
+    if not ranked:
+        raise LLMError(f"no usable Gemini model for this key; available: {names[:20]}")
+    _gemini_models = ranked[:6]
+    log.info("Gemini model order: %s", ", ".join(_gemini_models))
+    return _gemini_models
 
 
 def _gemini(system: str, user: str) -> str:
+    global _gemini_idx
     c = cfg()["llm"]
-    url = f"{GEMINI_BASE}/models/{_resolve_gemini_model()}:generateContent"
+    models = _gemini_model_list()
+    model = models[_gemini_idx % len(models)]
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": user}]}],
         "generationConfig": {"temperature": c["temperature"], "responseMimeType": "application/json"},
     }
-    r = requests.post(url, headers={"x-goog-api-key": secret("GEMINI_API_KEY")}, json=body, timeout=180)
-    if r.status_code == 429:
-        raise LLMError("rate limited (429)")
+    try:
+        r = requests.post(f"{GEMINI_BASE}/models/{model}:generateContent",
+                          headers={"x-goog-api-key": secret("GEMINI_API_KEY")}, json=body, timeout=150)
+    except requests.Timeout as exc:
+        _gemini_idx += 1
+        raise Overloaded(f"{model} timed out") from exc
+    if r.status_code in (429, 500, 503, 504) or (r.status_code == 404):
+        _gemini_idx += 1  # next attempt uses the next model
+        raise Overloaded(f"{model} HTTP {r.status_code}: {r.text[:200]}")
     if r.status_code >= 400:
-        raise LLMError(f"Gemini HTTP {r.status_code}: {r.text[:300]}")
+        raise LLMError(f"Gemini HTTP {r.status_code} ({model}): {r.text[:300]}")
     data = r.json()
     try:
         return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
     except (KeyError, IndexError) as exc:
-        raise LLMError(f"unexpected Gemini response: {json.dumps(data)[:400]}") from exc
+        raise LLMError(f"unexpected Gemini response from {model}: {json.dumps(data)[:400]}") from exc
 
 
 def _anthropic(system: str, user: str) -> str:
@@ -108,7 +121,7 @@ def _anthropic(system: str, user: str) -> str:
     return "".join(b.get("text", "") for b in r.json()["content"] if b.get("type") == "text")
 
 
-def complete_json(system: str, user: str, retries: int = 3) -> Any:
+def complete_json(system: str, user: str, retries: int = 6) -> Any:
     provider = cfg()["llm"]["provider"]
     call = {"gemini": _gemini, "anthropic": _anthropic}[provider]
     last: Exception | None = None
@@ -117,7 +130,7 @@ def complete_json(system: str, user: str, retries: int = 3) -> Any:
             return _extract_json(call(system, user))
         except (LLMError, json.JSONDecodeError, requests.RequestException) as exc:
             last = exc
-            wait = 10 * attempt
+            wait = 5 if isinstance(exc, Overloaded) else 10 * attempt
             log.warning("LLM attempt %d/%d failed (%s); retrying in %ds", attempt, retries, exc, wait)
             time.sleep(wait)
     raise LLMError(f"LLM failed after {retries} attempts: {last}")
