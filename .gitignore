@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 client_secret*.json
 .env
+*.bat
+_sync/

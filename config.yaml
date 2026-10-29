@@ -6,7 +6,7 @@
 
 channel:
   name: "Paisa Decoded"            # working name - change freely
-  handle: "@paisadecoded"
+  handle: "@PaisaDecodedOfficial"
   language: "en-IN"
   timezone: "Asia/Kolkata"
   # Who the videos are for. Fed verbatim into every script prompt.

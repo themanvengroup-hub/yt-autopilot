@@ -7,7 +7,7 @@ Everything here is free. Do the steps in order. Each one produces a secret you p
 |---|---|
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | 3 |
 | `GEMINI_API_KEY` | 4 |
-| `PEXELS_API_KEY` | 5 |
+| `PIXABAY_API_KEY` (and/or `PEXELS_API_KEY`) | 5 |
 | `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` | 6 |
 
 ---
@@ -42,9 +42,15 @@ Everything here is free. Do the steps in order. Each one produces a secret you p
 Free-tier limits are far above what 2–3 scripts a day need. To use Claude instead, add
 `ANTHROPIC_API_KEY` and set `llm.provider: anthropic` in `config.yaml`.
 
-## 5. Pexels API key, free B-roll (2 min)
+## 5. Stock footage key, free B-roll (2 min)
 
-<https://www.pexels.com/api/> → sign up → copy the key → secret `PEXELS_API_KEY`.
+**Pixabay** (recommended, key issued instantly): sign up at <https://pixabay.com>, open
+<https://pixabay.com/api/docs/>, and copy the key shown in the "Parameters" section → secret `PIXABAY_API_KEY`.
+
+**Pexels** (optional second source; new keys can be restricted for a while):
+<https://www.pexels.com/api/> → secret `PEXELS_API_KEY`.
+
+Your own clips in `assets/broll/<topic>/` are used before either (see that folder's README).
 
 ## 6. YouTube API access (20–30 min, the fiddly part)
 
