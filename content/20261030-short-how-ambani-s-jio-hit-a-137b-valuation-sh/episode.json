@@ -2,7 +2,7 @@
   "id": "20261030-short-how-ambani-s-jio-hit-a-137b-valuation-sh",
   "ref": "S1030",
   "kind": "short",
-  "status": "recorded",
+  "status": "failed",
   "created_at": "2026-10-30T07:41:26+05:30",
   "script": {
     "title": "How Ambani’s Jio Hit a $137B Valuation #shorts",
@@ -79,9 +79,10 @@
   "youtube_id": null,
   "publish_at": null,
   "error": "command failed (254): ffmpeg -y -i /home/runner/work/yt-autopilot/yt-autopilot/.work/20261030-short-how-ambani-s-jio-hit-a-137b-valuation-sh/voice_src -af highpass=f=80,lowpass=f=13000,afftdn=nf=-25,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05:stop_periods=-1:stop_duration=0.35:stop_threshold=-45dB:stop_silence=0.21,acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2,loudnorm=I=-14:TP=-1.5:LRA=11...\nconfiguration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-fre",
-  "attempts": 1,
+  "attempts": 2,
   "history": [
     "2026-10-30T17:03:36+05:30 scripted→recorded voice received",
-    "2026-10-30T17:04:31+05:30 recorded→recorded attempt 1"
+    "2026-10-30T17:04:31+05:30 recorded→recorded attempt 1",
+    "2026-10-30T17:42:37+05:30 recorded→failed attempt 2"
   ]
 }
