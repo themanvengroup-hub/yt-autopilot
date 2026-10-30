@@ -1,0 +1,86 @@
+{
+  "id": "20261030-short-why-maruti-makes-less-on-more-sales-shor",
+  "ref": "S1030c",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-10-30T08:22:27+05:30",
+  "script": {
+    "title": "Why Maruti Makes Less On More Sales #shorts",
+    "hook_text": "Maruti Sales Up, Profits Down?",
+    "segments": [
+      {
+        "text": "Maruti grew revenue by 26%, so why are its profit margins shrinking?",
+        "broll": "car factory production line"
+      },
+      {
+        "text": "For decades, Maruti was India's undisputed king of cheap, reliable hatchbacks like the Alto.",
+        "broll": "indian family buying car"
+      },
+      {
+        "text": "A ₹5 lakh car gave them massive volume, but wafer-thin profits per vehicle.",
+        "broll": "rupee cash counting closeup"
+      },
+      {
+        "text": "Today, aspirational Indians are ditching budget hatchbacks for ₹15 lakh SUVs loaded with tech.",
+        "broll": "suv driving city highway"
+      },
+      {
+        "text": "To keep up, Maruti is battling fierce discount wars while redesigning entire lineups.",
+        "broll": "car dealership discount banner"
+      },
+      {
+        "text": "Higher manufacturing costs and mark-to-market losses ate away at their fresh revenue jump.",
+        "broll": "financial stock market chart"
+      },
+      {
+        "text": "In India's auto market, selling bigger cars doesn't mean printing easier money.",
+        "broll": "car driving into sunset"
+      },
+      {
+        "text": "Which leaves investors asking the exact same puzzle:",
+        "broll": "business executive thinking desk"
+      }
+    ],
+    "loop_line": "Which leaves investors asking the exact same puzzle:",
+    "description": "Maruti Suzuki reported a massive 26% jump in revenue, but its profit margins took a noticeable hit. Here is the economics behind why Indian automakers face margin squeezes when consumer preferences shift toward SUVs. Educational analysis only; not financial advice. #MarutiSuzuki #IndianAutomobile #BusinessEconomics",
+    "tags": [
+      "Maruti Suzuki",
+      "Maruti Suzuki share",
+      "Indian car market",
+      "Maruti profit margin",
+      "SUV market India",
+      "automobile business",
+      "business case study",
+      "Indian economy",
+      "Paisa Decoded",
+      "auto industry India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Maruti Suzuki Q2 revenue grew 26% while higher costs and MTM losses impacted margins",
+        "source_url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNaGZyT29SZnA3UzR2NVRYZk5UTEFTM3RGWjl3a2E1aEdXU3p3LUVRQWJVcHdkUVZ4WHVJYkJySW5qZy1vZW5Tcm9QX05RMGNnWDJLbHN6MkYyYmtWb01leVJVejJPSmZLbEFqWFVjMzd4NU8wUC1Qd0tib19EZXNNaEFGMk9WR1lkU2JYMkRld19DVkxoOGtQMzJKT29aTW8xbGlhcHVCS3g4bEZDZkVCb2M2ZXF4ZENVLXdTTmtpSUdGVGI2Wk5zdWZZdHlMcG9Id0FrNk9TcWlxU1lKNE9rOGR0VVlpQ1lXdVV30gHwAUFVX3lxTE12Qk9yMnZkb3dpNm9JdENWb1RJUWpJYWtBX1RSTjA2YTN6a3F6NmFLWUdnZkhCLXdwZlBDcUZ4MnRSeDZ6bzVuTnpFMmtfS2Z5OXlaT0pQSmFXM01qTlFPcWxFYWszZ0NKd3dYOXZEZjVKZWRkcjNOMEx6bmZ3WF9ibWxUbEY4QlhVU1N2S0NpUUlwdEFONHl4dURBVldmb3BhR2UtR2Z2OTVGS1hvaGJEa1lHUjdsck9wZ3FpR21rVWhjZkY2SGQ2S2RwWEdmYXFSdFdDbU5oQTBYdVhJOFhrVDlJOTY5OXhncXRPZVZGVQ?oc=5"
+      }
+    ],
+    "chosen_candidate": "Maruti Suzuki India Q2 Results: Higher costs, MTM losses impact margins; revenue grows 26% - CNBC TV18",
+    "why_it_will_work": "It decodes an unexpected paradox that every car owner understands: why India's biggest automaker is earning lower margins despite record sales as buyer tastes move upmarket."
+  },
+  "sources": [
+    {
+      "title": "Maruti Suzuki India Q2 Results: Higher costs, MTM losses impact margins; revenue grows 26% - CNBC TV18",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNaGZyT29SZnA3UzR2NVRYZk5UTEFTM3RGWjl3a2E1aEdXU3p3LUVRQWJVcHdkUVZ4WHVJYkJySW5qZy1vZW5Tcm9QX05RMGNnWDJLbHN6MkYyYmtWb01leVJVejJPSmZLbEFqWFVjMzd4NU8wUC1Qd0tib19EZXNNaEFGMk9WR1lkU2JYMkRld19DVkxoOGtQMzJKT29aTW8xbGlhcHVCS3g4bEZDZkVCb2M2ZXF4ZENVLXdTTmtpSUdGVGI2Wk5zdWZZdHlMcG9Id0FrNk9TcWlxU1lKNE9rOGR0VVlpQ1lXdVV30gHwAUFVX3lxTE12Qk9yMnZkb3dpNm9JdENWb1RJUWpJYWtBX1RSTjA2YTN6a3F6NmFLWUdnZkhCLXdwZlBDcUZ4MnRSeDZ6bzVuTnpFMmtfS2Z5OXlaT0pQSmFXM01qTlFPcWxFYWszZ0NKd3dYOXZEZjVKZWRkcjNOMEx6bmZ3WF9ibWxUbEY4QlhVU1N2S0NpUUlwdEFONHl4dURBVldmb3BhR2UtR2Z2OTVGS1hvaGJEa1lHUjdsck9wZ3FpR21rVWhjZkY2SGQ2S2RwWEdmYXFSdFdDbU5oQTBYdVhJOFhrVDlJOTY5OXhncXRPZVZGVQ?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    21,
+    22,
+    23
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}

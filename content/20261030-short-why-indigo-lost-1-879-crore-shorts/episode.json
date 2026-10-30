@@ -1,0 +1,94 @@
+{
+  "id": "20261030-short-why-indigo-lost-1-879-crore-shorts",
+  "ref": "S1030b",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-10-30T08:18:08+05:30",
+  "script": {
+    "title": "Why IndiGo Lost ₹1,879 Crore #shorts",
+    "hook_text": "IndiGo Lost ₹1,879 Crore?!",
+    "segments": [
+      {
+        "text": "IndiGo just lost 1,879 crore rupees in three months.",
+        "broll": "commercial airplane runway takeoff"
+      },
+      {
+        "text": "Wait, your flight ticket costs 7,000 rupees and every single seat is packed!",
+        "broll": "crowded airport departure gate"
+      },
+      {
+        "text": "So where did all the paisa go?",
+        "broll": "confused traveler boarding pass"
+      },
+      {
+        "text": "Airlines don’t make money on tickets; they burn it on fuel.",
+        "broll": "refueling airplane jet engine"
+      },
+      {
+        "text": "Aviation fuel eats nearly 40% of operational expenses, taxed heavily across India.",
+        "broll": "oil barrels price graph"
+      },
+      {
+        "text": "Add aircraft leases paid in rising US dollars and heavy airport fees, and profits vanish.",
+        "broll": "airplane cockpit flight deck"
+      },
+      {
+        "text": "Now, IndiGo says ticket price hikes are inevitable.",
+        "broll": "flight ticket booking screen"
+      },
+      {
+        "text": "Which explains why domestic airfares keep climbing, even though...",
+        "broll": "passenger jet sunset clouds"
+      }
+    ],
+    "loop_line": "Which explains why domestic airfares keep climbing, even though...",
+    "description": "How does India's biggest airline lose ₹1,879 crore in a quarter when flights are completely full? We break down the brutal economics of aviation fuel, taxes, and ticket margins. #IndiGo #Aviation #BusinessNews",
+    "tags": [
+      "IndiGo",
+      "IndiGo Airlines",
+      "IndiGo Q2 results",
+      "Indian aviation",
+      "flight ticket prices",
+      "aviation turbine fuel",
+      "airline business model",
+      "Indian business decoded",
+      "Paisa Decoded",
+      "business news India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "IndiGo Q2 loss was Rs 1,879 crore",
+        "source_url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPa1FKSmRoVWppakYtRFVwaTJNRWZBMDZLRlFVanlyTDZNVHgycy1sOEs5UGdDLWx2UXV2a0NfM056b0o1R3ByN3lNYWRSblUwclVXVTg4ZXpKT0NNWG84dDA2eG9oel9OOVlzREF3WmV3Vi0tdjVUOE5OZXRTQml1Uno0V1VNZ3pJUzFrNGVZRVR5X3N4UWc2U2Z0Q2hZTzFhX3lUcHpDSF9RRkdMRTg0Tm0wcjVaZktlRkHSAboBQVVfeXFMT2tRSkpkaFVqaWpGLURVcGkyTUVmQTA2S0ZRVWp5ckw2TVR4MnMtbDhLOVBnQy1sdlF1dmtDXzNOem9KNUdwcjd5TWFkUm5VMHJVV1U4OGV6Sk9DTVhvOHQwNnhvaHpfTjlZc0RBd1pld1YtLXY1VDhOTmV0U0JpdVJ6NFdVTWd6SVMxazRlWUVUeV9zeFFnNlNmdENoWU8xYV95VHB6Q0hfUUZHTEU4NE5tMHI1WmZLZUZB?oc=5"
+      },
+      {
+        "claim": "IndiGo says fare increases inevitable as fuel costs rise",
+        "source_url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTW9YTjRKVjI5dEZyZ1FtYTFWMDVUbnJOeEFKTnRHUU5TR2Rwc1Z5UUJtVE93eWg1S0xScERkN3U3Nk9OWWs4UW1WWjRnTVRQWTRIX2xDdk0teFY3bVJIS1lFN2JwT1FWcGhCdkI2aGV2NWhzcGdLbGJRdW83WmV2eUYwSDFINWJCOFVNV0VPWkFndEVYS1E0enFWR2VGQkdqWDE0aGY5ZGpVeWtEcFE?oc=5"
+      },
+      {
+        "claim": "Aviation turbine fuel accounts for approximately 40% of operating expenses for Indian carriers",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "IndiGo Q2 loss narrows 27% to Rs 1,879 crore as revenue jumps 26% - Firstpost",
+    "why_it_will_work": "Every Indian traveler complains about high flight tickets, creating an irresistible curiosity gap when they hear India's biggest airline is still losing thousands of crores."
+  },
+  "sources": [
+    {
+      "title": "IndiGo Q2 loss narrows 27% to Rs 1,879 crore as revenue jumps 26% - Firstpost",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPa1FKSmRoVWppakYtRFVwaTJNRWZBMDZLRlFVanlyTDZNVHgycy1sOEs5UGdDLWx2UXV2a0NfM056b0o1R3ByN3lNYWRSblUwclVXVTg4ZXpKT0NNWG84dDA2eG9oel9OOVlzREF3WmV3Vi0tdjVUOE5OZXRTQml1Uno0V1VNZ3pJUzFrNGVZRVR5X3N4UWc2U2Z0Q2hZTzFhX3lUcHpDSF9RRkdMRTg0Tm0wcjVaZktlRkHSAboBQVVfeXFMT2tRSkpkaFVqaWpGLURVcGkyTUVmQTA2S0ZRVWp5ckw2TVR4MnMtbDhLOVBnQy1sdlF1dmtDXzNOem9KNUdwcjd5TWFkUm5VMHJVV1U4OGV6Sk9DTVhvOHQwNnhvaHpfTjlZc0RBd1pld1YtLXY1VDhOTmV0U0JpdVJ6NFdVTWd6SVMxazRlWUVUeV9zeFFnNlNmdENoWU8xYV95VHB6Q0hfUUZHTEU4NE5tMHI1WmZLZUZB?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    17,
+    18,
+    19
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
