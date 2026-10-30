@@ -221,7 +221,8 @@ def cmd_render(args: argparse.Namespace) -> None:
         ep.attempts += 1
         ep.save()
         try:
-            voice = tg.download_file(ep.voice_file_id, WORK_DIR / ep.id / "voice_src")
+            # keep the download OUTSIDE the render work dir: render_episode() wipes that folder first
+            voice = tg.download_file(ep.voice_file_id, WORK_DIR / "voices" / f"{ep.id}.audio")
             result = render_episode(ep, voice)
             desc = youtube.build_description(ep.script, result.chapters)
             vid = youtube.upload(result.video, title=ep.script["title"], description=desc,
@@ -234,7 +235,8 @@ def cmd_render(args: argparse.Namespace) -> None:
             _set_output("video_path", str(result.video))
         except Exception as exc:  # noqa: BLE001
             log.exception("render %s failed", ep.id)
-            ep.error = str(exc)[:1500]
+            msg = str(exc)
+            ep.error = msg if len(msg) <= 1500 else msg[:300] + " … " + msg[-1200:]  # keep the real ffmpeg error at the end
             ep.transition("failed" if ep.attempts >= 2 else "recorded", f"attempt {ep.attempts}")
             tg.send(f"Render of {ep.ref} failed (attempt {ep.attempts}): <code>{tg.esc(str(exc))[:600]}</code>"
                     + ("\nI'll retry on the next run." if ep.status == "recorded" else f"\nFix it, then /redo {ep.ref}."))
