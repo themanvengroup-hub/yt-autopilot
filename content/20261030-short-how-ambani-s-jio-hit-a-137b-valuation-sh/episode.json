@@ -2,7 +2,7 @@
   "id": "20261030-short-how-ambani-s-jio-hit-a-137b-valuation-sh",
   "ref": "S1030",
   "kind": "short",
-  "status": "scripted",
+  "status": "recorded",
   "created_at": "2026-10-30T07:41:26+05:30",
   "script": {
     "title": "How Ambani’s Jio Hit a $137B Valuation #shorts",
@@ -75,10 +75,12 @@
     13,
     14
   ],
-  "voice_file_id": null,
+  "voice_file_id": "CQACAgUAAxkBAAMiauR1Dre-SfaMOKOZGobqSomZQTYAAvEpAALraChXpfvrN_qS3IQ9BA",
   "youtube_id": null,
   "publish_at": null,
   "error": null,
   "attempts": 0,
-  "history": []
+  "history": [
+    "2026-10-30T17:03:36+05:30 scripted→recorded voice received"
+  ]
 }
