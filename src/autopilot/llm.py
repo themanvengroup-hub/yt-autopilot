@@ -71,8 +71,7 @@ def _gemini_model_list() -> list[str]:
              if "generateContent" in m.get("supportedGenerationMethods", [])]
     ranked = sorted((n for n in names if n.startswith("gemini") and not any(s in n for s in _SKIP)),
                     key=_model_rank, reverse=True)
-    if wanted in names:
-        ranked = [wanted] + [n for n in ranked if n != wanted]
+    ranked = [wanted] + [n for n in ranked if n != wanted]  # configured model always tried first
     if not ranked:
         raise LLMError(f"no usable Gemini model for this key; available: {names[:20]}")
     _gemini_models = ranked[:6]
@@ -96,7 +95,14 @@ def _gemini(system: str, user: str) -> str:
     except requests.Timeout as exc:
         _gemini_idx += 1
         raise Overloaded(f"{model} timed out") from exc
-    if r.status_code in (429, 500, 503, 504) or (r.status_code == 404):
+    if r.status_code == 404:
+        hint = re.search(r"use models/([A-Za-z0-9.\-]+)", r.text)
+        if hint and hint.group(1) not in models:
+            models.insert(_gemini_idx % len(models) + 1, hint.group(1))  # Google named the replacement
+            log.warning("%s retired; Google suggests %s", model, hint.group(1))
+        models.pop(_gemini_idx % len(models)) if len(models) > 1 else None  # never retry a retired model
+        raise Overloaded(f"{model} HTTP 404 (retired)")
+    if r.status_code in (429, 500, 503, 504):
         _gemini_idx += 1  # next attempt uses the next model
         raise Overloaded(f"{model} HTTP {r.status_code}: {r.text[:200]}")
     if r.status_code >= 400:
