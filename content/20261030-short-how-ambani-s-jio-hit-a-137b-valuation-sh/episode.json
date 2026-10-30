@@ -1,0 +1,84 @@
+{
+  "id": "20261030-short-how-ambani-s-jio-hit-a-137b-valuation-sh",
+  "ref": "S1030",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-10-30T07:41:26+05:30",
+  "script": {
+    "title": "How Ambani’s Jio Hit a $137B Valuation #shorts",
+    "hook_text": "Jio Hits $137B Valuation!",
+    "segments": [
+      {
+        "text": "Jio just became India’s second most valuable company.",
+        "broll": "mumbai skyscraper skyline zoom"
+      },
+      {
+        "text": "Its valuation hit 137 billion dollars after a massive IPO surge.",
+        "broll": "stock market trading chart"
+      },
+      {
+        "text": "How does a brand selling cheap mobile data get this big?",
+        "broll": "person tapping smartphone screen"
+      },
+      {
+        "text": "It is not just telecom, yaar. Jio built a complete digital ecosystem.",
+        "broll": "fiber optic cables glowing"
+      },
+      {
+        "text": "They turned over 450 million telecom users into buyers for streaming, apps, and shopping.",
+        "broll": "crowded indian market street"
+      },
+      {
+        "text": "That massive customer moat drove a 27 percent surge on day one.",
+        "broll": "indian currency notes count"
+      },
+      {
+        "text": "Educational only, not financial advice.",
+        "broll": "disclaimer graphic text display"
+      }
+    ],
+    "loop_line": "And that subscriber juggernaut is why...",
+    "description": "How did Reliance Jio reach a $137 billion valuation? We decode the ecosystem strategy behind India's second most valuable company. #Jio #PaisaDecoded #Business",
+    "tags": [
+      "jio ipo",
+      "jio valuation",
+      "reliance jio",
+      "mukesh ambani",
+      "paisa decoded",
+      "indian business",
+      "jio business model",
+      "stock market india"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Jio valuation reached $137 billion, making it India's second most valuable firm",
+        "source_url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMnBsQUVaem9YZkdBUHZ0aFRjRFVadWg5ektvU0ozc3VOWmhpXzRQcmJjY3BZaS0yRERZa1hTdjZxSjkwdFRlWWhuUnJIRk9HMUVjdzdibExtbnJIbnFUVzZKM1BhemljWDI3MTlTTEZHUmEzX1dkWC1RcHd6TjIxMVBxUDAzS1VUMjIzZkpIaHlLbHpJVGtpcUVLTERnWklieDJlVldNUkplUnJjNjFZVkMzYjRpaXpJQ3B3?oc=5"
+      },
+      {
+        "claim": "Jio shares surged 27% after IPO",
+        "source_url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNR2sweWd1VWl2d2ZiNEpOSmE5Y3pzVk1FSnlIWS1nZmVGNXhlbkhObWFpOGFwTnNkb0ZSdXkyOEFPZm9rM0hEUzJrNEE0aXM1ODhKMWxPczQ3b1RHN01rcE9YTHhxVkFTeEFJblAyd200ZFlCay1uXzRzMFJiMlMtdms1WHg?oc=5"
+      }
+    ],
+    "chosen_candidate": "Ambani’s Jio reaches $137 billion valuation, becoming India’s second-most valuable firm - Reuters",
+    "why_it_will_work": "Reliance Jio's massive valuation surge is high-profile news that taps directly into young Indian viewers' curiosity about tech mega-companies and wealth creation."
+  },
+  "sources": [
+    {
+      "title": "Ambani’s Jio reaches $137 billion valuation, becoming India’s second-most valuable firm - Reuters",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMnBsQUVaem9YZkdBUHZ0aFRjRFVadWg5ektvU0ozc3VOWmhpXzRQcmJjY3BZaS0yRERZa1hTdjZxSjkwdFRlWWhuUnJIRk9HMUVjdzdibExtbnJIbnFUVzZKM1BhemljWDI3MTlTTEZHUmEzX1dkWC1RcHd6TjIxMVBxUDAzS1VUMjIzZkpIaHlLbHpJVGtpcUVLTERnWklieDJlVldNUkplUnJjNjFZVkMzYjRpaXpJQ3B3?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    12,
+    13,
+    14
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
