@@ -1,0 +1,81 @@
+{
+  "id": "20261030-short-why-starbucks-makes-1-367-cr-in-india-sh",
+  "ref": "S1030d",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-10-30T22:25:53+05:30",
+  "script": {
+    "title": "Why Starbucks Makes ₹1,367 Cr in India #shorts",
+    "hook_text": "Starbucks ₹1,367 Cr India Secret",
+    "segments": [
+      {
+        "text": "Starbucks India just hit 1,367 crore rupees in revenue.",
+        "broll": "starbucks coffee cup poured"
+      },
+      {
+        "text": "In a land of 10-rupee tapri chai, how did they cut losses by 27%?",
+        "broll": "indian roadside chai vendor"
+      },
+      {
+        "text": "Simple. They do not just sell coffee, boss. They sell quiet air-conditioned workspace for dates and meetings.",
+        "broll": "young professional laptop cafe"
+      },
+      {
+        "text": "Add high-margin food and localized menu items, and average order values easily cross 400 rupees.",
+        "broll": "cafe food counter display"
+      },
+      {
+        "text": "Plus, Tata's 50-50 joint venture gives them prime real estate leverage across top cities.",
+        "broll": "tata corporate office building"
+      }
+    ],
+    "loop_line": "Not financial advice, but smart brand positioning is why...",
+    "description": "Ever wondered how Starbucks thrives in India despite expensive ₹300 coffee? Here is the business model behind Starbucks India crossing ₹1,367 crore in revenue and cutting losses. #business #starbucks #paisadecoded",
+    "tags": [
+      "starbucks india",
+      "starbucks revenue",
+      "starbucks business model",
+      "tata starbucks",
+      "indian business case study",
+      "paisa decoded",
+      "coffee business india",
+      "startup business india",
+      "business shorts"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Starbucks India revenue reached ₹1,367 crore",
+        "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRVT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQd9IBqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRVT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQdw?oc=5"
+      },
+      {
+        "claim": "Starbucks India cut losses by 27%",
+        "source_url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRVT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQd9IBqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRVT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQdw?oc=5"
+      },
+      {
+        "claim": "Starbucks operates as a 50-50 joint venture with Tata Consumer Products in India",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Starbucks India brews Rs 1,367 Cr revenue in FY26; cuts losses by 27% - Entrackr",
+    "why_it_will_work": "It contrasts expensive premium coffee against India's ₹10 tea culture to hook viewers into understanding Starbucks' real estate and consumer business strategy."
+  },
+  "sources": [
+    {
+      "title": "Starbucks India brews Rs 1,367 Cr revenue in FY26; cuts losses by 27% - Entrackr",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRWT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQd9IBqgFBVV95cUxQUk0zNTF3Umd6UUhrQ1pSd2p4WGg0bXFZZlVMRGdmbE5McGtHamVkcW1ybGFvUmNkdVhyZGRWT0wxN2Viel9HbnRCdGhLci1TNmg5UEpzTG9yQzlWSXZCa2g1eGQ1ZzFsQzhTZ1BWVnNwc1BwcDV2Q0VuSWluMlFpc3VadEVvZjZKZ2pfR1lLSEdCRncwOTNyOGFKTzJ0SlJtRnVPbUNCZFBQdw?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    40,
+    41,
+    42
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
