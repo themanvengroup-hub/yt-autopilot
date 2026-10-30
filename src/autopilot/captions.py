@@ -31,9 +31,19 @@ def transcribe(wav: Path, prompt_text: str) -> list[Word]:
     """
     from faster_whisper import WhisperModel  # heavy import, keep lazy
 
+    import subprocess
+
+    import numpy as np
+
+    # Decode with ffmpeg ourselves (16 kHz mono float32) instead of letting faster-whisper
+    # open the file via PyAV, whose API changes have broken file loading before.
+    raw = subprocess.run(["ffmpeg", "-nostdin", "-i", str(wav), "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    audio = np.frombuffer(raw, dtype=np.float32).copy()
+
     model = WhisperModel(cfg()["render"]["whisper_model"], device="cpu", compute_type="int8")
     segments, _ = model.transcribe(
-        str(wav), language="en", word_timestamps=True, vad_filter=True,
+        audio, language="en", word_timestamps=True, vad_filter=True,
         initial_prompt=prompt_text[:800], beam_size=5,
     )
     words = [Word(w.word.strip(), float(w.start), float(w.end))
