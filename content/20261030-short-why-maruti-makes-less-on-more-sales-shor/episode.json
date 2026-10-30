@@ -2,7 +2,7 @@
   "id": "20261030-short-why-maruti-makes-less-on-more-sales-shor",
   "ref": "S1030c",
   "kind": "short",
-  "status": "scripted",
+  "status": "recorded",
   "created_at": "2026-10-30T08:22:27+05:30",
   "script": {
     "title": "Why Maruti Makes Less On More Sales #shorts",
@@ -77,10 +77,12 @@
     22,
     23
   ],
-  "voice_file_id": null,
+  "voice_file_id": "CQACAgUAAxkBAAMbauRwYYwspE9zMonv8Q9Bchqk0oIAAuIpAALraChXbANwnKNi0Ng9BA",
   "youtube_id": null,
   "publish_at": null,
   "error": null,
   "attempts": 0,
-  "history": []
+  "history": [
+    "2026-10-30T16:12:56+05:30 scripted→recorded voice received"
+  ]
 }
