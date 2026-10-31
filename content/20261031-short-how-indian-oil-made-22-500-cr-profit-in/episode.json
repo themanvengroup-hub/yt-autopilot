@@ -1,0 +1,90 @@
+{
+  "id": "20261031-short-how-indian-oil-made-22-500-cr-profit-in",
+  "ref": "S1031",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-10-31T07:41:44+05:30",
+  "script": {
+    "title": "How Indian Oil Made ₹22,500 Cr Profit in 90 Days #shorts",
+    "hook_text": "₹22,500 Cr Profit in 90 Days!",
+    "segments": [
+      {
+        "text": "Indian Oil just made over ₹22,000 crore profit in three months.",
+        "broll": "petrol pump india"
+      },
+      {
+        "text": "That is almost ₹240 crore pure profit every single day.",
+        "broll": "indian currency notes stack"
+      },
+      {
+        "text": "But just a quarter ago, they were actually losing money.",
+        "broll": "stock chart falling"
+      },
+      {
+        "text": "So how did an oil PSU flip from loss to massive profits so fast?",
+        "broll": "oil refinery sunset"
+      },
+      {
+        "text": "It comes down to Gross Refining Margins, or GRMs.",
+        "broll": "crude oil barrel"
+      },
+      {
+        "text": "When international crude prices drop, Indian Oil buys cheap oil but sells petrol at steady local prices.",
+        "broll": "car filling petrol"
+      },
+      {
+        "text": "They pocket the massive difference on every single litre you fill.",
+        "broll": "digital fuel meter"
+      },
+      {
+        "text": "This isn't financial advice, but that secret margin surge is why...",
+        "broll": "thinking young indian"
+      }
+    ],
+    "loop_line": "This isn't financial advice, but that secret margin surge is why...",
+    "description": "Indian Oil reported a massive 174% jump in Q2 net profit, reaching over ₹22,000 crore. Here is the secret business mechanism behind refining margins and petrol pricing in India. #IndianOil #Business #PaisaDecoded",
+    "tags": [
+      "Indian Oil",
+      "IOC Q2 results",
+      "Indian Oil profit",
+      "Gross Refining Margin",
+      "petrol prices India",
+      "Indian economy",
+      "business story",
+      "Paisa Decoded",
+      "stock market India",
+      "crude oil price"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Indian Oil Q2 net profit jumped 174% to ₹22,503 crore",
+        "source_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9sTWExM0ZmUTZnZkFQVDJLaDFleWdud2ZLVkJybkxTcDVVdVo2djJtY0d2OWRzOG1nb3VYdnlZWTBNdVFOSjktdnFvdXVfeHFra2x0enlDLVNiTTZnYTBmMTNVbGRpNmZPMzNIcDQwN3dxeUFNN05BUw?oc=5"
+      },
+      {
+        "claim": "IOC profit surged due to high refining margins moving QoQ from loss to profit",
+        "source_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNTlptaW5iSWgzdHo4ZW0yQ09JaE9qLUhKZ1NWQXZEX0tzeXZMd2xZYWoyaVR5SktCeU5NRWFBOFp0RzQ2aHUzYm84eXZqTHk4NnEyOGk1VG1JWUUzTDk5SWdaNmdLdURDOUNzTU1CSWkwQXItOWV5UnRpeVlzZHgtdUdJV2FMQmhRYVlMMklJTlRWMG1pamR1RmpoWHk3SVQ3X2VQakJZTnEwRWNxVHJwcUc3MDVFbWJsN1NiX3RSMU50SUpBa3JQZS11d2U0UmFJSUtIN1M4d2FkVEt4RXNOcTVB0gHnAUFVX3lxTFBwNWRoajZVNjcxbGpVV2VOMzUxa0tMb0lia1JKeGRBQmFKaUt0UlJWMVNjVW5NVVB2NEx1ejZKVnk5dWE4TXBNZUFabVlwcU84S1V6WHNKcndPLUl1ZnNwd09ySTgxUV91X29NNTcxN2sxSzFxbFIzRWdnYUI1elhkVVNqODZib1RsMWJpb1VWZEtQenRkZ3lodFF0VExOU1ZZVGhJbEw4bWVPZW9KOXMtQXJ0ZFNnZjhvVzJkRWhnU3ZnSlRDVjhvRWIwYmlNY0s1V0hMbVVmdlpTUjh6ZVhrQk9qeEFxaw?oc=5"
+      }
+    ],
+    "chosen_candidate": "Indian Oil Q2 Net Profit Jumps 174% To ₹22,503 Crore - Sarkaritel.com",
+    "why_it_will_work": "It taps into everyday consumer curiosity about fuel prices versus massive oil PSU profits using a mind-boggling daily profit figure."
+  },
+  "sources": [
+    {
+      "title": "Indian Oil Q2 Net Profit Jumps 174% To ₹22,503 Crore - Sarkaritel.com",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9sTWExM0ZmUTZnZkFQVDJLaDFleWdud2ZLVkJybkxTcDVVdVo2djJtY0d2OWRzOG1nb3VYdnlZWTBNdVFOSjktdnFvdXVfeHFra2x0enlDLVNiTTZnYTBmMTNVbGRpNmZPMzNIcDQwN3dxeUFNN05BUw?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    47,
+    48,
+    49
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
