@@ -2,7 +2,7 @@
   "id": "20261031-short-how-indian-oil-made-22-500-cr-profit-in",
   "ref": "S1031",
   "kind": "short",
-  "status": "scripted",
+  "status": "recorded",
   "created_at": "2026-10-31T07:41:44+05:30",
   "script": {
     "title": "How Indian Oil Made ₹22,500 Cr Profit in 90 Days #shorts",
@@ -81,10 +81,12 @@
     48,
     49
   ],
-  "voice_file_id": null,
+  "voice_file_id": "CQACAgUAAxkBAAMyauY8i5UqbYGsuP0kSL9Uqdl8EoIAApAmAAKyfTFX_8NWduNkHq89BA",
   "youtube_id": null,
   "publish_at": null,
   "error": null,
   "attempts": 0,
-  "history": []
+  "history": [
+    "2026-11-01T00:46:53+05:30 scripted→recorded voice received"
+  ]
 }
