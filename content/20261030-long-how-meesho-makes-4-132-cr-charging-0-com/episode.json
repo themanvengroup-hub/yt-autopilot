@@ -13,19 +13,39 @@
         "segments": [
           {
             "text": "How does a company make billions by charging zero percent commission?",
-            "broll": "smartphone online shopping scroll"
+            "broll": "indian rupees cash stacked close up",
+            "broll_alt": [
+              "financial chart on tablet computer",
+              "hands counting Indian rupee notes"
+            ],
+            "callout": "0% COMMISSION"
           },
           {
             "text": "While Amazon takes up to twenty-five percent from sellers, Meesho did the exact opposite. They told Indian small businesses to sell for free.",
-            "broll": "indian street market vendor"
+            "broll": "indian artisan packing sari parcel",
+            "broll_alt": [
+              "tailor working in small workshop",
+              "textile merchant in busy shop"
+            ],
+            "callout": ""
           },
           {
             "text": "Yet, Meesho just pulled in ₹4,132 crore in revenue for a single quarter. At the same time, they slashed their quarterly loss by 68% down to ₹132 crore.",
-            "broll": "financial bar graph growth"
+            "broll": "mumbai financial district skyline aerial",
+            "broll_alt": [
+              "financial growth chart screen close up",
+              "modern office glass building sunlight"
+            ],
+            "callout": "₹4,132 CR"
           },
           {
             "text": "How do you build a multi-thousand crore paisa engine when your core product costs sellers nothing? Today, we decode Meesho's hidden money machine.",
-            "broll": "rupee notes stack close-up"
+            "broll": "server room flashing led lights",
+            "broll_alt": [
+              "digital tech network connections background",
+              "futuristic financial data stream motion"
+            ],
+            "callout": ""
           }
         ]
       },
@@ -34,35 +54,75 @@
         "segments": [
           {
             "text": "If sellers pay zero commission, where is Meesho actually getting thousands of crores?",
-            "broll": "thinking man holding phone"
+            "broll": "person scrolling ecommerce app smartphone",
+            "broll_alt": [
+              "woman browsing mobile shopping application",
+              "hand tapping mobile phone screen"
+            ],
+            "callout": ""
           },
           {
             "text": "The answer starts with advertising. Imagine you sell cheap kurtis in Jaipur alongside ten thousand other sellers.",
-            "broll": "colorful indian kurtis display"
+            "broll": "colourful rajasthani ethnic dresses hanging",
+            "broll_alt": [
+              "busy jaipur bazaar market colorful textiles",
+              "garment store racks close up"
+            ],
+            "callout": ""
           },
           {
             "text": "How do buyers find your shop first? You pay Meesho for ad placement on their search page.",
-            "broll": "mobile screen seller dashboard"
+            "broll": "finger clicking mobile screen sponsored ad",
+            "broll_alt": [
+              "digital marketing dashboard screen video",
+              "hand scrolling shopping app search results"
+            ],
+            "callout": ""
           },
           {
             "text": "Meesho flipped the model completely. Instead of forcing a sales tax on every product, they turned selling into a competitive bidding game.",
-            "broll": "auction gavel abstract tech"
+            "broll": "indian entrepreneurs meeting laptop discussion",
+            "broll_alt": [
+              "auction gavel hitting wooden block",
+              "stock market bidding trading floor screen"
+            ],
+            "callout": ""
           },
           {
             "text": "Sellers willingly give money for visibility because without ads, their products stay invisible. That advertising engine generates massive high-margin revenue.",
-            "broll": "digital ad dashboard analytics"
+            "broll": "digital analytics growth bar chart",
+            "broll_alt": [
+              "financial profit chart upward trend line",
+              "glowing digital currency nodes network"
+            ],
+            "callout": ""
           },
           {
             "text": "The second stream is logistics, powered by their logistics platform called Valmo. Every time a package moves from Surat to Patna, Meesho earns a slice of shipping.",
-            "broll": "delivery boy riding scooter"
+            "broll": "delivery truck driving highway aerial",
+            "broll_alt": [
+              "logistics warehouse worker scanning parcel",
+              "cargo container truck driving sunset"
+            ],
+            "callout": ""
           },
           {
             "text": "They do not own thousands of trucks themselves. They aggregate local courier partners through clever jugaad and technology.",
-            "broll": "cardboard boxes delivery warehouse"
+            "broll": "indian delivery boy loading motor scooter",
+            "broll_alt": [
+              "courier worker organizing packages",
+              "delivery rider riding scooter busy street"
+            ],
+            "callout": ""
           },
           {
             "text": "By charging small logistics margins across millions of daily orders, those tiny drops turn into a massive ocean of cash.",
-            "broll": "water drop ocean abstract"
+            "broll": "automated sorting warehouse conveyor belt",
+            "broll_alt": [
+              "parcels moving fast conveyor belt warehouse",
+              "stacked cardboard boxes warehouse interior"
+            ],
+            "callout": ""
           }
         ]
       },
@@ -71,31 +131,66 @@
         "segments": [
           {
             "text": "Amazon spent billions targeting metro buyers, but Meesho quietly captured real Bharat.",
-            "broll": "indian small town street"
+            "broll": "bustling indian tier two town street market",
+            "broll_alt": [
+              "indian rural village shopkeeper interaction",
+              "crowded small town bazaar street aerial"
+            ],
+            "callout": ""
           },
           {
             "text": "In big cities, people buy branded smartphones and fancy sneakers online. But in Tier 2 and Tier 3 India, people want unbranded everyday fashion.",
-            "broll": "young indian shoppers fashion"
+            "broll": "young indian woman opening parcel box",
+            "broll_alt": [
+              "browsing affordable clothes market stall",
+              "unboxing affordable clothes parcel close up"
+            ],
+            "callout": ""
           },
           {
             "text": "The average order value on Meesho is often less than the cost of a couple of auto rides. We are talking about two hundred to three hundred rupees.",
-            "broll": "auto rickshaw driving city"
+            "broll": "auto rickshaw driving city street",
+            "broll_alt": [
+              "hand handing over indian rupee notes",
+              "auto rickshaw stand india city traffic"
+            ],
+            "callout": "₹200 - ₹300"
           },
           {
             "text": "At that price point, traditional delivery costs would destroy any business model. A normal courier charge could cost as much as the item itself.",
-            "broll": "calculator hands typing fast"
+            "broll": "courier driver delivering package door step",
+            "broll_alt": [
+              "cardboard package on doorstep outdoor",
+              "express courier truck driving down road"
+            ],
+            "callout": ""
           },
           {
             "text": "So Meesho engineered a low-cost delivery network specifically built for lower price items. They bundled orders and worked with regional partners who operate on razor-thin margins.",
-            "broll": "workers sorting packages fast"
+            "broll": "workers loading delivery van warehouse",
+            "broll_alt": [
+              "regional courier warehouse sorting boxes",
+              "logistic network map glowing lights animation"
+            ],
+            "callout": ""
           },
           {
             "text": "If you enjoy understanding how Indian companies actually make money, hit subscribe right now!",
-            "broll": "youtube subscribe graphic animation"
+            "broll": "hand tapping smartphone screen subscribe button",
+            "broll_alt": [
+              "person using mobile phone home indoor",
+              "glowing subscribe icon animation"
+            ],
+            "callout": ""
           },
           {
             "text": "This sharp focus on Bharat helped their order volumes explode, driving quarterly revenue up 34% year on year.",
-            "broll": "chart arrow pointing up"
+            "broll": "stacks of cardboard shipping boxes warehouse",
+            "broll_alt": [
+              "busy warehouse logistics order fulfillment",
+              "exponential growth bar chart glowing green"
+            ],
+            "callout": "+34% REVENUE"
           }
         ]
       },
@@ -104,31 +199,66 @@
         "segments": [
           {
             "text": "Slashing quarterly losses by 68% sounds amazing, but can Meesho actually become profitable?",
-            "broll": "question mark illuminated lights"
+            "broll": "financial analyst reviewing charts tablet",
+            "broll_alt": [
+              "modern corporate boardroom meeting table",
+              "graph showing cost reduction curve screen"
+            ],
+            "callout": ""
           },
           {
             "text": "For years, Indian startups burned millions on customer acquisition discounts. You gives free cashbacks, customers buy once, and then they leave.",
-            "broll": "burning money concept visual"
+            "broll": "burning discount coupon sticker close up",
+            "broll_alt": [
+              "rupee currency bills burning in flames",
+              "shopping smartphone screen discount code promo"
+            ],
+            "callout": ""
           },
           {
             "text": "Meesho managed to break that habit by relying on organic word-of-mouth spread across WhatsApp groups and social resellers.",
-            "broll": "woman messaging on smartphone"
+            "broll": "indian woman chatting smartphone smile indoor",
+            "broll_alt": [
+              "friends looking at smartphone together laughing",
+              "hand holding phone showing chat message"
+            ],
+            "callout": ""
           },
           {
             "text": "By reducing marketing burn and growing ad revenue, their net loss shrank down to just ₹132 crore.",
-            "broll": "balance scale balancing money"
+            "broll": "financial balance sheet ledger audit",
+            "broll_alt": [
+              "businessman reviewing financial report desktop",
+              "green stock market ticker board glowing"
+            ],
+            "callout": ""
           },
           {
             "text": "However, competition is not sitting quiet. Quick commerce apps and rival marketplaces are expanding fast into smaller towns.",
-            "broll": "fast delivery van street"
+            "broll": "fast motion delivery bikes city traffic",
+            "broll_alt": [
+              "delivery scooter rider carrying big backpack",
+              "quick delivery rider speeding at dusk"
+            ],
+            "callout": ""
           },
           {
             "text": "As an educational takeaway for young investors, watching a company transition from cash-burn to positive cash flow is the ultimate lesson in unit economics.",
-            "broll": "financial chart green candle"
+            "broll": "young investor studying stock charts laptop",
+            "broll_alt": [
+              "finance notebook desk calculator glasses",
+              "financial education workshop presentation screen"
+            ],
+            "callout": ""
           },
           {
             "text": "Keep in mind this analysis is for educational purposes only and is not financial advice. The big lesson here is simple: zero price to sellers does not mean zero profit for the platform.",
-            "broll": "chai cup steaming table"
+            "broll": "modern glass skyscraper looking up sky",
+            "broll_alt": [
+              "corporate headquarters entrance exterior sunny",
+              "business district towers reflection sunlight"
+            ],
+            "callout": ""
           }
         ]
       }
@@ -165,7 +295,8 @@
       }
     ],
     "chosen_candidate": "Meesho's Q2 loss narrows 68% to Rs 132 crore as revenue jumps 34% to Rs 4,132 crore - Indian Startup News",
-    "why_it_will_work": "Meesho is an iconic brand that millions of young Indians use daily, and decoding how a zero-commission business makes thousands of crores creates an immediate, highly engaging curiosity gap."
+    "why_it_will_work": "Meesho is an iconic brand that millions of young Indians use daily, and decoding how a zero-commission business makes thousands of crores creates an immediate, highly engaging curiosity gap.",
+    "directed": true
   },
   "sources": [],
   "telegram_message_ids": [
@@ -177,7 +308,7 @@
   "youtube_id": null,
   "publish_at": null,
   "error": null,
-  "attempts": 1,
+  "attempts": 2,
   "history": [
     "2026-11-02T01:55:56+05:30 scripted→recorded voice received"
   ]
