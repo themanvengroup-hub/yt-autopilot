@@ -78,14 +78,15 @@
     23
   ],
   "voice_file_id": "CQACAgUAAxkBAAMbauRwYYwspE9zMonv8Q9Bchqk0oIAAuIpAALraChXbANwnKNi0Ng9BA",
-  "youtube_id": "y-QiB-WV0ho",
+  "youtube_id": "D4LkUyGzIsw",
   "publish_at": null,
   "error": null,
-  "attempts": 3,
+  "attempts": 4,
   "history": [
     "2026-10-30T16:12:56+05:30 scripted→recorded voice received",
     "2026-10-30T16:13:48+05:30 recorded→recorded attempt 1",
     "2026-10-30T17:04:35+05:30 recorded→failed attempt 2",
-    "2026-10-30T22:32:27+05:30 failed→uploaded 43s"
+    "2026-10-30T22:32:27+05:30 failed→uploaded 43s",
+    "2026-11-02T01:43:15+05:30 uploaded→uploaded 43s"
   ]
 }
