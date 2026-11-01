@@ -270,7 +270,12 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
     bounds = _segment_lookup(segments)
     shots = plan_shots(words, total, bounds, fmt.shot_seconds)
     _assign_broll(shots, segments, BrollLibrary(fmt))
-    log.info("%d shots, %d with footage", len(shots), sum(1 for s in shots if s.clip))
+    with_footage = sum(1 for s in shots if s.clip)
+    log.info("%d shots, %d with footage", len(shots), with_footage)
+    if with_footage < 0.7 * len(shots):
+        # never upload a video full of blank frames: fail now, the nightly run retries it
+        raise RuntimeError(f"only {with_footage}/{len(shots)} shots got stock footage "
+                           "(stock site rate-limited or unreachable); will retry on the next run")
     groups = group_by_segment(shots)
     T = float(r.get("transition_seconds_short" if fmt.is_short else "transition_seconds_long", 0.3)) \
         if r.get("transitions", True) else 0.0

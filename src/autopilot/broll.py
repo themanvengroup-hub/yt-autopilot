@@ -15,6 +15,7 @@ from __future__ import annotations
 import logging
 import random
 import re
+import time
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -26,6 +27,11 @@ from .state import read_state, write_state
 
 log = logging.getLogger(__name__)
 CACHE = WORK_DIR / "broll-cache"
+DL_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/130.0 Safari/537.36 yt-autopilot",
+    "Referer": "https://pixabay.com/",
+}
 _STOP = {"the", "and", "with", "close", "aerial", "slow", "motion", "cinematic", "shot", "view", "night", "timelapse", "footage"}
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".webm", ".mkv"}
 
@@ -118,6 +124,11 @@ class BrollLibrary:
         self._results: dict[str, list[Candidate]] = {}
         self._history: list[str] = read_state("broll_used", [])
         self._used: set[str] = set(self._history)   # never repeat a clip from a recent video
+        self._downloaded: list[Clip] = []
+        self._reuse_idx = 0
+        self._last_dl = 0.0
+        self._rate_limited = 0
+        self._blocked_until = 0.0
         if not self.providers and not self.local:
             log.warning("no B-roll source configured (PIXABAY_API_KEY / PEXELS_API_KEY / assets/broll) "
                         "— shots will use solid backgrounds")
@@ -169,20 +180,46 @@ class BrollLibrary:
         return results
 
     def _download(self, c: Candidate) -> Clip | None:
+        """Polite download: browser-like headers, pacing between requests, and real back-off on
+        429/5xx (honouring Retry-After). After repeated rate-limits a circuit breaker stops new
+        downloads for this render instead of hammering the CDN (which only extends the ban)."""
         dest = CACHE / f"{c.key.replace(':', '_')}_{c.width}.mp4"
-        if not dest.exists():
-            dest.parent.mkdir(parents=True, exist_ok=True)
+        if dest.exists() and dest.stat().st_size > 50_000:
+            return Clip(dest, c.duration)
+        if self._blocked_until > time.time():
+            return None
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        for attempt in range(3):
+            wait = 1.2 - (time.time() - self._last_dl)          # ~1 request / 1.2 s
+            if wait > 0:
+                time.sleep(wait)
+            self._last_dl = time.time()
             try:
-                with requests.get(c.url, stream=True, timeout=120) as r:
+                with requests.get(c.url, stream=True, timeout=120, headers=DL_HEADERS) as r:
+                    if r.status_code in (429, 503):
+                        retry = r.headers.get("Retry-After", "")
+                        pause = float(retry) if retry.isdigit() else 15 * (attempt + 1)
+                        self._rate_limited += 1
+                        log.warning("CDN rate limit on %s (attempt %d); pausing %.0fs", c.key, attempt + 1, pause)
+                        if self._rate_limited >= 6:
+                            self._blocked_until = time.time() + 600
+                            log.error("stock CDN keeps rate-limiting; no new downloads for this render")
+                            return None
+                        time.sleep(min(pause, 60))
+                        continue
                     r.raise_for_status()
                     with open(dest, "wb") as fh:
                         for chunk in r.iter_content(1 << 16):
                             fh.write(chunk)
+                self._rate_limited = max(self._rate_limited - 1, 0)
+                self._downloaded.append(Clip(dest, c.duration))
+                return self._downloaded[-1]
             except requests.RequestException as exc:
                 log.warning("download %s failed: %s", c.key, exc)
                 dest.unlink(missing_ok=True)
-                return None
-        return Clip(dest, c.duration)
+                time.sleep(3)
+        dest.unlink(missing_ok=True)
+        return None
 
     def _remember(self, key: str) -> None:
         self._used.add(key)
@@ -202,6 +239,7 @@ class BrollLibrary:
         if not self.providers:
             return None
         ordered = queries + [cfg()["render"]["fallback_broll_query"]]
+        tries = 0
         for q in ordered:
             for c in self._search(q):
                 if c.key in self._used or c.duration < min(min_seconds + 1.0, 5):
@@ -209,8 +247,13 @@ class BrollLibrary:
                 if clip := self._download(c):
                     self._remember(c.key)
                     return clip
-        for q in ordered:  # library exhausted: allow reuse rather than an empty frame
-            for c in self._search(q):
-                if clip := self._download(c):
-                    return clip
+                tries += 1
+                if tries >= 4 or self._blocked_until > time.time():
+                    break
+            if tries >= 4 or self._blocked_until > time.time():
+                break
+        # couldn't get a fresh clip: reuse one already downloaded for this video (never a blank frame)
+        if self._downloaded:
+            self._reuse_idx = (self._reuse_idx + 1) % len(self._downloaded)
+            return self._downloaded[self._reuse_idx]
         return None
