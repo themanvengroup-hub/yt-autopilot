@@ -177,7 +177,7 @@
   "youtube_id": null,
   "publish_at": null,
   "error": null,
-  "attempts": 0,
+  "attempts": 1,
   "history": [
     "2026-11-02T01:55:56+05:30 scripted→recorded voice received"
   ]
