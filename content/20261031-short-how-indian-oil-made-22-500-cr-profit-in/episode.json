@@ -123,12 +123,13 @@
     49
   ],
   "voice_file_id": "CQACAgUAAxkBAAMyauY8i5UqbYGsuP0kSL9Uqdl8EoIAApAmAAKyfTFX_8NWduNkHq89BA",
-  "youtube_id": "2-OAvKUJyQk",
+  "youtube_id": "eMiMRNQJ2-0",
   "publish_at": null,
   "error": null,
-  "attempts": 2,
+  "attempts": 3,
   "history": [
     "2026-11-01T00:46:53+05:30 scripted→recorded voice received",
-    "2026-11-01T00:49:26+05:30 recorded→uploaded 34s"
+    "2026-11-01T00:49:26+05:30 recorded→uploaded 34s",
+    "2026-11-02T03:08:56+05:30 uploaded→uploaded 34s"
   ]
 }
