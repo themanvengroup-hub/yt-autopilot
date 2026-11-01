@@ -2,7 +2,7 @@
   "id": "20261101-short-will-epfo-invest-your-pf-in-startups-sho",
   "ref": "S1101",
   "kind": "short",
-  "status": "scripted",
+  "status": "recorded",
   "created_at": "2026-11-01T07:41:36+05:30",
   "script": {
     "title": "Will EPFO Invest Your PF in Startups? #shorts",
@@ -79,10 +79,12 @@
     54,
     55
   ],
-  "voice_file_id": null,
+  "voice_file_id": "CQACAgUAAxkBAAM6aueM5xlTCoFAahBTp48-AqdzubgAAqEmAAKyfUFXhi6iC0bnp5Q9BA",
   "youtube_id": null,
   "publish_at": null,
   "error": null,
   "attempts": 0,
-  "history": []
+  "history": [
+    "2026-11-02T01:55:56+05:30 scripted→recorded voice received"
+  ]
 }
