@@ -184,7 +184,8 @@ def _handle_audio(msg: dict, file_id: str, size: int) -> None:
     ep.voice_file_id = file_id
     ep.attempts = 0
     ep.transition("recorded", "voice received")
-    tg.send(f"Got it. Editing {ep.ref} now; you'll get a private YouTube link in ~10–30 min.",
+    tg.send(f"Got it, {ep.ref} is queued. Tonight's edit runs at 11:17 PM IST; the private YouTube link "
+            f"arrives here right after.",
             reply_to=msg["message_id"])
 
 
@@ -223,6 +224,12 @@ def cmd_render(args: argparse.Namespace) -> None:
         try:
             # keep the download OUTSIDE the render work dir: render_episode() wipes that folder first
             voice = tg.download_file(ep.voice_file_id, WORK_DIR / "voices" / f"{ep.id}.audio")
+            if not ep.script.get("directed"):
+                try:  # director pass: footage queries + premium callouts matched to every line
+                    scriptwriter.direct_visuals(ep.kind, ep.script)
+                    ep.save()
+                except Exception as exc:  # noqa: BLE001 - never block a render on this
+                    log.warning("director pass failed (%s); using the script's own footage notes", exc)
             result = render_episode(ep, voice)
             desc = youtube.build_description(ep.script, result.chapters)
             vid = youtube.upload(result.video, title=ep.script["title"], description=desc,

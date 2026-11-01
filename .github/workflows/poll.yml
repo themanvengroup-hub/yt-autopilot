@@ -1,5 +1,5 @@
 # Every 30 min, 07:37–00:07 IST: read Telegram (recordings + commands).
-# If a recording arrived, chain straight into the render job.
+# Recordings are queued; the nightly render.yml (23:17 IST) edits and uploads them.
 name: poll
 on:
   schedule:
@@ -17,8 +17,6 @@ jobs:
   poll:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    outputs:
-      render: ${{ steps.poll.outputs.render }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,9 +39,3 @@ jobs:
         if: always()
         with:
           message: "poll: telegram updates"
-
-  render:
-    needs: poll
-    if: needs.poll.outputs.render == 'true'
-    uses: ./.github/workflows/render.yml
-    secrets: inherit

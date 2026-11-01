@@ -26,6 +26,7 @@ from .state import read_state, write_state
 
 log = logging.getLogger(__name__)
 CACHE = WORK_DIR / "broll-cache"
+_STOP = {"the", "and", "with", "close", "aerial", "slow", "motion", "cinematic", "shot", "view", "night", "timelapse", "footage"}
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".webm", ".mkv"}
 
 
@@ -42,6 +43,7 @@ class Candidate:
     width: int
     height: int
     duration: float
+    tags: str = ""    # provider tags / slug words, used for relevance ranking
 
 
 # ── providers ────────────────────────────────────────────────
@@ -80,7 +82,8 @@ def _pixabay(query: str, fmt: Format, key: str) -> list[Candidate]:
                       for v in (hit.get("videos") or {}).values()]
         best = _pick_size(renditions, fmt)
         if best:
-            out.append(Candidate(f"pixabay:{hit['id']}", best[0], best[1], best[2], float(hit.get("duration") or 8)))
+            out.append(Candidate(f"pixabay:{hit['id']}", best[0], best[1], best[2], float(hit.get("duration") or 8),
+                                 hit.get("tags", "")))
     # Pixabay has no orientation filter: rank portrait first for Shorts, then sharpness;
     # stable sort keeps Pixabay's popularity order as the tie-breaker (a decent quality proxy)
     out.sort(key=lambda c: (not (fmt.is_short and c.height > c.width), -min(_sharpness(c, fmt), 1.0)))
@@ -98,7 +101,8 @@ def _pexels(query: str, fmt: Format, key: str) -> list[Candidate]:
                       for f in v.get("video_files", []) if f.get("file_type") == "video/mp4"]
         best = _pick_size(renditions, fmt)
         if best:
-            out.append(Candidate(f"pexels:{v['id']}", best[0], best[1], best[2], float(v.get("duration") or 8)))
+            out.append(Candidate(f"pexels:{v['id']}", best[0], best[1], best[2], float(v.get("duration") or 8),
+                                 v.get("url", "").replace("-", " ")))
     return out
 
 
@@ -154,6 +158,13 @@ class BrollLibrary:
                 results += search(query)
             except requests.RequestException as exc:
                 log.warning("%s search %r failed: %s", name, query, exc)
+        words = {w for w in re.findall(r"[a-z]+", query.lower()) if len(w) > 2} - _STOP
+        def score(c: Candidate) -> tuple:
+            tags = c.tags.lower()
+            rel = sum(1 for w in words if w in tags or w.rstrip("s") in tags) / max(len(words), 1)
+            portrait = self.fmt.is_short and c.height > c.width
+            return (-round(rel, 1), not portrait, -min(_sharpness(c, self.fmt), 1.0))
+        results.sort(key=score)
         self._results[query] = results
         return results
 

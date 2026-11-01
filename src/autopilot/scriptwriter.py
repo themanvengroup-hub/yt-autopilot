@@ -177,3 +177,44 @@ def teleprompter_text(kind: str, script: dict[str, Any]) -> str:
             parts.append(f"\n[{seg['section'].upper()}]")
         parts.append(seg["text"])
     return "\n\n".join(parts).strip()
+
+
+# ── director pass: visual plan for an existing script (footage + on-screen text) ──
+DIRECTOR_SYSTEM = """You are the video director and editor for a premium Indian business-explainer channel.
+You receive the spoken lines of a finished voiceover. You DO NOT change any spoken text.
+For each line you choose the stock footage and decide whether a key-number card appears.
+
+FOOTAGE: queries must describe what a camera can literally film (objects, places, actions),
+2-5 English words, cinematic wording welcome ("aerial", "close up", "slow motion", "timelapse").
+Match the literal subject of the line: a line about fuel costs → "jet fuel truck refueling airplane";
+about coffee prices → "barista pouring latte close up". Never abstract ideas or brand names.
+Give India-flavoured scenes where plausible, with generic alternates. Vary shot types line to line.
+
+ON-SCREEN TEXT: a callout is a big premium card showing ONE striking number or 1-3 word phrase that
+appears in or is implied by the line ("₹22,500 CR", "90 DAYS", "0% COMMISSION"). Use it only on
+the 2-4 most striking lines of a Short (about one per section for long-form). Never a sentence,
+never repeat the hook text. Uppercase, Indian number format with ₹ and CR/L where relevant.
+Return ONLY JSON."""
+
+
+def direct_visuals(kind: str, script: dict[str, Any]) -> dict[str, Any]:
+    """Fill/upgrade broll, broll_alt and callout for every segment, in place. Spoken text untouched."""
+    segs = script["segments"] if kind == "short" else [s for sec in script["sections"] for s in sec["segments"]]
+    lines = [{"i": i, "text": s["text"]} for i, s in enumerate(segs)]
+    user = (f"Title: {script.get('title', '')}\nHook card text (already on screen for 2.5 s): "
+            f"{script.get('hook_text', '')}\nFormat: {'YouTube Short (vertical)' if kind == 'short' else 'long-form (16:9)'}\n"
+            f"Lines:\n{json.dumps(lines, ensure_ascii=False, indent=1)}\n\n"
+            'Return {"shots": [{"i": 0, "broll": "...", "broll_alt": ["...", "..."], "callout": "" }]} '
+            "with one entry per line; callout is an empty string when the line gets none.")
+    plan = llm.complete_json(DIRECTOR_SYSTEM, user)
+    by_i = {int(p["i"]): p for p in plan.get("shots", []) if "i" in p}
+    for i, seg in enumerate(segs):
+        p = by_i.get(i)
+        if not p:
+            continue
+        if p.get("broll"):
+            seg["broll"] = p["broll"]
+        seg["broll_alt"] = [q for q in (p.get("broll_alt") or []) if q][:3]
+        seg["callout"] = (p.get("callout") or "").strip()[:24]
+    script["directed"] = True
+    return script

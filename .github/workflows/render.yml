@@ -1,7 +1,10 @@
-# Render recorded episodes and upload them (private) to YouTube.
-# Called by poll.yml, or run manually to retry a specific episode.
+# Nightly edit: render every recorded episode and upload it (private) to YouTube.
+# Runs at 23:17 IST. Recordings you send during the day are queued by poll.yml.
+# Run it manually (optionally with an episode id) to edit something immediately.
 name: render
 on:
+  schedule:
+    - cron: "47 17 * * *"         # 17:47 UTC = 23:17 IST
   workflow_call:
   workflow_dispatch:
     inputs:
@@ -11,6 +14,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: autopilot-render
+  cancel-in-progress: false
 
 jobs:
   render:
