@@ -1,0 +1,88 @@
+{
+  "id": "20261101-short-will-epfo-invest-your-pf-in-startups-sho",
+  "ref": "S1101",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-01T07:41:36+05:30",
+  "script": {
+    "title": "Will EPFO Invest Your PF in Startups? #shorts",
+    "hook_text": "Your PF Funding Startups?",
+    "segments": [
+      {
+        "text": "Your monthly PF deduction could soon fund Indian startups.",
+        "broll": "Indian rupee notes salary"
+      },
+      {
+        "text": "Right now, EPFO manages huge retirement savings, mostly putting money into safe government bonds.",
+        "broll": "Government financial building debt"
+      },
+      {
+        "text": "That safe investment earns you around eight percent annual interest.",
+        "broll": "Calculator showing interest return"
+      },
+      {
+        "text": "So why risk investing retirement cash into tech startups?",
+        "broll": "Modern startup office space"
+      },
+      {
+        "text": "Simple. Early startup bets can deliver high multi-fold returns over long cycles.",
+        "broll": "Stock chart growth arrow"
+      },
+      {
+        "text": "Strict caps will ensure only a tiny fraction goes to high-risk funds. Not financial advice.",
+        "broll": "Piggy bank safety shield"
+      },
+      {
+        "text": "So next time you see your pay slip, remember...",
+        "broll": "Corporate worker holding payslip"
+      }
+    ],
+    "loop_line": "Your monthly PF deduction could soon fund Indian startups.",
+    "description": "EPFO is exploring investments in startups and Alternative Investment Funds (AIFs). Here is how your Provident Fund money works and why this shift matters for young salaried Indians. #PF #EPFO #PaisaDecoded",
+    "tags": [
+      "EPFO",
+      "Provident Fund",
+      "Indian Startups",
+      "PF interest rate",
+      "Personal Finance India",
+      "Startup Funding",
+      "Paisa Decoded",
+      "Salaried Employee India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "EPFO exploring startup and AIF investments for PF money",
+        "source_url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPcnlNc3RlM2laV1pGemRvdDRLS3dabVItNHdsUTF6M19uWGpmY2pMT0N1RDdKUGR5RU95b3NwWVdpdERHbnU4SGN0alN1akRGZzc2bVJoTXpNcTBxZmhiZTJjWWJnV055RURqYVdIZFRScjhOMjkzWkQzcmpzR2dxQUJZNnhSSHRYRk1fdmZLbWx0ejA0UWhENWRaRnYzcm9Wcmx3WnJoZEFZRlljblNhVC01YzN3Z1liV0F2WnFXSW90WnhPRW9hbUZ1MVpQc191TkM3R1BJbFVnbFk4S3FpSk1CSGVKQUdGaUk2UjEtbEVicjJVdEh2aEY2NTFmVTR3Y0hN0gGIAkFVX3lxTE5YQkJkM2A0QWg1ZWh1VWlCU0U1cS1ZcUJDOTdKbTdlYXhJRklIdS0teUhJRkVJM2swdzROblJUN3VDeTdDakJjNmE4QjVHdkdqSm5LaTBnYUh6NzNUVXd1WEFlVGJyVmh0RGdOTUt3aUtOWTZ0RlpEeF96TW1NOGk5YnFCYktxSWhmdUxndHp4MThfcllqMGFxdS1rc0VIZGQ4X3FMTmhpTHU5N3N1QzZDSFl4OXNPTmJJcHZmRzRQLWVucTdKT19pNUpwOVIzRTU0cVNOTW1HNS1CM0FwTWFiRXBYSTMyUUp6bmRweUM1N2JINy1MbTB1LWlTM2lLM1cwbktKTVJGRA?oc=5"
+      },
+      {
+        "claim": "EPFO currently invests primarily in debt securities and government bonds",
+        "source_url": "common knowledge"
+      },
+      {
+        "claim": "EPFO offers around 8% annual returns on deposits",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "EPFO eyes startup, AIF investments: How does it currently invest your PF money and why is it done? | Explained - Livemint",
+    "why_it_will_work": "Every young salaried professional in India gets PF deducted monthly, creating instant personal relevance and high curiosity about where their retirement money goes."
+  },
+  "sources": [
+    {
+      "title": "EPFO eyes startup, AIF investments: How does it currently invest your PF money and why is it done? | Explained - Livemint",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPcnlNc3RlM2laV1pGemRvdDRLS3dabVItNHdsUTF6M19uWGpmY2pMT0N1RDdKUGR5RU95b3NwWVdpdERHbnU4SGN0alN1akRGZzc2bVJoTXpNcTBxZmhiZTJjWWJnV055RURqYVdIZFRScjhOMjkzWkQzcmpzR2dxQUJZNnhSSHRYRk1fdmZLbWx0ejA0UWhENWRaRnYzcm9Wcmx3WnJoZEFZRlljblNhVC01YzN3Z1liV0F2WnFXSW90WnhPRW9hbUZ1MVpQc191TkM3R1BJbFVnbFk4S3FpSk1CSGVKQUdGaUk2UjEtbEVicjJVdEh2aEY2NTFmVTR3Y0hN0gGIAkFVX3lxTE5YQkJkM2E0QWg1ZWh1VWlCU0U1cS1ZcUJDOTdKbTdlYXhJRklIdS0teUhJRkVJM2swdzROblJUN3VDeTdDakJjNmE4QjVHdkdqSm5LaTBnYUh6NzNUVXd1WEFlVGJyVmh0RGdOTUt3aUtOWTZ0RlpEeF96TW1NOGk5YnFCYktxSWhmdUxndHp4MThfcllqMGFxdS1rc0VIZGQ4X3FMTmhpTHU5N3N1QzZDSFl4OXNPTmJJcHZmRzRQLWVucTdKT19pNUpwOVIzRTU0cVNOTW1HNS1CM0FwTWFiRXBYSTMyUUp6bmRweUM1N2JINy1MbTB1LWlTM2lLM1cwbktKTVJGRA?oc=5",
+      "signal": "India startup funding"
+    }
+  ],
+  "telegram_message_ids": [
+    53,
+    54,
+    55
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
