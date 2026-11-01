@@ -22,6 +22,7 @@ import requests
 
 from . import media
 from .config import ASSETS_DIR, WORK_DIR, Format, cfg, secret
+from .state import read_state, write_state
 
 log = logging.getLogger(__name__)
 CACHE = WORK_DIR / "broll-cache"
@@ -45,19 +46,33 @@ class Candidate:
 
 # ── providers ────────────────────────────────────────────────
 def _pick_size(options: list[tuple[str, int, int]], fmt: Format) -> tuple[str, int, int] | None:
-    """Smallest rendition that is still at least the target width; else the largest."""
+    """Smallest rendition that still fills the frame without upscaling; else the largest.
+
+    A vertical Short cut from landscape footage keeps only a 9:16 slice, so it needs a
+    source at least 1920 px tall (i.e. 4K) to stay sharp.
+    """
     options = [o for o in options if o[0] and o[1] and o[2]]
     if not options:
         return None
-    target = fmt.width if not fmt.is_short else fmt.height  # landscape sources get cropped for Shorts
-    big = sorted((o for o in options if max(o[1], o[2]) >= target), key=lambda o: o[1] * o[2])
-    return big[0] if big else max(options, key=lambda o: o[1] * o[2])
+
+    def fills(o: tuple[str, int, int]) -> bool:
+        w, h = o[1], o[2]
+        scale = max(fmt.width / w, fmt.height / h)   # cover-fit scale factor
+        return scale <= 1.05
+
+    good = sorted((o for o in options if fills(o)), key=lambda o: o[1] * o[2])
+    return good[0] if good else max(options, key=lambda o: o[1] * o[2])
+
+
+def _sharpness(c: "Candidate", fmt: Format) -> float:
+    """>=1 means the clip covers the frame at native resolution or better (no upscaling)."""
+    return 1 / max(fmt.width / c.width, fmt.height / c.height)
 
 
 def _pixabay(query: str, fmt: Format, key: str) -> list[Candidate]:
     r = requests.get("https://pixabay.com/api/videos/",
-                     params={"key": key, "q": query[:100], "per_page": 20, "safesearch": "true",
-                             "video_type": "film"}, timeout=20)
+                     params={"key": key, "q": query[:100], "per_page": 30, "safesearch": "true",
+                             "video_type": "film", "order": "popular", "min_width": 1280}, timeout=20)
     r.raise_for_status()
     out = []
     for hit in r.json().get("hits", []):
@@ -66,9 +81,9 @@ def _pixabay(query: str, fmt: Format, key: str) -> list[Candidate]:
         best = _pick_size(renditions, fmt)
         if best:
             out.append(Candidate(f"pixabay:{hit['id']}", best[0], best[1], best[2], float(hit.get("duration") or 8)))
-    # Pixabay has no orientation filter; prefer portrait for Shorts when available
-    if fmt.is_short:
-        out.sort(key=lambda c: c.height <= c.width)
+    # Pixabay has no orientation filter: rank portrait first for Shorts, then sharpness;
+    # stable sort keeps Pixabay's popularity order as the tie-breaker (a decent quality proxy)
+    out.sort(key=lambda c: (not (fmt.is_short and c.height > c.width), -min(_sharpness(c, fmt), 1.0)))
     return out
 
 
@@ -97,7 +112,8 @@ class BrollLibrary:
             self.providers.append(("pexels", lambda q, k=key: _pexels(q, fmt, k)))
         self.local = self._scan_local()
         self._results: dict[str, list[Candidate]] = {}
-        self._used: set[str] = set()
+        self._history: list[str] = read_state("broll_used", [])
+        self._used: set[str] = set(self._history)   # never repeat a clip from a recent video
         if not self.providers and not self.local:
             log.warning("no B-roll source configured (PIXABAY_API_KEY / PEXELS_API_KEY / assets/broll) "
                         "— shots will use solid backgrounds")
@@ -157,21 +173,32 @@ class BrollLibrary:
                 return None
         return Clip(dest, c.duration)
 
-    def clip_for(self, query: str, min_seconds: float) -> Clip | None:
-        """Own library first, then an unused stock clip, then any stock clip."""
-        if clip := self._local_clip(query):
-            return clip
+    def _remember(self, key: str) -> None:
+        self._used.add(key)
+        if not key.startswith("local:"):
+            self._history.append(key)
+            write_state("broll_used", self._history[-600:])
+
+    def clip_for(self, queries: list[str] | str, min_seconds: float) -> Clip | None:
+        """Own library first, then the best unused stock clip across the query list
+        (primary, alternates, channel fallback), then any clip rather than a blank frame."""
+        if isinstance(queries, str):
+            queries = [queries]
+        queries = [q for q in queries if q]
+        for q in queries:
+            if clip := self._local_clip(q):
+                return clip
         if not self.providers:
             return None
-        queries = [q for q in (query, cfg()["render"]["fallback_broll_query"]) if q]
-        for q in queries:
+        ordered = queries + [cfg()["render"]["fallback_broll_query"]]
+        for q in ordered:
             for c in self._search(q):
-                if c.key in self._used or c.duration < min(min_seconds, 4):
+                if c.key in self._used or c.duration < min(min_seconds + 1.0, 5):
                     continue
                 if clip := self._download(c):
-                    self._used.add(c.key)
+                    self._remember(c.key)
                     return clip
-        for q in queries:  # library exhausted: allow reuse rather than failing the render
+        for q in ordered:  # library exhausted: allow reuse rather than an empty frame
             for c in self._search(q):
                 if clip := self._download(c):
                     return clip

@@ -74,8 +74,20 @@ render:
   whisper_model: "small.en"       # better with Indian accents than base/tiny
   caption_font: "Poppins ExtraBold"
   caption_font_file: "assets/fonts/Poppins-ExtraBold.ttf"
-  caption_highlight: "&H0000E5FF"   # ASS BGR: yellow
-  shorts_shot_seconds: 2.6          # fast cuts keep Shorts retention up
+  caption_highlight: "&H0000E5FF"   # ASS BGR: yellow (only used if captions: true)
+  # ── premium edit settings ──
+  captions: false                   # YouTube shows its own captions; no burned-in subtitles
+  callouts: true                    # big key-number cards (e.g. ₹1,879 CR) on 2-4 beats
+  section_titles: true              # long-form chapter lower-thirds
+  transitions: true                 # motion transitions only where the script changes beat
+  transition_seconds_short: 0.25
+  transition_seconds_long: 0.4
+  grade: true                       # unified colour look across all stock clips
+  whoosh: true                      # soft whoosh under each transition
+  music_db: -20                     # music level under the voice (voice = 0 dB, -14 LUFS)
+  sfx_db: -18
+  accent_colour: "&H0000C8FF"       # ASS BGR: warm amber for callouts
+  shorts_shot_seconds: 2.4          # fast cuts keep Shorts retention up
   longform_shot_seconds: 5.5
   music_volume: 0.10
   # Pauses longer than this are tightened (jump-cut effect).

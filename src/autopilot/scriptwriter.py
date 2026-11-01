@@ -42,6 +42,15 @@ Retention craft you must apply:
 - Open loops: tease the answer, deliver it later.
 - Every segment must earn the next one; cut anything that doesn't move the story.
 - Titles: under 60 characters, curiosity + specificity, no clickbait the video doesn't pay off.
+FOOTAGE RULES (the video is cut from free stock libraries like Pixabay):
+- Queries must describe something a camera can literally film: objects, places, actions.
+  Good: "airplane taking off runway", "mumbai traffic night aerial", "hands counting rupee notes".
+  Bad: "profit loss", "business strategy", "IndiGo" (abstract ideas and brand names return nothing useful).
+- 2-5 words, English, cinematic wording helps: "aerial", "close up", "slow motion", "night", "timelapse".
+- Prefer India-flavoured scenes when plausible ("indian street market", "delhi metro"), but
+  keep a generic alternate in broll_alt ("city street market") because Indian stock is scarcer.
+- No real people's faces by name, no logos, no text-on-screen footage.
+- Vary shot types across consecutive segments (wide → close-up → aerial) so the edit breathes.
 Return ONLY valid JSON matching the schema the user gives you."""
 
 
@@ -59,7 +68,10 @@ def _insights_block() -> str:
 SHORT_SCHEMA = """{
   "title": "string, <=60 chars, include #shorts at the end",
   "hook_text": "string, <=6 words, bold on-screen text for the first 2 seconds",
-  "segments": [ {"text": "1-2 spoken sentences", "broll": "2-4 word stock-footage search query, concrete & visual, in English"} ],
+  "segments": [ {"text": "1-2 spoken sentences",
+                  "broll": "primary stock-footage query (see FOOTAGE RULES)",
+                  "broll_alt": ["2 alternate queries, different visual ideas for the same beat"],
+                  "callout": "OPTIONAL: the key number/word for this beat, <=3 words, e.g. '₹1,879 CR' or '40%'. Use on only 2-4 segments."} ],
   "loop_line": "final sentence that flows back into the hook so viewers rewatch",
   "description": "2-3 sentences + 3 relevant hashtags",
   "tags": ["8-12 search tags"],
@@ -73,7 +85,8 @@ LONG_SCHEMA = """{
   "thumbnail_text": "string, 2-4 punchy words for the thumbnail",
   "sections": [
     {"heading": "chapter name, <=5 words",
-     "segments": [ {"text": "1-3 spoken sentences", "broll": "2-4 word stock-footage search query"} ]}
+     "segments": [ {"text": "1-3 spoken sentences", "broll": "primary stock-footage query",
+                    "broll_alt": ["2 alternate queries"], "callout": "OPTIONAL key number, <=3 words; ~1 per section"} ]}
   ],
   "description": "3 short paragraphs: hook, what they'll learn, CTA to subscribe. Then 5 hashtags. Do NOT include timestamps.",
   "tags": ["10-15 search tags"],

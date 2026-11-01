@@ -140,3 +140,65 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
     out.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
     return out
+
+
+# ── premium overlay: hook card + key-number callouts (no subtitles by default) ──
+def build_overlay(fmt: Format, out: Path, *, words: list[Word] | None = None, hook_text: str = "",
+                  callouts: list[tuple[float, str]] | None = None,
+                  section_marks: list[tuple[float, str]] | None = None) -> Path | None:
+    """Return an .ass file, or None when there is nothing to draw.
+
+    Motion follows the usual kinetic-type rules: elements enter fast with an ease-out
+    overshoot (scale 112%→100% in 180 ms), hold, and leave quicker than they came
+    (fade 150 ms). Never more than one text element on screen at a time.
+    """
+    callouts = callouts or []
+    section_marks = [m for m in (section_marks or []) if m[0] > 1]
+    if not (words or hook_text or callouts or section_marks):
+        return None
+    if words:  # optional legacy karaoke captions (render.captions: true)
+        return build_ass(words, fmt, out, hook_text=hook_text, section_marks=section_marks)
+
+    r = cfg()["render"]
+    font = r["caption_font"] if (ROOT / r["caption_font_file"]).exists() else "DejaVu Sans"
+    W, H = fmt.width, fmt.height
+    big = 128 if fmt.is_short else 110
+    hook_size = 84 if fmt.is_short else 72
+    accent = r.get("accent_colour", "&H0000C8FF")   # ASS BGR: warm amber
+
+    header = f"""[Script Info]
+ScriptType: v4.00+
+PlayResX: {W}
+PlayResY: {H}
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Hook,{font},{hook_size},&H00FFFFFF,&H00FFFFFF,&H64000000,&H96000000,-1,0,0,0,100,100,0,0,1,0,6,8,90,90,{int(H * 0.16)},1
+Style: Callout,{font},{big},{accent},{accent},&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,0,8,5,80,80,0,1
+Style: Section,{font},{int(hook_size * 0.8)},&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,2,0,1,0,5,1,90,90,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+    pop = r"{\fad(120,150)\fscx112\fscy112\t(0,180,0.6,\fscx100\fscy100)}"
+    lines = []
+    busy_until = 0.0
+    if hook_text:
+        # thin accent bar above the hook text, both pop in together
+        lines.append(f"Dialogue: 2,{_ts(0.05)},{_ts(2.6)},Hook,,0,0,0,,{pop}{_clean(hook_text.upper())}")
+        busy_until = 2.7
+    y_call = int(H * (0.30 if fmt.is_short else 0.5))
+    for t, text in sorted(callouts):
+        if t < busy_until:
+            t = busy_until
+        end = t + 1.9
+        lines.append(f"Dialogue: 3,{_ts(t)},{_ts(end)},Callout,,0,0,0,,"
+                     f"{{\\pos({W // 2},{y_call})}}{pop}{_clean(text)}")
+        busy_until = end + 0.3
+    for t, title in section_marks:
+        lines.append(f"Dialogue: 2,{_ts(t)},{_ts(t + 2.8)},Section,,0,0,0,,"
+                     f"{{\\fad(200,250)\\move(70,{H - 140},90,{H - 140})}}{{\\c{accent}}}▍{{\\c&H00FFFFFF&}}{_clean(title.upper())}")
+    out.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
+    return out

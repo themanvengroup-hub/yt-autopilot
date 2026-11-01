@@ -1,18 +1,31 @@
-"""Turn (script + your voice) into a finished video.
+"""Turn (script + your voice) into a finished, premium-looking video.
+
+Edit doctrine (what makes it look "produced" rather than "slideshow"):
+  * Cut on meaning: hard cuts inside a beat, a short motion transition only where the
+    script changes beat (segment boundary). Transitions are seams, not decoration.
+  * Every shot moves: an eased push-in or pull-out (alternating), never a static frame.
+  * One look: the same grade on every clip (contrast curve, saturation, vignette, fine
+    grain), so footage from different photographers feels like one film.
+  * No burned-in subtitles. YouTube provides captions. On-screen text is limited to the
+    Short's hook card (first 2.5 s) and 2-4 key-number callouts.
+  * Mix: voice is the anchor (-14 LUFS), music sits ~20 dB under and ducks when you speak,
+    a soft whoosh (~-18 dB) marks each transition.
 
 Pipeline:
-    voice.m4a ─▶ clean/tighten ─▶ transcribe (word timings)
+    voice.m4a ─▶ clean/tighten ─▶ word timings (Whisper)
                                    │
-          script segments ─────────┼─▶ shot plan (cut on segment changes / every N sec)
+          script segments ─────────┼─▶ shot plan ─▶ group shots by segment
                                    │        │
-                                   │        └─▶ Pexels B-roll per shot ─▶ per-shot encode ─▶ concat
-                                   └─▶ karaoke ASS captions
-    voice + ducked music ─────────────────────────────────────────────▶ final mux + burn captions
+                                   │        └─▶ B-roll per shot ─▶ graded, moving shots ─▶ concat per segment
+                                   │                                                      └▶ xfade chain across segments
+    voice + ducked music + whooshes ───────────────────────────────▶ final mux (+ hook/callout overlay)
 """
 from __future__ import annotations
 
 import logging
+import os
 import shutil
+from concurrent.futures import ThreadPoolExecutor
 from bisect import bisect_right
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -26,6 +39,8 @@ from .thumbnail import make_thumbnail
 
 log = logging.getLogger(__name__)
 FPS = 30
+# Transition rotation for segment changes: all motion-matched, none of the cheesy ones.
+TRANSITIONS = ["smoothleft", "zoomin", "smoothup", "fade", "smoothright", "hblur"]
 
 
 @dataclass
@@ -45,6 +60,11 @@ class RenderResult:
     chapters: list[tuple[float, str]] = field(default_factory=list)
 
 
+def _r() -> dict:
+    return cfg()["render"]
+
+
+# ── timing ───────────────────────────────────────────────────
 def _segment_lookup(segments: list[dict]) -> list[float]:
     """Cumulative word-share boundaries per segment, e.g. [0.12, 0.30, ... 1.0]."""
     counts = [max(len(s["text"].split()), 1) for s in segments]
@@ -56,16 +76,14 @@ def _segment_lookup(segments: list[dict]) -> list[float]:
 
 
 def _segment_of(word_idx: int, n_words: int, bounds: list[float]) -> int:
-    """Map a spoken word to a script segment by relative position.
-
-    Position-based mapping tolerates ad-libs and skipped lines far better than
-    exact text matching, and B-roll only needs to be roughly in sync.
-    """
+    """Map a spoken word to a script segment by relative position (robust to ad-libs)."""
     ratio = (word_idx + 0.5) / max(n_words, 1)
     return min(bisect_right(bounds, ratio), len(bounds) - 1)
 
 
 def plan_shots(words: list[captions.Word], total: float, bounds: list[float], target: float) -> list[Shot]:
+    """Cut at every segment change (≥1.2 s in) and every `target` seconds within a segment,
+    always on a word boundary so cuts land on speech rhythm."""
     shots: list[Shot] = []
     n = len(words)
     start, seg = 0.0, _segment_of(0, n, bounds) if n else 0
@@ -76,9 +94,8 @@ def plan_shots(words: list[captions.Word], total: float, bounds: list[float], ta
             shots.append(Shot(start, w.start, seg))
             start, seg = w.start, s
     shots.append(Shot(start, total, seg))
-    # merge slivers (<0.8s) into the previous shot
     merged: list[Shot] = []
-    for sh in shots:
+    for sh in shots:  # merge slivers into the previous shot
         if merged and sh.end - sh.start < 0.8:
             merged[-1].end = sh.end
         else:
@@ -86,44 +103,148 @@ def plan_shots(words: list[captions.Word], total: float, bounds: list[float], ta
     return merged
 
 
+def group_by_segment(shots: list[Shot], min_len: float = 1.6) -> list[list[Shot]]:
+    """Consecutive shots of the same segment form one group; transitions sit between groups.
+    Very short groups are merged into the previous one so transitions never stack up."""
+    groups: list[list[Shot]] = []
+    for sh in shots:
+        if groups and groups[-1][-1].segment == sh.segment:
+            groups[-1].append(sh)
+        else:
+            groups.append([sh])
+    merged: list[list[Shot]] = []
+    for g in groups:
+        if merged and g[-1].end - g[0].start < min_len:
+            merged[-1].extend(g)
+        else:
+            merged.append(g)
+    return merged
+
+
+def segment_starts(words: list[captions.Word], bounds: list[float]) -> dict[int, float]:
+    first: dict[int, float] = {}
+    for i, w in enumerate(words):
+        first.setdefault(_segment_of(i, len(words), bounds), w.start)
+    return first
+
+
+# ── footage ──────────────────────────────────────────────────
+def _queries(seg: dict) -> list[str]:
+    q = seg.get("broll") or []
+    q = [q] if isinstance(q, str) else list(q)
+    return [x for x in q + list(seg.get("broll_alt") or []) if x]
+
+
 def _assign_broll(shots: list[Shot], segments: list[dict], lib: BrollLibrary) -> None:
+    """Each shot gets its own clip where possible; a clip is reused within a segment only
+    when the library runs dry, and then from a different point in the clip."""
     per_seg: dict[int, list[Clip]] = {}
     use_count: dict[int, int] = {}
     for sh in shots:
         clips = per_seg.setdefault(sh.segment, [])
         k = use_count.get(sh.segment, 0)
         dur = sh.end - sh.start
-        if len(clips) < 2:
-            clip = lib.clip_for(segments[sh.segment].get("broll", ""), dur)
+        if len(clips) <= k and len(clips) < 3:
+            clip = lib.clip_for(_queries(segments[sh.segment]), dur)
             if clip:
                 clips.append(clip)
         if clips:
             sh.clip = clips[k % len(clips)]
-            # later uses of the same clip start further in, so repeats don't look identical
-            sh.offset = (k // len(clips)) * dur % max(sh.clip.duration - dur, 0.01)
+            usable = max(sh.clip.duration - dur - 0.6, 0.0)
+            # skip the first ~0.5 s (stock clips often fade in) and vary the start on reuse
+            sh.offset = min(0.5 + (k // len(clips)) * dur, 0.5 + usable) if usable else 0.0
         use_count[sh.segment] = k + 1
 
 
-def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path) -> None:
+# ── shot encoding ────────────────────────────────────────────
+def _grade() -> str:
+    if not _r().get("grade", True):
+        return "null"
+    # unified "doc" look: gentle S-curve, richer colour, soft vignette, fine moving grain
+    return ("curves=master='0/0 0.25/0.21 0.5/0.5 0.75/0.80 1/1',"
+            "eq=saturation=1.12:gamma=0.98,"
+            "vignette=angle=PI/5:mode=forward,"
+            "noise=alls=3:allf=t")
+
+
+def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path, dur: float) -> None:
     W, H = fmt.width, fmt.height
-    frames = max(round(sh.end * FPS) - round(sh.start * FPS), 1)
-    dur = frames / FPS
-    direction = "" if idx % 2 == 0 else "1-"
-    grade = "eq=brightness=-0.03:saturation=1.08"
+    frames = max(round(dur * FPS), 1)
+    amp = 0.07 if fmt.is_short else 0.045          # push distance
+    # ease-out cubic: fast start, gentle settle (reads as intentional camera move)
+    ease = f"(1-pow(1-min(on/{frames},1),3))"
+    z = f"1+{amp}*{ease}" if idx % 2 == 0 else f"1+{amp}-{amp}*{ease}"
     if sh.clip:
-        vf = (f"scale={int(W * 1.08)}:{int(H * 1.08)}:force_original_aspect_ratio=increase,"
-              f"crop={W}:{H}:x='(iw-{W})*({direction}t/{dur:.3f})':y='(ih-{H})/2',"
-              f"fps={FPS},{grade},format=yuv420p,setsar=1")
+        # 2x oversample before zoompan removes the sub-pixel jitter zoompan is known for
+        vf = (f"fps={FPS},scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
+              f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS},"
+              f"{_grade()},format=yuv420p,setsar=1")
         inp = ["-stream_loop", "-1", "-ss", f"{sh.offset:.2f}", "-i", str(sh.clip.path)]
     else:
         vf = f"fps={FPS},format=yuv420p,setsar=1"
-        inp = ["-f", "lavfi", "-i", f"color=c=0x14213d:s={W}x{H}:r={FPS}"]
+        inp = ["-f", "lavfi", "-i", f"gradients=s={W}x{H}:c0=0x0b132b:c1=0x1c2541:speed=0.01:r={FPS}"]
     media.run(["ffmpeg", "-y", *inp, "-frames:v", str(frames), "-vf", vf, "-an",
-               "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", str(out)])
+               "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", str(out)])
 
 
+def _render_groups(groups: list[list[Shot]], fmt: Format, work: Path, T: float) -> tuple[Path, list[float]]:
+    """Encode shots → one clip per group → xfade chain. Returns video + transition times."""
+    # encode every shot in parallel (zoompan is mostly single-threaded, so this scales ~linearly)
+    jobs, lists, idx = [], [], 0
+    for gi, g in enumerate(groups):
+        paths = []
+        for si, sh in enumerate(g):
+            dur = sh.end - sh.start
+            if si == len(g) - 1 and gi < len(groups) - 1:
+                dur += T                              # overlap consumed by the transition
+            p = work / "shots" / f"{idx:04d}.mp4"
+            jobs.append((sh, idx, p, dur))
+            paths.append(p)
+            idx += 1
+        lists.append(paths)
+    workers = max(os.cpu_count() or 2, 2)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        list(pool.map(lambda j: _encode_shot(j[0], j[1], fmt, j[2], j[3]), jobs))
+
+    group_files: list[Path] = []
+    group_durs: list[float] = []
+    for gi, paths in enumerate(lists):
+        lst = work / f"g{gi:03d}.txt"
+        lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in paths))
+        gf = work / f"g{gi:03d}.mp4"
+        media.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(gf)])
+        group_files.append(gf)
+        group_durs.append(media.duration(gf))
+
+    base = work / "base.mp4"
+    if len(group_files) == 1 or T <= 0:
+        lst = work / "groups.txt"
+        lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in group_files))
+        media.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(base)])
+        return base, []
+
+    inputs: list[str] = []
+    for p in group_files:
+        inputs += ["-i", str(p)]
+    chain, times = [], []
+    acc, prev = group_durs[0], "[0:v]"
+    for i in range(1, len(group_files)):
+        offset = acc - T
+        label = f"[x{i}]"
+        chain.append(f"{prev}[{i}:v]xfade=transition={TRANSITIONS[(i - 1) % len(TRANSITIONS)]}"
+                     f":duration={T}:offset={offset:.3f}{label}")
+        times.append(offset)
+        acc += group_durs[i] - T
+        prev = label
+    media.run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(chain), "-map", prev,
+               "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", str(base)])
+    return base, times
+
+
+# ── main ─────────────────────────────────────────────────────
 def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
     fmt = video_format(ep.kind)
+    r = _r()
     work = WORK_DIR / ep.id
     shutil.rmtree(work, ignore_errors=True)
     (work / "shots").mkdir(parents=True)
@@ -135,56 +256,64 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
         raise ValueError(f"Short voiceover is {total:.0f}s; YouTube Shorts must be under 3 minutes")
     log.info("voice duration %.1fs", total)
 
-    # 2. word timings
-    script_text = teleprompter_text(ep.kind, ep.script)
+    # 2. word timings (drive cut points, callouts and chapters)
     try:
-        words = captions.transcribe(voice, script_text)
-    except Exception as exc:  # noqa: BLE001 - keep the pipeline alive, captions just get less precise
+        words = captions.transcribe(voice, teleprompter_text(ep.kind, ep.script))
+    except Exception as exc:  # noqa: BLE001
         log.warning("transcription failed (%s); estimating timings from script", exc)
         words = []
     if len(words) < 5:
         words = captions.estimate_words(" ".join(s["text"] for s in iter_segments(ep.kind, ep.script)), total)
 
-    # 3. shot plan + B-roll
+    # 3. shot plan + footage
     segments = iter_segments(ep.kind, ep.script)
     bounds = _segment_lookup(segments)
     shots = plan_shots(words, total, bounds, fmt.shot_seconds)
     _assign_broll(shots, segments, BrollLibrary(fmt))
     log.info("%d shots, %d with footage", len(shots), sum(1 for s in shots if s.clip))
+    groups = group_by_segment(shots)
+    T = float(r.get("transition_seconds_short" if fmt.is_short else "transition_seconds_long", 0.3)) \
+        if r.get("transitions", True) else 0.0
 
-    # 4. chapters / section titles (long-form)
+    # 4. chapters + callouts
+    starts = segment_starts(words, bounds)
     chapters: list[tuple[float, str]] = []
-    if ep.kind == "long":
-        first_word_of_seg: dict[int, float] = {}
-        for i, w in enumerate(words):
-            first_word_of_seg.setdefault(_segment_of(i, len(words), bounds), w.start)
-        for si, seg in enumerate(segments):
-            if seg.get("section") and si in first_word_of_seg:
-                chapters.append((0.0 if not chapters else first_word_of_seg[si], seg["section"]))
+    callouts: list[tuple[float, str]] = []
+    for si, seg in enumerate(segments):
+        t = starts.get(si)
+        if t is None:
+            continue
+        if ep.kind == "long" and seg.get("section"):
+            chapters.append((0.0 if not chapters else t, seg["section"]))
+        if r.get("callouts", True) and seg.get("callout"):
+            # one text element at a time: wait for a chapter title on the same beat to clear
+            delay = 3.1 if (ep.kind == "long" and seg.get("section") and t > 1) else 0.15
+            callouts.append((t + delay, seg["callout"]))
 
-    # 5. captions
-    ass = captions.build_ass(words, fmt, work / "captions.ass",
-                             hook_text=ep.script.get("hook_text", "") if fmt.is_short else "",
-                             section_marks=chapters)
+    # 5. picture
+    base, transition_times = _render_groups(groups, fmt, work, T)
 
-    # 6. video
-    list_file = work / "shots.txt"
-    with open(list_file, "w") as fh:
-        for i, sh in enumerate(shots):
-            p = work / "shots" / f"{i:04d}.mp4"
-            _encode_shot(sh, i, fmt, p)
-            fh.write(f"file '{p.as_posix()}'\n")
-    base = work / "base.mp4"
-    media.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_file), "-c", "copy", str(base)])
+    # 6. sound: voice + ducked music + whoosh on each transition
+    mix = media.mix_with_music(voice, work / "mix.wav",
+                               sfx_times=transition_times if r.get("whoosh", True) else [])
 
-    mix = media.mix_with_music(voice, work / "mix.wav")
+    # 7. text layer (hook card, callouts, optional captions) — burned only if there is any
+    hook = ep.script.get("hook_text", "") if fmt.is_short else ""
+    overlay = captions.build_overlay(
+        fmt, work / "overlay.ass",
+        words=words if r.get("captions", False) else None,
+        hook_text=hook, callouts=callouts,
+        section_marks=chapters if r.get("section_titles", True) else None,
+    )
+    vf = "null"
+    if overlay:
+        fonts_dir = (ROOT / r["caption_font_file"]).parent
+        vf = f"ass={overlay.as_posix()}:fontsdir={fonts_dir.as_posix()}"
     final = work / f"{ep.id}.mp4"
-    fonts_dir = (ROOT / cfg()["render"]["caption_font_file"]).parent
-    vf = f"ass={ass.as_posix()}:fontsdir={fonts_dir.as_posix()}"
     media.run(["ffmpeg", "-y", "-i", str(base), "-i", str(mix), "-vf", vf,
-               "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "faster", "-crf", "20",
+               "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
                "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
-               "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart",
+               "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest", "-movflags", "+faststart",
                str(final)])
 
     thumb = None
