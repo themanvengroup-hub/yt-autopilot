@@ -2,7 +2,7 @@
   "id": "20261101-short-will-epfo-invest-your-pf-in-startups-sho",
   "ref": "S1101",
   "kind": "short",
-  "status": "recorded",
+  "status": "uploaded",
   "created_at": "2026-11-01T07:41:36+05:30",
   "script": {
     "title": "Will EPFO Invest Your PF in Startups? #shorts",
@@ -10,31 +10,66 @@
     "segments": [
       {
         "text": "Your monthly PF deduction could soon fund Indian startups.",
-        "broll": "Indian rupee notes salary"
+        "broll": "indian corporate employee reviewing payslip",
+        "broll_alt": [
+          "laptop screen showing payroll sheet",
+          "young professional office desk portrait"
+        ],
+        "callout": ""
       },
       {
         "text": "Right now, EPFO manages huge retirement savings, mostly putting money into safe government bonds.",
-        "broll": "Government financial building debt"
+        "broll": "reserve bank india building aerial",
+        "broll_alt": [
+          "indian rupee bundles counting machine",
+          "ministry of finance building exterior"
+        ],
+        "callout": ""
       },
       {
         "text": "That safe investment earns you around eight percent annual interest.",
-        "broll": "Calculator showing interest return"
+        "broll": "close up calculator adding percentage",
+        "broll_alt": [
+          "piggy bank coins savings cinematic",
+          "senior citizen relaxing sunny park"
+        ],
+        "callout": "~8% INTEREST"
       },
       {
         "text": "So why risk investing retirement cash into tech startups?",
-        "broll": "Modern startup office space"
+        "broll": "young programmers discussing startup code",
+        "broll_alt": [
+          "modern tech hub glass office",
+          "robotics engineer soldering circuit board"
+        ],
+        "callout": ""
       },
       {
         "text": "Simple. Early startup bets can deliver high multi-fold returns over long cycles.",
-        "broll": "Stock chart growth arrow"
+        "broll": "financial growth graph glowing screen",
+        "broll_alt": [
+          "venture capitalist shaking hands founder",
+          "upward stock market candlestick chart"
+        ],
+        "callout": "MULTI-FOLD GAINS"
       },
       {
         "text": "Strict caps will ensure only a tiny fraction goes to high-risk funds. Not financial advice.",
-        "broll": "Piggy bank safety shield"
+        "broll": "lawyer stamping legal regulatory document",
+        "broll_alt": [
+          "digital security padlock screen",
+          "business executive reviewing audit checklist"
+        ],
+        "callout": "STRICT CAPS"
       },
       {
         "text": "So next time you see your pay slip, remember...",
-        "broll": "Corporate worker holding payslip"
+        "broll": "close up fingers holding salary slip",
+        "broll_alt": [
+          "smiling professional walking corporate lobby",
+          "smartphone screen banking alert notification"
+        ],
+        "callout": ""
       }
     ],
     "loop_line": "Your monthly PF deduction could soon fund Indian startups.",
@@ -64,7 +99,8 @@
       }
     ],
     "chosen_candidate": "EPFO eyes startup, AIF investments: How does it currently invest your PF money and why is it done? | Explained - Livemint",
-    "why_it_will_work": "Every young salaried professional in India gets PF deducted monthly, creating instant personal relevance and high curiosity about where their retirement money goes."
+    "why_it_will_work": "Every young salaried professional in India gets PF deducted monthly, creating instant personal relevance and high curiosity about where their retirement money goes.",
+    "directed": true
   },
   "sources": [
     {
@@ -80,11 +116,12 @@
     55
   ],
   "voice_file_id": "CQACAgUAAxkBAAM6aueM5xlTCoFAahBTp48-AqdzubgAAqEmAAKyfUFXhi6iC0bnp5Q9BA",
-  "youtube_id": null,
+  "youtube_id": "xJyHohw3wjk",
   "publish_at": null,
   "error": null,
-  "attempts": 0,
+  "attempts": 1,
   "history": [
-    "2026-11-02T01:55:56+05:30 scripted→recorded voice received"
+    "2026-11-02T01:55:56+05:30 scripted→recorded voice received",
+    "2026-11-02T03:04:17+05:30 recorded→uploaded 38s"
   ]
 }
