@@ -10,35 +10,75 @@
     "segments": [
       {
         "text": "Indian Oil just made over ₹22,000 crore profit in three months.",
-        "broll": "petrol pump india"
+        "broll": "aerial oil refinery chimneys",
+        "broll_alt": [
+          "industrial oil refinery night",
+          "petrochemical plant drone view"
+        ],
+        "callout": ""
       },
       {
         "text": "That is almost ₹240 crore pure profit every single day.",
-        "broll": "indian currency notes stack"
+        "broll": "currency counting machine notes",
+        "broll_alt": [
+          "counting indian rupee banknotes",
+          "stacks of cash close up"
+        ],
+        "callout": "₹240 CR / DAY"
       },
       {
         "text": "But just a quarter ago, they were actually losing money.",
-        "broll": "stock chart falling"
+        "broll": "red stock chart falling",
+        "broll_alt": [
+          "financial crash screen close up",
+          "trader looking at monitor"
+        ],
+        "callout": "NET LOSS"
       },
       {
         "text": "So how did an oil PSU flip from loss to massive profits so fast?",
-        "broll": "oil refinery sunset"
+        "broll": "huge oil storage tanks",
+        "broll_alt": [
+          "petroleum facility worker walking",
+          "industrial pipelines valve wheels"
+        ],
+        "callout": ""
       },
       {
         "text": "It comes down to Gross Refining Margins, or GRMs.",
-        "broll": "crude oil barrel"
+        "broll": "refinery cracking towers sunset",
+        "broll_alt": [
+          "oil refinery distillation tower",
+          "industrial chemical pipes glowing"
+        ],
+        "callout": "REFINING MARGINS"
       },
       {
         "text": "When international crude prices drop, Indian Oil buys cheap oil but sells petrol at steady local prices.",
-        "broll": "car filling petrol"
+        "broll": "crude oil tanker ship",
+        "broll_alt": [
+          "cargo ship unloading port",
+          "aerial sea tanker vessel"
+        ],
+        "callout": ""
       },
       {
         "text": "They pocket the massive difference on every single litre you fill.",
-        "broll": "digital fuel meter"
+        "broll": "fuel pump nozzle filling",
+        "broll_alt": [
+          "petrol pump digital meter",
+          "car refueling petrol station"
+        ],
+        "callout": "PROFIT PER LITRE"
       },
       {
         "text": "This isn't financial advice, but that secret margin surge is why...",
-        "broll": "thinking young indian"
+        "broll": "busy indian city traffic",
+        "broll_alt": [
+          "scooters at traffic signal",
+          "highway vehicles timelapse evening"
+        ],
+        "callout": ""
       }
     ],
     "loop_line": "This isn't financial advice, but that secret margin surge is why...",
@@ -66,7 +106,8 @@
       }
     ],
     "chosen_candidate": "Indian Oil Q2 Net Profit Jumps 174% To ₹22,503 Crore - Sarkaritel.com",
-    "why_it_will_work": "It taps into everyday consumer curiosity about fuel prices versus massive oil PSU profits using a mind-boggling daily profit figure."
+    "why_it_will_work": "It taps into everyday consumer curiosity about fuel prices versus massive oil PSU profits using a mind-boggling daily profit figure.",
+    "directed": true
   },
   "sources": [
     {
@@ -85,7 +126,7 @@
   "youtube_id": "2-OAvKUJyQk",
   "publish_at": null,
   "error": null,
-  "attempts": 1,
+  "attempts": 2,
   "history": [
     "2026-11-01T00:46:53+05:30 scripted→recorded voice received",
     "2026-11-01T00:49:26+05:30 recorded→uploaded 34s"
