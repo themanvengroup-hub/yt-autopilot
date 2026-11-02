@@ -1,0 +1,296 @@
+{
+  "id": "20261102-long-digital-arrest-scams-will-banks-refund-y",
+  "ref": "L1102",
+  "kind": "long",
+  "status": "scripted",
+  "created_at": "2026-11-02T07:48:21+05:30",
+  "script": {
+    "title": "Digital Arrest Scams: Will Banks Refund Your Paisa?",
+    "thumbnail_text": "YOUR MONEY BACK?",
+    "sections": [
+      {
+        "heading": "The 10-Minute Trap",
+        "segments": [
+          {
+            "text": "A fake Supreme Court notice just drained eighty lakh rupees from a retired teacher in Pune.",
+            "broll": "stressed person looking at smartphone",
+            "broll_alt": [
+              "worried face glowing screen",
+              "hands holding mobile phone night"
+            ],
+            "callout": "₹80 Lakh Stolen"
+          },
+          {
+            "text": "Cyber criminals set up fake police studios, put victims under so-called 'digital arrest' for days, and siphon off life savings. But now, the Supreme Court and the Reserve Bank of India are asking a brutal question: why should ordinary citizens bear the full loss when banks fail basic verification?",
+            "broll": "bank teller counting cash",
+            "broll_alt": [
+              "bank glass counter interior",
+              "hands typing on computer keyboard"
+            ]
+          },
+          {
+            "text": "In the next eight minutes, we unpack the hidden business machinery behind digital arrest scams, how thousands of fake bank accounts slip past banking security, and exactly what new RBI compensation rules mean for your hard-earned money.",
+            "broll": "aerial view mumbai financial district",
+            "broll_alt": [
+              "city skyline modern skyscrapers",
+              "busy street traffic night timelapse"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Inside the Digital Scam Economy",
+        "segments": [
+          {
+            "text": "Here is the chilling truth: digital arrest is not some random prank call, it is a multi-million-dollar corporate enterprise running on industrial precision.",
+            "broll": "server rack blinking led lights",
+            "broll_alt": [
+              "dark data center corridor",
+              "computer code running screen"
+            ]
+          },
+          {
+            "text": "A call lands on your phone with an automated voice claiming a parcel containing narcotics was intercepted at Mumbai customs in your name. Within minutes, you are shifted to a video call where men dressed in official uniforms sit in front of authentic-looking police emblems, threatening you with non-bailable warrants.",
+            "broll": "man in uniform sitting at desk",
+            "broll_alt": [
+              "office room dim lighting",
+              "laptop open on wooden table"
+            ]
+          },
+          {
+            "text": "To prove your innocence, they instruct you to transfer your liquid funds to a 'clearing RBI verification account'. The victim panics, moves their entire fixed deposit, and within three minutes, that money evaporates.",
+            "broll": "hands transferring money mobile app",
+            "broll_alt": [
+              "smartphone screen digital payment",
+              "credit card swipe machine"
+            ]
+          },
+          {
+            "text": "Indians lost an estimated one hundred and twenty crore rupees to digital arrest scams in just the first quarter of 2024 alone. That equals the price of sixty lakh cutting chais wiped out into thin air every single month.",
+            "broll": "boiling cutting chai stall",
+            "broll_alt": [
+              "street vendor preparing tea",
+              "tea glass steam rising"
+            ],
+            "callout": "₹120 Cr Lost"
+          }
+        ]
+      },
+      {
+        "heading": "The Mule Account Engine",
+        "segments": [
+          {
+            "text": "Now ask yourself: where does that scammed money actually land the moment you click send on your banking app?",
+            "broll": "mumbai local train passing crowd",
+            "broll_alt": [
+              "busy pedestrian crossing daytime",
+              "crowded urban railway platform"
+            ]
+          },
+          {
+            "text": "It does not instantly fly to an overseas hacker. It enters a genuine savings account registered at a reputable commercial bank right inside India.",
+            "broll": "modern glass bank building exterior",
+            "broll_alt": [
+              "corporate office building entrance",
+              "atm machine glass door"
+            ]
+          },
+          {
+            "text": "These are called mule accounts. Syndicates hire local agents to open accounts using forged identity papers or by bribing vulnerable people in small towns with a one-time fee of two thousand rupees.",
+            "broll": "hands opening identity document paper",
+            "broll_alt": [
+              "person signing official documents",
+              "signing contract fountain pen"
+            ]
+          },
+          {
+            "text": "Once your eighty lakh rupees hits a mule account, automated scripts immediately slice it into forty micro-transfers of two lakh rupees each, dispersed into separate tier-two mule accounts across five different states. By the time a panicked victim dials the 1930 cyber crime helpline, that money has already been converted into cash at local ATMs or bought as cryptocurrency on offshore exchanges.",
+            "broll": "atm cash dispenser issuing money",
+            "broll_alt": [
+              "person withdrawing cash machine",
+              "hands counting rupee notes bundle"
+            ],
+            "callout": "Layered In Minutes"
+          }
+        ]
+      },
+      {
+        "heading": "Why Banks Ignored the Alarms",
+        "segments": [
+          {
+            "text": "Here is where the business economics get deeply uncomfortable for Indian banking.",
+            "broll": "bank vault heavy steel door",
+            "broll_alt": [
+              "bank security camera panning",
+              "bank office cubicles wide"
+            ]
+          },
+          {
+            "text": "When an account that usually maintains a balance of five hundred rupees suddenly receives twenty-five lakh rupees and empties it within four minutes, algorithms should scream fraud. Yet repeatedly, transactions pass through with zero human intervention or account freeze.",
+            "broll": "financial charts scrolling on monitor",
+            "broll_alt": [
+              "stock market graph green red",
+              "analyst typing fast keyboard"
+            ]
+          },
+          {
+            "text": "Banks operate under intense pressure to minimize customer drop-offs and maximize UPI transaction volume, often cutting corners on real-time transaction monitoring.",
+            "broll": "delhi metro passengers walking fast",
+            "broll_alt": [
+              "commuters rushing through station",
+              "busy sidewalk foot traffic"
+            ]
+          },
+          {
+            "text": "If you enjoy understanding how the real business world works behind headlines, take a quick second right now and subscribe to Paisa Decoded.",
+            "broll": "finger tapping mobile screen",
+            "broll_alt": [
+              "hand tapping smartphone display",
+              "holding smartphone coffee shop"
+            ]
+          },
+          {
+            "text": "For years, banks deflected liability by pointing to OTP authentication, claiming the user authorized the transfer willingly. But the Supreme Court of India is challenging this convenient shield.",
+            "broll": "high court building pillars wide",
+            "broll_alt": [
+              "supreme court dome architecture",
+              "courtroom wooden bench gavel"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "The Supreme Court Mandate",
+        "segments": [
+          {
+            "text": "Can a commercial bank simply shrug off responsibility when their KYC systems let a ghost account steal your life savings?",
+            "broll": "gavel striking wooden sounding block",
+            "broll_alt": [
+              "judges wooden desk close up",
+              "legal documents stacked table"
+            ]
+          },
+          {
+            "text": "The Supreme Court recently observed that RBI rules must obligate banks to fully compensate victims of digital arrest if the bank failed in proper Know-Your-Customer due diligence.",
+            "broll": "hands reviewing printed financial statements",
+            "broll_alt": [
+              "accountant checking bank audit files",
+              "reading contracts magnifying glass"
+            ],
+            "callout": "Mandatory Due Diligence"
+          },
+          {
+            "text": "Under existing RBI circulars, if you report unauthorized electronic transactions within three working days, your zero liability is clear. But in digital arrests, the victim is coerced into hitting transfer themselves, creating a legal grey zone that left thousands bankrupt.",
+            "broll": "calendar flipping days timelapse",
+            "broll_alt": [
+              "wall clock ticking fast motion",
+              "hourglass sand falling slow motion"
+            ]
+          },
+          {
+            "text": "The apex court's strict stance forces banks to treat mule account creation as institutional negligence. If a bank opened an account with fake biometric data or ignored rapid transaction layering flags, they could soon be legally on the hook to refund the defrauded customer.",
+            "broll": "fingerprint biometric scanner glowing",
+            "broll_alt": [
+              "digital identity scanner device",
+              "security badge scanner office"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Protecting Your Life Savings",
+        "segments": [
+          {
+            "text": "While legal protections tighten, prevention is still the only foolproof guarantee for your wealth.",
+            "broll": "lock closing on steel safe",
+            "broll_alt": [
+              "digital padlock animation concept",
+              "person putting money into safe"
+            ]
+          },
+          {
+            "text": "Remember two basic facts: Indian law enforcement, customs, or court judges never conduct interrogations over Skype, and they never ask you to park money in a 'safe government verification account'. There is no such thing as an official digital arrest in Indian criminal law.",
+            "broll": "police siren light flashing night",
+            "broll_alt": [
+              "flashing red blue emergency lights",
+              "empty police station desk"
+            ]
+          },
+          {
+            "text": "If you or your parents ever face this situation, disconnect immediately and dial the government cyber helpline at 1930 within the golden hour to freeze the beneficiary account. Note that this breakdown is for educational purposes only and not financial advice.",
+            "broll": "person dialing emergency numbers smartphone",
+            "broll_alt": [
+              "hand pressing touchscreen keypad",
+              "typing on smartphone desk"
+            ],
+            "callout": "Dial 1930 Instantly"
+          },
+          {
+            "text": "The rules of banking accountability are shifting rapidly across India, but understanding the system is your first and strongest line of defense.",
+            "broll": "aerial view city traffic sunset",
+            "broll_alt": [
+              "urban metropolis twilight aerial",
+              "modern city highway flowing traffic"
+            ]
+          }
+        ]
+      }
+    ],
+    "description": "Digital arrest scams have drained hundreds of crores from unsuspecting Indians, with fraudsters posing as customs officials and police officers on video calls. But why should everyday citizens bear the entire loss when banks let thousands of fake mule accounts slip past their security radar?\n\nIn this video, we break down the industrial economics of digital arrest scams, how money mule networks layer stolen funds in minutes, and why the Supreme Court and RBI are now pushing banks to compensate victims when institutional due diligence fails.\n\nSubscribe to Paisa Decoded for deep-dive breakdowns on Indian business, banking, and money economics.\n\n#PaisaDecoded #DigitalArrest #CyberCrimeIndia #RBIRules #PersonalFinanceIndia",
+    "tags": [
+      "digital arrest scam",
+      "rbi digital fraud rules",
+      "supreme court digital arrest",
+      "mule account banking scam",
+      "cyber crime 1930 helpline",
+      "online banking fraud compensation",
+      "paisa decoded",
+      "how digital arrest works",
+      "bank liability cyber scam",
+      "rbi customer protection rules",
+      "financial fraud india"
+    ],
+    "pinned_comment": "If a bank allows a scammer to open a fake mule account that steals your money, should the bank be forced to refund 100% of your loss? Tell us your take below.",
+    "shorts_spinoffs": [
+      "How Fake Police Studios Steal ₹80 Lakh in 10 Minutes",
+      "What Is a Mule Account? The Secret Engine of Cyber Scams",
+      "New RBI Rules: Can You Get Scammed Money Back from Banks?"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Supreme Court observed RBI rules must make banks fully compensate digital arrest victims if banks fail due diligence",
+        "source_url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMDZvQ0NxendZU0hKdUNwU0N5UFZONkRnaGwtelRUdU9PRG4yRTE2dU91RXJ4Umt5Y05wcGxPWXRMcjA5aVdwNnZWX19kWGVZbGZNbjRrUGQ0anJzSG41WlN1VWZSQVdMOGltb2J3YkxNUktqQmRKLVJMN2xsVS1STi1sS0tfZGVFUjhybXRR?oc=5"
+      },
+      {
+        "claim": "Indians lost approximately ₹120 crore to digital arrest scams in Q1 2024",
+        "source_url": "common knowledge"
+      },
+      {
+        "claim": "The National Cyber Crime helpline number is 1930",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "SC says RBI rules must make banks fully compensate digital arrest victims if banks fail due diligence - MediaNama",
+    "why_it_will_work": "Digital arrest scams are terrifyingly common across Indian households right now, and finding out whether banks must refund your stolen money hits the exact intersection of urgency, anger, and personal finance."
+  },
+  "sources": [
+    {
+      "title": "SC says RBI rules must make banks fully compensate digital arrest victims if banks fail due diligence - MediaNama",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMDZvQ0NxendZU0hKdUNwU0N5UFZONkRnaGwtelRUdU9PRG4yRTE2dU91RXJ4Umt5Y05wcGxPWXRMcjA5aVdwNnZWX19kWGVZbGZNbjRrUGQ0anJzSG41WlN1VWZSQVdMOGltb2J3YkxNUktqQmRKLVJMN2xsVS1STi1sS0tfZGVFUjhybXRR?oc=5",
+      "signal": "RBI policy"
+    }
+  ],
+  "telegram_message_ids": [
+    68,
+    69,
+    70,
+    71
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}

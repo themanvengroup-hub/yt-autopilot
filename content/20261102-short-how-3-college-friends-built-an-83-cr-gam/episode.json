@@ -1,0 +1,104 @@
+{
+  "id": "20261102-short-how-3-college-friends-built-an-83-cr-gam",
+  "ref": "S1102",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-02T07:49:08+05:30",
+  "script": {
+    "title": "How 3 College Friends Built an ₹83 Cr Gaming App #shorts",
+    "hook_text": "3 College Friends Raised ₹83 Crore!",
+    "segments": [
+      {
+        "text": "Three college friends just raised eighty-three crore rupees for their startup.",
+        "broll": "indian college students walking campus",
+        "broll_alt": [
+          "young people laughing campus park",
+          "college library study group"
+        ],
+        "callout": "₹83 CRORE"
+      },
+      {
+        "text": "Their app, Matiks, turns simple brain puzzles into competitive games.",
+        "broll": "hands holding smartphone close up",
+        "broll_alt": [
+          "person playing mobile game",
+          "finger tapping smartphone screen"
+        ]
+      },
+      {
+        "text": "But how do brain gaming apps actually make real cash?",
+        "broll": "young man thinking coffee shop",
+        "broll_alt": [
+          "confused student sitting desk",
+          "close up eyes thinking"
+        ]
+      },
+      {
+        "text": "They earn from tournament entry fees, premium passes, and rewarded video ads.",
+        "broll": "hands counting rupee notes",
+        "broll_alt": [
+          "digital payment wallet phone",
+          "cash stack desk close up"
+        ],
+        "callout": "3 REVENUE MODEL"
+      },
+      {
+        "text": "Global investors put ten million dollars in because skill-based gaming is exploding worldwide.",
+        "broll": "modern glass office building aerial",
+        "broll_alt": [
+          "corporate boardroom meeting",
+          "city skyline sunset aerial"
+        ],
+        "callout": "$10 MILLION"
+      },
+      {
+        "text": "So next time your parents say gaming won't pay the bills, remember...",
+        "broll": "young indian student smiling camera",
+        "broll_alt": [
+          "happy young man talking phone",
+          "student walking city street"
+        ]
+      }
+    ],
+    "loop_line": "So next time your parents say gaming won't pay the bills, remember...",
+    "description": "How did three Indian college friends turn math puzzles into a multi-million dollar startup? Here is the economics behind Matiks raising $10 million for brain gaming. #startupindia #paisadecoded #business",
+    "tags": [
+      "Matiks app",
+      "Indian startups",
+      "startup funding",
+      "gaming startup India",
+      "how gaming apps make money",
+      "college founders India",
+      "Paisa Decoded",
+      "business news India",
+      "venture capital India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "3 Indian college friends built Matiks and raised $10 million in funding",
+        "source_url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQc2U2U3ZpMDdaclFvT09sWHY2Y1lnbE5VY3RYTTIwdy05Y3l1S2d5eEdqeUNYWGRKSWgzWFNNVnlMaXFQVFFhTzJaWE5PQUZrMzJ5YTFqSTNyTFhXQ1d2cmc5aXJwZjM5N1Nfd1JQUXJIbnlPRUE4QWJzLTQ2RXdsRHI3M3U4OFZmRlliSGZGcV9GSUxlZ2Nac3NXQUNPZEhKQzdoQVd2Zk9Xa1BMRWFqcDBiT016QURma01BUm5YVGRzcEJDSG1uY1lvMWt3a3pvSlEzd1JOeFhmWnfSAeABQVVfeXFMTmdEU2FMSFM2X05XNzAzSTJTV2tLVUJZUlY0XzdFUGVuRHVxdEdJdWx2UEJXMFVjVXplTXRlZW01ZzRoMWo3WFJGcWFEV2FwbjdkdDVCU19xZzdpNWE3MTliT2tUOVNaZ3BwRnREV1VHNWVLbTU4YllXUmhjOVg2dzZ2YzB5VnlOV0I4MGZYY25pWW1yek8yR3NYMnMxNzlfM2tKbDlKUjdkM1NhMENlNU5jazNqOXRDX1gybkRMR3JpV3ZGWjZHRnRHdVFWaV8tRkxXbnNQZ2txd3k4Nmt1N2I?oc=5"
+      }
+    ],
+    "chosen_candidate": "3 Indian college friends build brain gaming app Matiks, raise $10 million in funding | Trending - Hindustan Times",
+    "why_it_will_work": "College students raising ₹83 Crore creates instant intrigue for our 18-35 age group, allowing us to explain gaming business models in a simple, inspiring way."
+  },
+  "sources": [
+    {
+      "title": "3 Indian college friends build brain gaming app Matiks, raise $10 million in funding | Trending - Hindustan Times",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQc2U2U3ZpMDdaclFvT09sWHY2Y1lnbE5VY3RYTTIwdy05Y3l1S2d5eEdqeUNYWGRKSWgzWFNNVnlMaXFQVFFhTzJaWE5PQUZrMzJ5YTFqSTNyTFhXQ1d2cmc5aXJwZjM5N1Nfd1JQUXJIbnlPRUE4QWJzLTQ2RXdsRHI3M3U4OFZmRlliSGZGcV9GSUxlZ2Nac3NXQUNPZEhKQzdoQVd2Wk9Xa1BMRWFqcDBiT016QURma01BUm5YVGRzcEJDSG1uY1lvMWt3a3pvSlEzd1JOeFhmWnfSAeABQVVfeXFMTmdEU2FMSFM2X05XNzAzSTJTV2tLVUJZUlY0XzdFUGVuRHVxdEdJdWx2UEJXMFVjVXplTXRlZW01ZzRoMWo3WFJGcWFEV2FwbjdkdDVCU19xZzdpNWE3MTliT2tUOVNaZ3BwRnREV1VHNWVLbTU4YllXUmhjOVg2dzZ2YzB5VnlOV0I4MGZYY25pWW1yek8yR3NYMnMxNzlfM2tKbDlKUjdkM1NhMENlNU5jazNqOXRDX1gybkRMR3JpV3ZGWjZHRnRHdVFWaV8tRkxXbnNQZ2txd3k4Nmt1N2I?oc=5",
+      "signal": "India startup funding"
+    }
+  ],
+  "telegram_message_ids": [
+    72,
+    73,
+    74
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
