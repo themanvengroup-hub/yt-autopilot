@@ -2,7 +2,7 @@
   "id": "20261103-short-why-kfc-operator-made-only-3-4-cr-profit",
   "ref": "S1103",
   "kind": "short",
-  "status": "recorded",
+  "status": "uploaded",
   "created_at": "2026-11-03T07:42:10+05:30",
   "script": {
     "title": "Why KFC Operator Made Only ₹3.4 Cr Profit #shorts",
@@ -103,11 +103,12 @@
     78
   ],
   "voice_file_id": "CQACAgUAAxkBAANQaunWuv8tDfV2SFlp2_4d-l_9-ZMAAvElAAI2nlBXv_YHMH5ntIw9BA",
-  "youtube_id": null,
+  "youtube_id": "AZ4-9drc6S0",
   "publish_at": null,
   "error": null,
-  "attempts": 0,
+  "attempts": 1,
   "history": [
-    "2026-11-03T19:09:32+05:30 scripted→recorded voice received"
+    "2026-11-03T19:09:32+05:30 scripted→recorded voice received",
+    "2026-11-04T00:06:46+05:30 recorded→uploaded 41s"
   ]
 }
