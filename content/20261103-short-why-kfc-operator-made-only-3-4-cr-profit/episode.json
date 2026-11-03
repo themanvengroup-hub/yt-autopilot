@@ -1,0 +1,111 @@
+{
+  "id": "20261103-short-why-kfc-operator-made-only-3-4-cr-profit",
+  "ref": "S1103",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-03T07:42:10+05:30",
+  "script": {
+    "title": "Why KFC Operator Made Only ₹3.4 Cr Profit #shorts",
+    "hook_text": "Why KFC Profits Are Shrinking",
+    "segments": [
+      {
+        "text": "Ever wondered why your ₹500 KFC bucket barely leaves any profit for the company?",
+        "broll": "fast food counter fried chicken close up",
+        "broll_alt": [
+          "person holding crispy fried chicken slice",
+          "restaurant dining table food served"
+        ]
+      },
+      {
+        "text": "KFC and Pizza Hut operator Devyani International saw quarterly revenue jump 10%, yet net profit crashed to just ₹3.4 crore.",
+        "broll": "hand holding indian rupee notes close up",
+        "broll_alt": [
+          "cash register opening payment transaction",
+          "scanning qr code payment counter"
+        ],
+        "callout": "₹3.4 CR PROFIT"
+      },
+      {
+        "text": "So where is all your fast-food paisa actually going?",
+        "broll": "chef preparing food commercial kitchen",
+        "broll_alt": [
+          "cooking oil pouring in pan close up",
+          "supermarket grocery store shelves aisle"
+        ]
+      },
+      {
+        "text": "First, rising costs for chicken, cheese, and cooking oil ate up a huge chunk of total sales.",
+        "broll": "raw chicken pieces kitchen prep wide",
+        "broll_alt": [
+          "fresh vegetables cutting board restaurant",
+          "food delivery bag courier bike"
+        ],
+        "callout": "10.6% REVENUE UP"
+      },
+      {
+        "text": "Second, heavy shopping mall rents and aggressive new store expansion strained their balance sheet.",
+        "broll": "modern shopping mall interior wide",
+        "broll_alt": [
+          "escalator in modern shopping mall",
+          "store front glass window retail street"
+        ],
+        "callout": "HIGH EXPENSES"
+      },
+      {
+        "text": "Plus, deep discounts to lure budget diners squeezed profit margins even further.",
+        "broll": "smartphone app ordering food delivery",
+        "broll_alt": [
+          "person looking at digital menu board",
+          "crowded fast food restaurant dining room"
+        ]
+      },
+      {
+        "text": "Educational framing only, not financial advice, but running food giants in India is a tough game.",
+        "broll": "busy city street traffic night timelapse",
+        "broll_alt": [
+          "mumbai street night aerial view",
+          "delhi street market crowded wide"
+        ]
+      }
+    ],
+    "loop_line": "Which makes you wonder...",
+    "description": "Ever wondered where your fast-food money goes? Devyani International, the operator behind KFC and Pizza Hut in India, reported a net profit of just ₹3.4 crore despite revenue growing over 10%. Here is the economics breakdown behind quick service restaurants in India. #KFCIndia #DevyaniInternational #IndianBusiness",
+    "tags": [
+      "Devyani International Q2 results",
+      "KFC India profit margin",
+      "Pizza Hut India revenue",
+      "fast food business model India",
+      "Paisa Decoded",
+      "Indian stock market news",
+      "business economics India",
+      "quick service restaurant margin"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Devyani International Q2 net profit stood at ₹3.4 crore with revenue up 10.6%",
+        "source_url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNUmNia3J1elB2OHhwWHZWOE5Ba2lGckZibnUxbmZXRTRPZlVhcHl2UUt6RnEwMXlKQkhZSzVaM3ZWQ05Ja19SRTVIakxyLUwtZ2IwOXNtelU1bUVvTHVuOHl2Y1FmV2drN1JpU2NFM1MyNUEweUVIU1BQSDU2OW5HbUZMamdfcHFjUUoxVUtNT25lUjdxZEE5MGNLNXVoeUIyekhPbkMyLXI4aFhjbHhNMm4tNmFGcnZzRjJfUmRZSUwtOFRFamlPdlNVUXg1YTJPMkRPd0FIUExOc2REODktd2JhOHDSAeoBQVVfeXFMTUxJblVDNnRKSW1MMWVIYkg1NzhERGdtY1NfWXZ3aUZKNElxX2J4T2o1S2pyazlwRHFGeVEyeF9yU0FVT2pDWFVaeHk5NVpWVm1qbkw2YTJPa1ZGZEZGVnR2UkJtc2xqLU9aX2dwX0pvdzMtYko0bERuUnh1V0R5MzlqaXpEMHAzU2U0S3Y0aUYzbEhGXzlUZVNKdFk3VkZZMVhDREpZNEc3Z0g4ekxmOFphSWVpOU5pZmpHU2gyZHhIaDU3VVhKOHlsZUQxVl9OOENkSWhCVkVEcnAyMDZrWlhFTGJKYVpZMkp3?oc=5"
+      }
+    ],
+    "chosen_candidate": "Devyani International Q2 results: Net profit at ₹3.4 cr, revenue up 10.6% - Business Standard",
+    "why_it_will_work": "Household fast-food brands like KFC and Pizza Hut create immediate familiarity, while a tiny ₹3.4 crore profit on huge revenue triggers deep curiosity about business economics."
+  },
+  "sources": [
+    {
+      "title": "Devyani International Q2 results: Net profit at ₹3.4 cr, revenue up 10.6% - Business Standard",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNUmNia3J1elB2OHhwWHZWOE5Ba2lGckZibnUxbmZXRTRPZlVhcHl2UUt6RnEwMXlKQkhZSzVaM3ZWQ05Ja19SRTVIakxyLUwtZ2IwOXNtelU1bUVvTHVuOHl2Y1FmV2dyN1JpU2NFM1MyNUEweUVIU1BQSDU2OW5HbUZMamdfcHFjUUoxVUtNT25lUjdxZEE5MGNLNXVoeUIyekhPbkMyLXI4aFhjbHhNMm4tNmFGcnZzRjJfUmRZSUwtOFRFamlPdlNVUXg1YTJPMkRPd0FIUExOc2REODktd2JhOHDSAeoBQVVfeXFMTUxJblVDNnRKSW1MMWVIYkg1NzhERGdtY1NfWXZ3aUZKNElxX2J4T2o1S2pyazlwRHFGeVEyeF9yU0FVT2pDWFVaeHk5NVpWVm1qbkw2YTJPa1ZGZEZGVnR2UkJtc2xqLU9aX2dwX0pvdzMtYko0bERuUnh1V0R5MzlqaXpEMHAzU2U0S3Y0aUYzbEhGXzlUZVNKdFk3VkZZMVhDREpZNEc3Z0g4ekxmOFphSWVpOU5pZmpHU2gyZHhIaDU3VVhKOHlsZUQxVl9OOENkSWhCVkVEcnAyMDZrWlhFTGJKYVpZMkp3?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    76,
+    77,
+    78
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
