@@ -1,0 +1,111 @@
+{
+  "id": "20261104-short-100-cr-us-stock-trading-scam-explained-s",
+  "ref": "S1104",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-04T07:43:01+05:30",
+  "script": {
+    "title": "₹100 Cr US Stock Trading Scam Explained #shorts",
+    "hook_text": "₹100 CR US STOCK SCAM?",
+    "segments": [
+      {
+        "text": "Indian investors just lost ₹100 crore trying to buy US stocks.",
+        "broll": "close up hands holding smartphone checking stock charts",
+        "broll_alt": [
+          "person holding smartphone screen night",
+          "close up typing on phone screen"
+        ],
+        "callout": "₹100 CRORE"
+      },
+      {
+        "text": "Over a thousand retail traders discovered their foreign portfolios were sold off without consent.",
+        "broll": "worried man sitting in front of computer laptop indoor",
+        "broll_alt": [
+          "stressed man looking at laptop screen",
+          "person face in hands at office desk"
+        ]
+      },
+      {
+        "text": "So how does an Indian investing app suddenly sell your US shares?",
+        "broll": "aerial view modern high rise glass building cityscape daylight",
+        "broll_alt": [
+          "modern office skyscraper reflections",
+          "financial district skyscraper timelapse daylight"
+        ]
+      },
+      {
+        "text": "Most Indian fintech apps don't hold US shares directly. They route orders through foreign partner brokers.",
+        "broll": "slow motion hands typing on laptop keyboard glowing",
+        "broll_alt": [
+          "close up server room lights blinking",
+          "hands using digital tablet in dark room"
+        ],
+        "callout": "FOREIGN BROKERS"
+      },
+      {
+        "text": "If that overseas partner faces liquidity trouble or margin calls, automated risk algorithms can liquidate client stocks.",
+        "broll": "dramatic red stock market ticker screen scrolling close up",
+        "broll_alt": [
+          "digital stock chart plummeting red lines",
+          "financial data numbers screen red glow"
+        ]
+      },
+      {
+        "text": "Always verify custodian transparency and regulatory rules before using international investment platforms.",
+        "broll": "delhi street daylight view crowded traffic busy",
+        "broll_alt": [
+          "mumbai city street daylight traffic aerial",
+          "busy indian city market street wide"
+        ],
+        "callout": "NOT FINANCIAL ADVICE"
+      },
+      {
+        "text": "Understanding backend broker risks is crucial, because ignoring foreign custody rules is how...",
+        "broll": "man holding cup of Indian chai outdoors evening",
+        "broll_alt": [
+          "close up pouring tea into glass cup street",
+          "person sitting with tea mug sunset urban"
+        ]
+      }
+    ],
+    "loop_line": "...Indian investors just lost ₹100 crore trying to buy US stocks.",
+    "description": "Retail investors in India faced sudden portfolio liquidations worth ₹100 crore in US stock portfolios. Here is how third-party international broker routing works and why you must check custodian safety. #FinanceIndia #USStocks #PaisaDecoded",
+    "tags": [
+      "US Stocks India",
+      "Stockal fraud news",
+      "investing in US stocks from India",
+      "Indian stock market scam",
+      "fintech regulation India",
+      "how to buy US stocks in India",
+      "broker custodian risks",
+      "Paisa Decoded shorts"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Stockal investors allege ₹100 crore trading fraud after US stocks were sold without consent",
+        "source_url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSzkxSm1lTzJMNGtrZTMxQXJqY08zNUpUN0xoY3BzQTM3Zk..."
+      }
+    ],
+    "chosen_candidate": "Stockal investors allege ₹100 crore trading fraud after US stocks sold without consent - IndiaIPO",
+    "why_it_will_work": "It taps into the growing curiosity and fear among young Indians investing in global markets through fintech apps."
+  },
+  "sources": [
+    {
+      "title": "Stockal investors allege ₹100 crore trading fraud after US stocks sold without consent - IndiaIPO",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSzkxSm1lTzJMNGtrZTMxQXJqY08zNUpUN0xoY3BzQTM3Wk9WWF9FMWNCam92SHdJVVhjNmlXcDVMdGl5Tlc0LXBVWWQ1U21GTmFGbldmQTRLT0VQQXJoQXRxRm9QdkVFX2VhSlN6dE1pZHlOSnkzb3dhZkRiOVoyY2JuT3JLU09UVWRuU2lvRUJob0g5TXBsWWZDN2ExNUF4ZTB6OHNlUTAySGxrT2lwVkJERHkyazNDVlZJb1dB?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    91,
+    92,
+    93
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
