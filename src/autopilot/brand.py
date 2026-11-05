@@ -1,9 +1,8 @@
 """Paisa Decoded brand assets: logo badge, corner watermark and the animated end card.
 
-The logo lives at assets/brand/logo.png (transparent, square). Replace that file with your own
-design at any time; everything else (watermark, end card) picks it up automatically. If the file
-is missing it is regenerated from code: a navy coin with a gold ring and a gold ₹ inside
-"decode" brackets.
+The logo lives at assets/brand/logo.png (the channel's green-and-gold coin, transparent outside
+the circle). Replace that file to rebrand; the corner watermark and the end card pick it up
+automatically. If the file is missing, a simple fallback coin is generated from code.
 """
 from __future__ import annotations
 
@@ -185,9 +184,11 @@ def end_card(fmt: Format, out: Path, seconds: float, fps: int = 30, seed: int = 
     cy = int(H * (0.40 if fmt.is_short else 0.40))
     yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
     rr = np.sqrt(((xx - W / 2) / max(W, H)) ** 2 + ((yy - cy) / max(W, H)) ** 2)
-    bg = np.stack([14 - 10 * rr, 26 - 18 * rr, 54 - 40 * rr], -1).clip(0, 255).astype(np.uint8)
+    # deep emerald → near-black, matching the green/gold channel logo
+    bg = np.stack([10 - 8 * rr, 38 - 30 * rr, 24 - 18 * rr], -1).clip(0, 255).astype(np.uint8)
     bg_im = Image.fromarray(bg, "RGB").convert("RGBA")
-    logo_px = int(min(W, H) * (0.46 if fmt.is_short else 0.36))
+    show_wm = bool(r.get("end_card_wordmark", False))   # the logo already carries the channel name
+    logo_px = int(min(W, H) * ((0.46 if show_wm else 0.70) if fmt.is_short else (0.36 if show_wm else 0.52)))
     lg = _shadowed(logo().resize((logo_px, logo_px), Image.LANCZOS), 18, .6, 10)
     wm = _shadowed(wordmark(int(min(W, H) * (0.075 if fmt.is_short else 0.062))), 8, .6, 4)
     tag_f = _font(int(min(W, H) * (0.040 if fmt.is_short else 0.034)), serif=True)
@@ -201,18 +202,22 @@ def end_card(fmt: Format, out: Path, seconds: float, fps: int = 30, seed: int = 
     pw, ph = pb[2] - pb[0] + 110, int((pb[3] - pb[1]) * 2.3)
     pill = Image.new("RGBA", (pw, ph), (0, 0, 0, 0))
     pd = ImageDraw.Draw(pill)
-    pd.rounded_rectangle((0, 0, pw - 1, ph - 1), ph // 2, fill=AMBER + (255,))
+    pill_bg = _gradient(pw, ph, (255, 222, 140), (212, 152, 48)).convert("RGBA")
+    pm = Image.new("L", (pw, ph), 0)
+    ImageDraw.Draw(pm).rounded_rectangle((0, 0, pw - 1, ph - 1), ph // 2, fill=255)
+    pill.paste(pill_bg, (0, 0), pm)
     # small bell-ish play triangle on the left of the label
     tx, ty = 38, ph / 2
-    pd.polygon([(tx - 9, ty - 12), (tx + 13, ty), (tx - 9, ty + 12)], fill=(255, 255, 255, 255))
-    pd.text((64 - pb[0], (ph - (pb[3] - pb[1])) / 2 - pb[1]), label, font=pill_f, fill=(255, 255, 255, 255))
+    ink = (12, 46, 28, 255)   # dark green text on the gold pill
+    pd.polygon([(tx - 9, ty - 12), (tx + 13, ty), (tx - 9, ty + 12)], fill=ink)
+    pd.text((64 - pb[0], (ph - (pb[3] - pb[1])) / 2 - pb[1]), label, font=pill_f, fill=ink)
     pill = _shadowed(pill, 10, .5, 5)
     rng = np.random.default_rng(seed)
     parts = [(rng.uniform(0, W), rng.uniform(0, H), rng.uniform(40, 160), rng.uniform(1.5, 4.5), rng.uniform(60, 170))
              for _ in range(70)]
     gap = int(min(W, H) * 0.05)
     y_wm = cy + logo_px / 2 + gap + wm.height / 2
-    y_tag = y_wm + wm.height / 2 + gap * 0.5 + tag.height / 2
+    y_tag = (y_wm + wm.height / 2 + gap * 0.5 if show_wm else cy + logo_px / 2 + gap * 0.9) + tag.height / 2
     y_pill = y_tag + tag.height / 2 + gap * 1.1 + pill.height / 2
 
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
@@ -245,7 +250,8 @@ def end_card(fmt: Format, out: Path, seconds: float, fps: int = 30, seed: int = 
         fr.paste((232, 180, 80, 255), (0, 0), gl.filter(ImageFilter.GaussianBlur(18)).resize((W, H), Image.BILINEAR))
         _paste(fr, lg, W / 2, cy, 0.35 + 0.65 * _ease_out_back(t / 0.55), min(t / 0.18, 1))
         u = _ease_out((t - 0.55) / 0.4)
-        _paste(fr, wm, W / 2, y_wm + 24 * (1 - u), 1, u)
+        if show_wm:
+            _paste(fr, wm, W / 2, y_wm + 24 * (1 - u), 1, u)
         u = _ease_out((t - 0.8) / 0.4)
         _paste(fr, tag, W / 2, y_tag + 20 * (1 - u), 1, u)
         u = (t - 1.05) / 0.35

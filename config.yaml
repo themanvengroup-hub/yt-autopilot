@@ -92,6 +92,7 @@ render:
   end_card_transition: "zoomin"
   end_card_tagline: "Know the money behind the headlines"
   end_card_cta: "SUBSCRIBE"
+  end_card_wordmark: false          # the channel logo already shows "PAISA DECODED"
   light_leaks: true                 # warm light-leak sweep on ~1/3 of transitions
   sfx: true                         # per-video synthesized SFX pack (whoosh/impact/pop/tick/riser/shimmer)
   callouts: true                    # big key-number cards; used only when captions are off
