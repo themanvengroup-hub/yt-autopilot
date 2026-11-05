@@ -1,0 +1,113 @@
+{
+  "id": "20261105-short-why-indian-companies-raised-84-400-cr-in",
+  "ref": "S1105",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-05T07:52:22+05:30",
+  "script": {
+    "title": "Why Indian Companies Raised ₹84,400 Cr in IPOs #shorts",
+    "hook_text": "₹84,400 CR IPO BOOM EXPLAINED",
+    "segments": [
+      {
+        "text": "Indian companies just raised ₹84,400 crore from IPOs in six months.",
+        "broll": "hands counting Indian rupee notes close up",
+        "broll_alt": [
+          "stack of rupee banknotes",
+          "financial stock chart screen"
+        ],
+        "callout": "₹84,400 CR"
+      },
+      {
+        "text": "That is a massive 30% jump compared to last year.",
+        "broll": "stock exchange trading floor reflection",
+        "broll_alt": [
+          "gavel hitting table finance",
+          "modern glass office building mumbai"
+        ],
+        "callout": "30% JUMP"
+      },
+      {
+        "text": "Promoters and VCs are using this market boom to exit and cash out.",
+        "broll": "businessman signing contract document",
+        "broll_alt": [
+          "corporate executives shaking hands",
+          "glass highrise city aerial"
+        ]
+      },
+      {
+        "text": "They know retail investors are hungry for high-profile new listings.",
+        "broll": "delivery driver riding scooter traffic",
+        "broll_alt": [
+          "young person looking at smartphone screen",
+          "busy street market India"
+        ]
+      },
+      {
+        "text": "So companies are fixing smaller offer sizes to create artificial demand.",
+        "broll": "magnifying glass over financial newspaper",
+        "broll_alt": [
+          "finger tapping tablet computer",
+          "crowded stock market street"
+        ],
+        "callout": "SMALLER DEALS"
+      },
+      {
+        "text": "Before buying any IPO hype, always analyze business cash flows, not just listing gains.",
+        "broll": "person analyzing charts on laptop",
+        "broll_alt": [
+          "calculating numbers on desk",
+          "coffee cup next to financial report"
+        ]
+      },
+      {
+        "text": "Not financial advice, but when retail FOMO peaks, that is exactly why...",
+        "broll": "delhi traffic intersection night timelapse",
+        "broll_alt": [
+          "mumbai skyline aerial sunset",
+          "flashing neon financial city"
+        ]
+      }
+    ],
+    "loop_line": "Not financial advice, but when retail FOMO peaks, that is exactly why...",
+    "description": "Indian companies raised a record ₹84,400 crore through mainboard IPOs in H1 FY27. Here is the real business strategy behind the massive stock market rush and promoter exits. #IPOMarket #IndianBusiness #PaisaDecoded",
+    "tags": [
+      "IPO market India",
+      "Swiggy IPO",
+      "Indian stock market",
+      "IPO boom",
+      "investing India",
+      "Paisa Decoded",
+      "finance decoded",
+      "Indian economy",
+      "startups India",
+      "stock market news"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "India mainboard IPO market raised ₹84,400 crore in H1 FY27, up 30%",
+        "source_url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQM2tGZzgwenJ2SjRwUWtNUzh5MnZhNjVuaWp0TThIREhuMk5mejFVT3NjbGdBOWVjcHdfNTdxbHpLdDFzNERIeWgyWEpqQW9iOGoxV2Jocjk1cjhWRkI2QjI0VGZwMjFPY1Y2ajZTTGg4OE1DQXk1eE5ua2xGd1FNR1NmblVUWTcyT0NHU1phdkRObU5ZOGlXUEp2MV8tUGRGdXYzbDdKd3lDWkZLNm10Sm1Qb1BXVE9aak9NZ3B4V25jb1RHOXlYXw?oc=5"
+      }
+    ],
+    "chosen_candidate": "India's mainboard IPO market raises record INR 84,400 crore in H1 FY27, up 30% - Prop News Time",
+    "why_it_will_work": "It taps into current retail market FOMO with exact rupee figures, breaking down why companies are eager to list right now."
+  },
+  "sources": [
+    {
+      "title": "India's mainboard IPO market raises record INR 84,400 crore in H1 FY27, up 30% - Prop News Time",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQM2tGZzgwenJ2SjRwUWtNUzh5MnZhNjVuaWp0TThIREhuMk5mejFVT3NjbGdBOWVjcHdfNTdxbHpLdDFzNERIeWgyWEpqQW9iOGoxV2Jocjk1cjhWRkI2QjI0VGZwMjFPY1Y2ajZTTGg4OE1DQXk1eE5ua2xGd1FNR1NmblVUWTcyT0NHU1phdkRObU5ZOGlXUEp2MV8tUGRGdXYzbDdKd3lDWkZLNm10Sm1Qb1BXVE9aak9NZ3B4V25jb1RHOXlYXw?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    95,
+    96,
+    97
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
