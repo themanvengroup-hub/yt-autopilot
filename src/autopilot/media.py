@@ -56,16 +56,16 @@ def _db(x: float) -> float:
     return 10 ** (x / 20)
 
 
-def mix_with_music(voice: Path, dst: Path, sfx_times: list[float] | None = None) -> Path:
+def mix_with_music(voice: Path, dst: Path, sfx_times: list[float] | None = None, tail: float = 0.0) -> Path:
     """Voice at 0 dB (already -14 LUFS), music ~-20 dB ducking under speech,
     a soft synthesized whoosh (~-18 dB) on each transition, gentle music fade-out."""
     r = cfg()["render"]
     music = pick_music()
     sfx_times = [t for t in (sfx_times or []) if t > 0.3]
-    total = duration(voice)
+    total = duration(voice) + tail      # tail = end card: music keeps playing under it
 
     inputs = ["-i", str(voice)]
-    parts = ["[0:a]aresample=48000,aformat=channel_layouts=mono,asplit=2[v1][v2]"]
+    parts = [f"[0:a]aresample=48000,aformat=channel_layouts=mono,apad=whole_dur={total:.3f},asplit=2[v1][v2]"]
     mix_labels = ["[v2]"]
     n = 1
     if music:

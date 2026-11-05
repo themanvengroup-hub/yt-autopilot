@@ -74,10 +74,22 @@ render:
   whisper_model: "small.en"       # better with Indian accents than base/tiny
   caption_font: "Poppins ExtraBold"
   caption_font_file: "assets/fonts/Poppins-ExtraBold.ttf"
-  caption_highlight: "&H0000E5FF"   # ASS BGR: yellow (only used if captions: true)
-  # ── premium edit settings ──
-  captions: false                   # YouTube shows its own captions; no burned-in subtitles
-  callouts: true                    # big key-number cards (e.g. ₹1,879 CR) on 2-4 beats
+  caption_highlight: "&H0000E5FF"   # ASS BGR: yellow (legacy karaoke style only)
+  # ── premium edit settings (style taken from the Video Editing/References reels) ──
+  captions: true                    # two-line phrase subtitles in the centre of the frame
+  caption_style: "two_tone"         # two_tone (white lead-in + amber payoff) | karaoke (legacy)
+  sub_font: "Poppins"               # bold weight is picked from sub_font_file
+  sub_font_file: "assets/fonts/Poppins-Bold.ttf"
+  sub_accent: "&H001EA5F8&"         # ASS BGR of #F8A51E, the reference orange
+  sub_size_short: 80
+  sub_size_long: 74
+  info_cards: true                  # white label→value card on the most fact-heavy beats
+  watermark: true                   # small PAISA DECODED wordmark in the corner
+  end_card: true                    # long-form only: gold serif wordmark on black
+  end_card_seconds: 3.0
+  end_card_font: "DM Serif Display"
+  end_card_tagline: "Know the money behind the headlines"
+  callouts: true                    # big key-number cards; used only when captions are off
   section_titles: true              # long-form chapter lower-thirds
   transitions: true                 # motion transitions only where the script changes beat
   transition_seconds_short: 0.25
@@ -88,7 +100,7 @@ render:
   sfx_db: -18
   accent_colour: "&H0000C8FF"       # ASS BGR: warm amber for callouts
   shorts_shot_seconds: 2.4          # fast cuts keep Shorts retention up
-  longform_shot_seconds: 5.5
+  longform_shot_seconds: 4.0         # references cut every ~3.5-4 s
   music_volume: 0.10
   # Pauses longer than this are tightened (jump-cut effect).
   max_pause_seconds: 0.35

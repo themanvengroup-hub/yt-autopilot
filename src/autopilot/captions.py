@@ -142,22 +142,29 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     return out
 
 
-# ── premium overlay: hook card + key-number callouts (no subtitles by default) ──
+# ── premium overlay: hook card, two-tone subtitles, info cards, callouts, watermark, end card ──
 def build_overlay(fmt: Format, out: Path, *, words: list[Word] | None = None, hook_text: str = "",
                   callouts: list[tuple[float, str]] | None = None,
-                  section_marks: list[tuple[float, str]] | None = None) -> Path | None:
+                  section_marks: list[tuple[float, str]] | None = None,
+                  cards: list[tuple[float, float, dict]] | None = None,
+                  end_card_at: float | None = None) -> Path | None:
     """Return an .ass file, or None when there is nothing to draw.
 
     Motion follows the usual kinetic-type rules: elements enter fast with an ease-out
     overshoot (scale 112%→100% in 180 ms), hold, and leave quicker than they came
-    (fade 150 ms). Never more than one text element on screen at a time.
+    (fade 150 ms). Big text elements never overlap each other.
     """
     callouts = callouts or []
     section_marks = [m for m in (section_marks or []) if m[0] > 1]
-    if not (words or hook_text or callouts or section_marks):
-        return None
-    if words:  # optional legacy karaoke captions (render.captions: true)
+    r = cfg()["render"]
+    if words and r.get("caption_style", "two_tone") == "karaoke":  # legacy karaoke captions
         return build_ass(words, fmt, out, hook_text=hook_text, section_marks=section_marks)
+    if words or cards or end_card_at is not None or r.get("watermark", True):
+        from . import styled  # two-tone subtitles + cards (reference "Citylights" look)
+        return styled.build(fmt, out, words=words or [], hook_text=hook_text, callouts=callouts,
+                            section_marks=section_marks, cards=cards or [], end_card_at=end_card_at)
+    if not (hook_text or callouts or section_marks):
+        return None
 
     r = cfg()["render"]
     font = r["caption_font"] if (ROOT / r["caption_font_file"]).exists() else "DejaVu Sans"

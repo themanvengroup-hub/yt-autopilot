@@ -224,7 +224,7 @@ def cmd_render(args: argparse.Namespace) -> None:
         try:
             # keep the download OUTSIDE the render work dir: render_episode() wipes that folder first
             voice = tg.download_file(ep.voice_file_id, WORK_DIR / "voices" / f"{ep.id}.audio")
-            if not ep.script.get("directed"):
+            if ep.script.get("directed") != scriptwriter.DIRECTOR_VERSION:
                 try:  # director pass: footage queries + premium callouts matched to every line
                     scriptwriter.direct_visuals(ep.kind, ep.script)
                     ep.save()

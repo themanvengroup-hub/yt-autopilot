@@ -84,3 +84,16 @@ def test_ass_escapes_braces(tmp_path):
     out = captions.build_ass(words, video_format("short"), tmp_path / "c.ass", hook_text="hi")
     body = out.read_text()
     assert "{evil}" not in body.upper() and "(EVIL)" in body
+
+
+def test_two_tone_overlay_has_subs_card_and_end_card(tmp_path):
+    from autopilot import styled
+    from autopilot.config import video_format
+    words = captions.estimate_words("Zepto delivers your milk in ten minutes, and loses money doing it.", 4.0)
+    card = {"pill": "the math", "rows": [["Order", "₹200"], ["Margin", "₹30"]]}
+    out = styled.build(video_format("long"), tmp_path / "o.ass", words=words, hook_text="", callouts=[],
+                       section_marks=[], cards=[(1.0, 3.5, card)], end_card_at=4.0)
+    text = out.read_text(encoding="utf-8")
+    assert "THE MATH" in text and "₹200" in text
+    assert "Zepto" in text and "money doing it" in text      # phrase subtitles, punctuation stripped
+    assert "Know the money" in text                          # end card tagline

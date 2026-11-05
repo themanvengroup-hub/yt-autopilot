@@ -189,12 +189,24 @@ FOOTAGE: queries must describe what a camera can literally film (objects, places
 Match the literal subject of the line: a line about fuel costs → "jet fuel truck refueling airplane";
 about coffee prices → "barista pouring latte close up". Never abstract ideas or brand names.
 Give India-flavoured scenes where plausible, with generic alternates. Vary shot types line to line.
+House look (premium real-estate / city explainer reels): favour cinematic drone and aerial shots,
+golden hour and blue hour skylines, glass towers, highways and metro lines, clean interiors and
+close-ups of hands/objects. Avoid cheesy office-handshake stock and anything with visible logos.
 
 ON-SCREEN TEXT: a callout is a big premium card showing ONE striking number or 1-3 word phrase that
 appears in or is implied by the line ("₹22,500 CR", "90 DAYS", "0% COMMISSION"). Use it only on
 the 2-4 most striking lines of a Short (about one per section for long-form). Never a sentence,
 never repeat the hook text. Uppercase, Indian number format with ₹ and CR/L where relevant.
+
+INFO CARD: on the single most fact-dense line of a Short (and at most one line per section of a
+long-form video) you MAY add a card that summarises facts spoken in that line or the next one:
+{"pill": "<=18 chars, e.g. 'THE MATH' or 'ZEPTO FY24'", "title": "optional, <=30 chars",
+ "rows": [["Label <=18 chars", "Value <=26 chars"], ... 2-4 rows]}. Only facts stated in the script.
+Omit the card (empty object) everywhere else.
 Return ONLY JSON."""
+
+
+DIRECTOR_VERSION = 2   # bump to re-direct queued episodes when the visual style changes
 
 
 def direct_visuals(kind: str, script: dict[str, Any]) -> dict[str, Any]:
@@ -204,8 +216,8 @@ def direct_visuals(kind: str, script: dict[str, Any]) -> dict[str, Any]:
     user = (f"Title: {script.get('title', '')}\nHook card text (already on screen for 2.5 s): "
             f"{script.get('hook_text', '')}\nFormat: {'YouTube Short (vertical)' if kind == 'short' else 'long-form (16:9)'}\n"
             f"Lines:\n{json.dumps(lines, ensure_ascii=False, indent=1)}\n\n"
-            'Return {"shots": [{"i": 0, "broll": "...", "broll_alt": ["...", "..."], "callout": "" }]} '
-            "with one entry per line; callout is an empty string when the line gets none.")
+            'Return {"shots": [{"i": 0, "broll": "...", "broll_alt": ["...", "..."], "callout": "", "card": {} }]} '
+            "with one entry per line; callout is an empty string and card an empty object when the line gets none.")
     plan = llm.complete_json(DIRECTOR_SYSTEM, user)
     by_i = {int(p["i"]): p for p in plan.get("shots", []) if "i" in p}
     for i, seg in enumerate(segs):
@@ -216,5 +228,12 @@ def direct_visuals(kind: str, script: dict[str, Any]) -> dict[str, Any]:
             seg["broll"] = p["broll"]
         seg["broll_alt"] = [q for q in (p.get("broll_alt") or []) if q][:3]
         seg["callout"] = (p.get("callout") or "").strip()[:24]
-    script["directed"] = True
+        card = p.get("card")
+        if isinstance(card, dict) and isinstance(card.get("rows"), list) and len(card["rows"]) >= 2:
+            seg["card"] = {"pill": str(card.get("pill", ""))[:18], "title": str(card.get("title", ""))[:30],
+                           "rows": [[str(r[0])[:18], str(r[1])[:26]] for r in card["rows"][:4]
+                                    if isinstance(r, (list, tuple)) and len(r) >= 2]}
+        else:
+            seg.pop("card", None)
+    script["directed"] = DIRECTOR_VERSION
     return script

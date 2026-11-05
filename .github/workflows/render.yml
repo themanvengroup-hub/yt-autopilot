@@ -31,10 +31,12 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
-      - name: Caption font
+      - name: Fonts (SIL Open Font License)
         run: |
-          [ -f assets/fonts/Poppins-ExtraBold.ttf ] || curl -sSfL -o assets/fonts/Poppins-ExtraBold.ttf \
-            https://github.com/google/fonts/raw/main/ofl/poppins/Poppins-ExtraBold.ttf
+          get() { [ -f "assets/fonts/$1" ] || curl -sSfL -o "assets/fonts/$1" "https://github.com/google/fonts/raw/main/ofl/$2/$1" || { rm -f "assets/fonts/$1"; echo "::warning::font $1 unavailable"; }; }
+          get Poppins-ExtraBold.ttf poppins
+          get Poppins-Bold.ttf poppins
+          get DMSerifDisplay-Regular.ttf dmserifdisplay
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

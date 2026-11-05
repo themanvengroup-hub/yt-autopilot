@@ -6,8 +6,9 @@ Edit doctrine (what makes it look "produced" rather than "slideshow"):
   * Every shot moves: an eased push-in or pull-out (alternating), never a static frame.
   * One look: the same grade on every clip (contrast curve, saturation, vignette, fine
     grain), so footage from different photographers feels like one film.
-  * No burned-in subtitles. YouTube provides captions. On-screen text is limited to the
-    Short's hook card (first 2.5 s) and 2-4 key-number callouts.
+  * Text in the style of the reference reels (see styled.py): two-line phrase subtitles in
+    the centre (white lead-in, amber payoff, numbers enlarged), one white info card where
+    the script is fact-heavy, a corner wordmark, and a gold serif end card on long-form.
   * Mix: voice is the anchor (-14 LUFS), music sits ~20 dB under and ducks when you speak,
     a soft whoosh (~-18 dB) marks each transition.
 
@@ -160,11 +161,13 @@ def _assign_broll(shots: list[Shot], segments: list[dict], lib: BrollLibrary) ->
 def _grade() -> str:
     if not _r().get("grade", True):
         return "null"
-    # unified "doc" look: gentle S-curve, richer colour, soft vignette, fine moving grain
-    return ("curves=master='0/0 0.25/0.21 0.5/0.5 0.75/0.80 1/1',"
-            "eq=saturation=1.12:gamma=0.98,"
-            "vignette=angle=PI/5:mode=forward,"
-            "noise=alls=3:allf=t")
+    # clean "premium real-estate" look (references): bright, slightly warm highlights,
+    # soft contrast, very light vignette, almost no grain
+    return ("curves=master='0/0.02 0.25/0.23 0.5/0.51 0.75/0.79 1/0.98',"
+            "eq=saturation=1.08:contrast=1.03,"
+            "colorbalance=rh=0.03:bh=-0.03:rm=0.01:bm=-0.01,"
+            "vignette=angle=PI/7:mode=forward,"
+            "noise=alls=1:allf=t")
 
 
 def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path, dur: float) -> None:
@@ -295,12 +298,27 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
             delay = 3.1 if (ep.kind == "long" and seg.get("section") and t > 1) else 0.15
             callouts.append((t + delay, seg["callout"]))
 
+    # info cards (reference-style): one per fact-heavy segment, held while that beat is spoken
+    cards: list[tuple[float, float, dict]] = []
+    if r.get("info_cards", True):
+        seg_ids = sorted(starts)
+        for k, si in enumerate(seg_ids):
+            card = segments[si].get("card")
+            if not isinstance(card, dict) or not card.get("rows"):
+                continue
+            t0 = starts[si] + 0.15
+            nxt = starts[seg_ids[k + 1]] if k + 1 < len(seg_ids) else total
+            t1 = min(max(nxt, t0 + 3.0), t0 + 6.5, total)
+            if t1 - t0 >= 2.0 and (not cards or t0 > cards[-1][1] + 4):
+                cards.append((t0, t1, card))
+
     # 5. picture
     base, transition_times = _render_groups(groups, fmt, work, T)
 
-    # 6. sound: voice + ducked music + whoosh on each transition
+    # 6. sound: voice + ducked music + whoosh on each transition (+ music tail under the end card)
+    tail = float(r.get("end_card_seconds", 3.0)) if (ep.kind == "long" and r.get("end_card", True)) else 0.0
     mix = media.mix_with_music(voice, work / "mix.wav",
-                               sfx_times=transition_times if r.get("whoosh", True) else [])
+                               sfx_times=transition_times if r.get("whoosh", True) else [], tail=tail)
 
     # 7. text layer (hook card, callouts, optional captions) — burned only if there is any
     hook = ep.script.get("hook_text", "") if fmt.is_short else ""
@@ -309,11 +327,12 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
         words=words if r.get("captions", False) else None,
         hook_text=hook, callouts=callouts,
         section_marks=chapters if r.get("section_titles", True) else None,
+        cards=cards, end_card_at=total if tail else None,
     )
-    vf = "null"
+    vf = f"tpad=stop_mode=clone:stop_duration={tail:.2f}" if tail else "null"
     if overlay:
         fonts_dir = (ROOT / r["caption_font_file"]).parent
-        vf = f"ass={overlay.as_posix()}:fontsdir={fonts_dir.as_posix()}"
+        vf += f",ass={overlay.as_posix()}:fontsdir={fonts_dir.as_posix()}"
     final = work / f"{ep.id}.mp4"
     media.run(["ffmpeg", "-y", "-i", str(base), "-i", str(mix), "-vf", vf,
                "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
