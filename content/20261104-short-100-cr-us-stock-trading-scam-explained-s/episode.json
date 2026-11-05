@@ -2,7 +2,7 @@
   "id": "20261104-short-100-cr-us-stock-trading-scam-explained-s",
   "ref": "S1104",
   "kind": "short",
-  "status": "scripted",
+  "status": "recorded",
   "created_at": "2026-11-04T07:43:01+05:30",
   "script": {
     "title": "₹100 Cr US Stock Trading Scam Explained #shorts",
@@ -102,10 +102,12 @@
     92,
     93
   ],
-  "voice_file_id": null,
+  "voice_file_id": "CQACAgUAAxkBAANjauyvfzdNEFmGmREeYlqOVFyUU_EAApMpAAL3HGlXPM2tjT65yyc9BA",
   "youtube_id": null,
   "publish_at": null,
   "error": null,
   "attempts": 0,
-  "history": []
+  "history": [
+    "2026-11-05T22:32:51+05:30 scripted→recorded voice received"
+  ]
 }
