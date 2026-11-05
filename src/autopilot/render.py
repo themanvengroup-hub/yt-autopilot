@@ -9,8 +9,13 @@ Edit doctrine (what makes it look "produced" rather than "slideshow"):
   * Text in the style of the reference reels (see styled.py): two-line phrase subtitles in
     the centre (white lead-in, amber payoff, numbers enlarged), one white info card where
     the script is fact-heavy, a corner wordmark, and a gold serif end card on long-form.
+  * Brand on every video: logo badge + wordmark in the corner, animated logo end card
+    joined with a zoom transition (brand.py).
+  * Variety per video (seeded by the episode id): transition order from a motion-matched
+    pool with an occasional flash, warm light-leak sweeps, shuffled camera moves
+    (push / pull / pan / tilt), and its own variants of every sound effect (sfx.py).
   * Mix: voice is the anchor (-14 LUFS), music sits ~20 dB under and ducks when you speak,
-    a soft whoosh (~-18 dB) marks each transition.
+    SFX sit 15-24 dB under the voice.
 
 Pipeline:
     voice.m4a ─▶ clean/tighten ─▶ word timings (Whisper)
@@ -19,7 +24,7 @@ Pipeline:
                                    │        │
                                    │        └─▶ B-roll per shot ─▶ graded, moving shots ─▶ concat per segment
                                    │                                                      └▶ xfade chain across segments
-    voice + ducked music + whooshes ───────────────────────────────▶ final mux (+ hook/callout overlay)
+    voice + ducked music + SFX pack ──────────────────────────────▶ final mux (+ logo, text layer, end card)
 """
 from __future__ import annotations
 
@@ -31,7 +36,10 @@ from bisect import bisect_right
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from . import captions, media
+import random
+import zlib
+
+from . import brand, captions, media, sfx
 from .broll import BrollLibrary, Clip
 from .config import ROOT, WORK_DIR, Format, cfg, video_format
 from .scriptwriter import iter_segments, teleprompter_text
@@ -40,8 +48,30 @@ from .thumbnail import make_thumbnail
 
 log = logging.getLogger(__name__)
 FPS = 30
-# Transition rotation for segment changes: all motion-matched, none of the cheesy ones.
-TRANSITIONS = ["smoothleft", "zoomin", "smoothup", "fade", "smoothright", "hblur"]
+# Transition pool for segment changes: motion-matched ones only (no star wipes / page curls).
+# Each video draws its own order from this pool (seeded by the episode id), so consecutive
+# videos don't repeat the same sequence. "fadewhite" is a short flash, used sparingly.
+TRANSITIONS = ["smoothleft", "zoomin", "smoothup", "hblur", "smoothright", "fade", "smoothdown", "zoomin"]
+FLASH = "fadewhite"
+# Camera moves per shot (also shuffled per video): push in, pull out, slow pan, slow tilt.
+MOTIONS = ["push", "pan_r", "pull", "pan_l", "push", "tilt"]
+
+
+def _seed(ep_id: str) -> int:
+    return zlib.crc32(ep_id.encode()) & 0x7FFFFFFF
+
+
+def _transition_plan(n: int, seed: int) -> tuple[list[str], list[int]]:
+    """Transition names for n seams + the seams that also get a light-leak sweep."""
+    rng = random.Random(seed)
+    pool = TRANSITIONS[:]
+    rng.shuffle(pool)
+    names = [pool[i % len(pool)] for i in range(n)]
+    for i in range(n):                      # roughly one flash per 7 seams, never the first
+        if i and i % 7 == rng.randrange(3, 7):
+            names[i] = FLASH
+    leaks = [i for i in range(n) if names[i] != FLASH and rng.random() < 0.35]
+    return names, leaks
 
 
 @dataclass
@@ -170,17 +200,30 @@ def _grade() -> str:
             "noise=alls=1:allf=t")
 
 
-def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path, dur: float) -> None:
+def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path, dur: float, motion: str = "push") -> None:
     W, H = fmt.width, fmt.height
     frames = max(round(dur * FPS), 1)
     amp = 0.07 if fmt.is_short else 0.045          # push distance
     # ease-out cubic: fast start, gentle settle (reads as intentional camera move)
     ease = f"(1-pow(1-min(on/{frames},1),3))"
-    z = f"1+{amp}*{ease}" if idx % 2 == 0 else f"1+{amp}-{amp}*{ease}"
+    glide = f"(0.5-0.5*cos(PI*min(on/{frames},1)))"   # ease-in-out for pans/tilts
+    cx, cy = "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    if motion == "pull":
+        z, x, y = f"1+{amp}-{amp}*{ease}", cx, cy
+    elif motion in ("pan_r", "pan_l"):
+        pz = 1.12 if fmt.is_short else 1.09
+        z, y = f"{pz}", cy
+        x = f"(iw-iw/zoom)*{glide}" if motion == "pan_r" else f"(iw-iw/zoom)*(1-{glide})"
+    elif motion == "tilt":
+        pz = 1.10
+        z, x = f"{pz}", cx
+        y = f"(ih-ih/zoom)*(1-{glide})"
+    else:
+        z, x, y = f"1+{amp}*{ease}", cx, cy
     if sh.clip:
         # 2x oversample before zoompan removes the sub-pixel jitter zoompan is known for
         vf = (f"fps={FPS},scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,crop={W * 2}:{H * 2},"
-              f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={W}x{H}:fps={FPS},"
+              f"zoompan=z='{z}':x='{x}':y='{y}':d=1:s={W}x{H}:fps={FPS},"
               f"{_grade()},format=yuv420p,setsar=1")
         inp = ["-stream_loop", "-1", "-ss", f"{sh.offset:.2f}", "-i", str(sh.clip.path)]
     else:
@@ -190,7 +233,8 @@ def _encode_shot(sh: Shot, idx: int, fmt: Format, out: Path, dur: float) -> None
                "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", str(out)])
 
 
-def _render_groups(groups: list[list[Shot]], fmt: Format, work: Path, T: float) -> tuple[Path, list[float]]:
+def _render_groups(groups: list[list[Shot]], fmt: Format, work: Path, T: float,
+                   seed: int = 0) -> tuple[Path, list[float], list[str]]:
     """Encode shots → one clip per group → xfade chain. Returns video + transition times."""
     # encode every shot in parallel (zoompan is mostly single-threaded, so this scales ~linearly)
     jobs, lists, idx = [], [], 0
@@ -205,9 +249,11 @@ def _render_groups(groups: list[list[Shot]], fmt: Format, work: Path, T: float) 
             paths.append(p)
             idx += 1
         lists.append(paths)
+    moves = MOTIONS[:]
+    random.Random(seed + 1).shuffle(moves)
     workers = max(os.cpu_count() or 2, 2)
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        list(pool.map(lambda j: _encode_shot(j[0], j[1], fmt, j[2], j[3]), jobs))
+        list(pool.map(lambda j: _encode_shot(j[0], j[1], fmt, j[2], j[3], moves[j[1] % len(moves)]), jobs))
 
     group_files: list[Path] = []
     group_durs: list[float] = []
@@ -224,24 +270,25 @@ def _render_groups(groups: list[list[Shot]], fmt: Format, work: Path, T: float) 
         lst = work / "groups.txt"
         lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in group_files))
         media.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(base)])
-        return base, []
+        return base, [], []
 
     inputs: list[str] = []
     for p in group_files:
         inputs += ["-i", str(p)]
     chain, times = [], []
+    names, _ = _transition_plan(len(group_files) - 1, seed)
     acc, prev = group_durs[0], "[0:v]"
     for i in range(1, len(group_files)):
         offset = acc - T
         label = f"[x{i}]"
-        chain.append(f"{prev}[{i}:v]xfade=transition={TRANSITIONS[(i - 1) % len(TRANSITIONS)]}"
+        chain.append(f"{prev}[{i}:v]xfade=transition={names[i - 1]}"
                      f":duration={T}:offset={offset:.3f}{label}")
         times.append(offset)
         acc += group_durs[i] - T
         prev = label
     media.run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(chain), "-map", prev,
                "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-pix_fmt", "yuv420p", str(base)])
-    return base, times
+    return base, times, names
 
 
 # ── main ─────────────────────────────────────────────────────
@@ -313,31 +360,61 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
                 cards.append((t0, t1, card))
 
     # 5. picture
-    base, transition_times = _render_groups(groups, fmt, work, T)
+    seed = _seed(ep.id)
+    base, transition_times, transition_names = _render_groups(groups, fmt, work, T, seed)
+    _, leak_idx = _transition_plan(len(transition_times), seed)
+    leak_times = [transition_times[i] + T / 2 for i in leak_idx]
+    base_dur = media.duration(base)
 
-    # 6. sound: voice + ducked music + whoosh on each transition (+ music tail under the end card)
-    tail = float(r.get("end_card_seconds", 3.0)) if (ep.kind == "long" and r.get("end_card", True)) else 0.0
-    mix = media.mix_with_music(voice, work / "mix.wav",
-                               sfx_times=transition_times if r.get("whoosh", True) else [], tail=tail)
+    # 6. branded end card (every video) — joined with a zoom transition
+    end_s = float(r.get("end_card_seconds_short" if fmt.is_short else "end_card_seconds_long", 3.0))
+    ET = 0.5
+    end_at: float | None = None
+    video = base
+    if r.get("end_card", True):
+        end_clip = brand.end_card(fmt, work / "end.mp4", end_s, FPS, seed)
+        end_at = base_dur - ET
+        video = work / "with_end.mp4"
+        media.run(["ffmpeg", "-y", "-i", str(base), "-i", str(end_clip), "-filter_complex",
+                   f"[0:v][1:v]xfade=transition={r.get('end_card_transition', 'zoomin')}:duration={ET}:"
+                   f"offset={end_at:.3f},format=yuv420p[v]", "-map", "[v]",
+                   "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", str(video)])
+    final_dur = (end_at + end_s) if end_at is not None else base_dur
 
-    # 7. text layer (hook card, callouts, optional captions) — burned only if there is any
+    # 7. text layer (hook, two-tone subtitles, info cards, section titles, light leaks)
     hook = ep.script.get("hook_text", "") if fmt.is_short else ""
+    text_events: list[tuple[str, float]] = []
     overlay = captions.build_overlay(
         fmt, work / "overlay.ass",
         words=words if r.get("captions", False) else None,
         hook_text=hook, callouts=callouts,
         section_marks=chapters if r.get("section_titles", True) else None,
-        cards=cards, end_card_at=total if tail else None,
+        cards=cards, end_card_at=end_at,
+        leak_times=leak_times if r.get("light_leaks", True) else [], events=text_events,
     )
-    vf = f"tpad=stop_mode=clone:stop_duration={tail:.2f}" if tail else "null"
+
+    # 8. sound: voice + ducked music + a per-video SFX pack on the edit's key moments
+    mix = media.mix_with_music(voice, work / "mix.wav", events=_sfx_events(
+        seed, work, transition_times, transition_names, T, cards, text_events,
+        [t for t, _ in chapters if t > 1], end_at, bool(hook)) if r.get("sfx", True) else [],
+        tail=max(final_dur - total, 0.0))
+
+    # 9. final: corner logo (until the end card) + text layer, muxed with the mix
+    wm, wx, wy = brand.watermark_png(fmt, work / "watermark.png")
+    stop = end_at if end_at is not None else final_dur
+    fc = (f"[2:v]format=rgba,fade=t=in:st=0.3:d=0.5:alpha=1[wm];"
+          f"[0:v][wm]overlay=x={wx}:y={wy}:enable='lt(t,{stop + 0.2:.2f})':format=auto[v0]")
     if overlay:
         fonts_dir = (ROOT / r["caption_font_file"]).parent
-        vf += f",ass={overlay.as_posix()}:fontsdir={fonts_dir.as_posix()}"
+        fc += f";[v0]ass={overlay.as_posix()}:fontsdir={fonts_dir.as_posix()}[v]"
+    else:
+        fc += ";[v0]null[v]"
     final = work / f"{ep.id}.mp4"
-    media.run(["ffmpeg", "-y", "-i", str(base), "-i", str(mix), "-vf", vf,
-               "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+    media.run(["ffmpeg", "-y", "-i", str(video), "-i", str(mix), "-loop", "1", "-t", f"{final_dur:.2f}",
+               "-i", str(wm), "-filter_complex", fc,
+               "-map", "[v]", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
                "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
-               "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest", "-movflags", "+faststart",
+               "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-t", f"{final_dur:.3f}", "-movflags", "+faststart",
                str(final)])
 
     thumb = None
@@ -346,6 +423,43 @@ def render_episode(ep: Episode, voice_src: Path) -> RenderResult:
         thumb = make_thumbnail(base, frame_t, ep.script.get("thumbnail_text", ep.script["title"]), work / "thumb.jpg")
 
     return RenderResult(final, media.duration(final), thumb, _valid_chapters(chapters))
+
+
+def _sfx_events(seed: int, work: Path, transitions: list[float], names: list[str], T: float,
+                cards: list[tuple[float, float, dict]], text_events: list[tuple[str, float]],
+                sections: list[float], end_at: float | None, has_hook: bool) -> list[tuple[float, Path, float]]:
+    """Place this video's SFX variants: impact on the open, whoosh per transition (variants
+    rotate), swoosh + row ticks on info cards, pop on number reveals, swoosh on chapter titles,
+    riser → impact → shimmer → pop on the end card."""
+    pk = sfx.pack(seed, work / "sfx")
+    ev: list[tuple[float, Path, float]] = []
+
+    def add(t: float, kind: str, gain: float = 0.0) -> None:
+        path, level = pk.get(kind)
+        ev.append((t, path, level + gain))
+
+    add(0.0, "impact", -3 if has_hook else -5)
+    for t, name in zip(transitions, names):
+        add(max(t + T / 2 - 0.35, 0), "whoosh")
+        if name == FLASH:
+            add(t + T / 2 - 0.05, "impact", -6)
+    for t0, _, card in cards:
+        add(max(t0 - 0.1, 0), "swoosh")
+        for i in range(min(len(card.get("rows") or []), 4)):
+            add(t0 + 0.26 + i * 0.14, "tick")
+    last = -9.0
+    for kind, t in sorted(text_events, key=lambda e: e[1]):
+        if t - last >= 1.5 and not any(c0 - 0.3 <= t <= c1 for c0, c1, _ in cards):
+            add(t, kind)
+            last = t
+    for t in sections:
+        add(t, "swoosh", -2)
+    if end_at is not None:
+        add(max(end_at - 0.6, 0), "riser")
+        add(end_at + 0.45, "impact", -2)
+        add(end_at + 0.85, "shimmer")
+        add(end_at + 1.12, "pop", -2)
+    return sorted(ev, key=lambda e: e[0])
 
 
 def _valid_chapters(ch: list[tuple[float, str]]) -> list[tuple[float, str]]:

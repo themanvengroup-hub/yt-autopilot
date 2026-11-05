@@ -84,20 +84,23 @@ render:
   sub_size_short: 80
   sub_size_long: 74
   info_cards: true                  # white label→value card on the most fact-heavy beats
-  watermark: true                   # small PAISA DECODED wordmark in the corner
-  end_card: true                    # long-form only: gold serif wordmark on black
-  end_card_seconds: 3.0
-  end_card_font: "DM Serif Display"
+  # brand: assets/brand/logo.png is the channel logo (swap the file to change it everywhere)
+  watermark: true                   # logo badge + PAISA DECODED wordmark in the corner
+  end_card: true                    # animated logo end card on every video (Shorts + long-form)
+  end_card_seconds_short: 2.5
+  end_card_seconds_long: 3.5
+  end_card_transition: "zoomin"
   end_card_tagline: "Know the money behind the headlines"
+  end_card_cta: "SUBSCRIBE"
+  light_leaks: true                 # warm light-leak sweep on ~1/3 of transitions
+  sfx: true                         # per-video synthesized SFX pack (whoosh/impact/pop/tick/riser/shimmer)
   callouts: true                    # big key-number cards; used only when captions are off
   section_titles: true              # long-form chapter lower-thirds
   transitions: true                 # motion transitions only where the script changes beat
   transition_seconds_short: 0.25
   transition_seconds_long: 0.4
   grade: true                       # unified colour look across all stock clips
-  whoosh: true                      # soft whoosh under each transition
   music_db: -20                     # music level under the voice (voice = 0 dB, -14 LUFS)
-  sfx_db: -18
   accent_colour: "&H0000C8FF"       # ASS BGR: warm amber for callouts
   shorts_shot_seconds: 2.4          # fast cuts keep Shorts retention up
   longform_shot_seconds: 4.0         # references cut every ~3.5-4 s

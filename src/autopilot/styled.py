@@ -8,8 +8,8 @@ What we took from the references (Video Editing/References, analysed Nov 2026):
   * When the payoff is a number, it gets bigger ("EOI Price is / ₹6699++").
   * One clean info card per beat-heavy section: white rounded card, amber pill,
     label → value rows (the "PHASE 1 / Contractor / Length / Budget" cards).
-  * A small two-tone wordmark in the corner for the whole video.
-  * Long-form ends on a black card with a gold serif wordmark and a tagline.
+  * Transitions get a warm light-leak sweep.
+  (The corner logo and the animated end card are video layers, see brand.py.)
 
 Everything is rendered as one .ass file and burned in by ffmpeg/libass, so it costs
 almost nothing at render time and needs no extra Python dependencies on the runner.
@@ -39,10 +39,6 @@ def _r() -> dict:
 
 def _amber() -> str:
     return _r().get("sub_accent", "&H001EA5F8&")   # #F8A51E, the reference orange
-
-
-def _gold() -> str:
-    return _r().get("end_card_gold", "&H004AA6D4&")  # #D4A64A
 
 
 # ── text measurement (for line breaking and card layout) ─────
@@ -177,7 +173,8 @@ def _text_pair(layer: int, t0: float, t1: float, x: int, y: int, text: str, *, s
 
 
 # ── components ───────────────────────────────────────────────
-def _subtitles(fmt: Format, words: list[Word], busy: list[tuple[float, float]]) -> list[str]:
+def _subtitles(fmt: Format, words: list[Word], busy: list[tuple[float, float]], limit: float,
+               events: list[tuple[str, float]]) -> list[str]:
     W, H = fmt.width, fmt.height
     size = int(_r().get("sub_size_short" if fmt.is_short else "sub_size_long", 72 if fmt.is_short else 74))
     spacing = -1.0
@@ -191,7 +188,9 @@ def _subtitles(fmt: Format, words: list[Word], busy: list[tuple[float, float]]) 
         t0 = max(ph[0].start - 0.06, 0)
         nxt = phrases[i + 1][0].start if i + 1 < len(phrases) else None
         t1 = (nxt - 0.02) if nxt is not None and nxt - ph[-1].end < 0.7 else ph[-1].end + 0.35
-        t1 = max(t1, t0 + 0.5)
+        t1 = min(max(t1, t0 + 0.5), limit)
+        if t0 >= limit - 0.1:
+            break
         a, b = _split(ph, size, spacing, max_px)
         a, b = _clean(_strip_punct(a)), _clean(_strip_punct(b))
         if not (a or b):
@@ -202,6 +201,8 @@ def _subtitles(fmt: Format, words: list[Word], busy: list[tuple[float, float]]) 
         # big number payoff ("EOI Price is / ₹6699++")
         b_size = int(sz * 1.45) if (b and _NUM.search(b) and len(b.split()) <= 2 and not under_card) else sz
         fit = lambda s, fs: min(1.0, max_px / max(text_width(s, fs, spacing), 1))  # noqa: E731
+        if b_size > sz:
+            events.append(("pop", t0 + 0.07))   # number reveal gets a pop
         if a:
             ya, yb = base_y - lh // 2 - (b_size - sz) // 4, base_y + lh // 2 + (b_size - sz) // 4
             fa = fit(a, sz)
@@ -304,6 +305,25 @@ def _callouts(fmt: Format, callouts: list[tuple[float, str]], start_after: float
     return out
 
 
+def _light_leaks(fmt: Format, times: list[float]) -> list[str]:
+    """Warm light leak sweeping across the frame during a transition (film-style flare)."""
+    W, H = fmt.width, fmt.height
+    out = []
+    for k, t in enumerate(times):
+        rx, ry = W * 0.42, H * 0.75
+        ell = (f"m 0 {-ry:.0f} b {rx * 0.55:.0f} {-ry:.0f} {rx:.0f} {-ry * 0.55:.0f} {rx:.0f} 0 "
+               f"b {rx:.0f} {ry * 0.55:.0f} {rx * 0.55:.0f} {ry:.0f} 0 {ry:.0f} "
+               f"b {-rx * 0.55:.0f} {ry:.0f} {-rx:.0f} {ry * 0.55:.0f} {-rx:.0f} 0 "
+               f"b {-rx:.0f} {-ry * 0.55:.0f} {-rx * 0.55:.0f} {-ry:.0f} 0 {-ry:.0f}")
+        x0, x1 = (-W * 0.15, W * 1.15) if k % 2 == 0 else (W * 1.15, -W * 0.15)
+        y = H * (0.35 if k % 3 else 0.6)
+        for colour, alpha, blur, lag in (("&H003C8CFF&", "&H70&", 140, 0), ("&H00C8E6FF&", "&H90&", 90, 80)):
+            out.append(_dlg(7, t - 0.25, t + 0.45, "Box",
+                            f"{{\\an5\\move({x0:.0f},{y:.0f},{x1:.0f},{y:.0f},{lag},{700 + lag})\\fad(160,260)"
+                            f"\\1c{colour}\\1a{alpha}\\bord0\\shad0\\blur{blur}\\p1}}{ell}{{\\p0}}"))
+    return out
+
+
 def _sections(fmt: Format, marks: list[tuple[float, str]]) -> list[str]:
     W, H = fmt.width, fmt.height
     out = []
@@ -313,41 +333,15 @@ def _sections(fmt: Format, marks: list[tuple[float, str]]) -> list[str]:
     return out
 
 
-def _watermark(fmt: Format, until: float) -> list[str]:
-    W, H = fmt.width, fmt.height
-    size = 34 if fmt.is_short else 30
-    name = cfg()["channel"]["name"].upper().split()
-    first, rest = name[0], " ".join(name[1:])
-    if fmt.is_short:   # top-right is covered by the Shorts player's buttons
-        pos = f"\\an7\\pos(56,{int(H * 0.055)})"
-    else:
-        pos = f"\\an9\\pos({W - 56},44)"
-    txt = f"{{{pos}\\fs{size}\\fsp2\\1a&H20&\\shad1\\4a&HA0&\\1c{WHITE}}}{first} {{\\1c{_amber()}}}{rest}"
-    return [_dlg(5, 0, until, "Mark", txt)]
-
-
-def _end_card(fmt: Format, t0: float, dur: float) -> list[str]:
-    W, H = fmt.width, fmt.height
-    t1 = t0 + dur
-    name = _clean(cfg()["channel"]["name"])
-    tag = _clean(_r().get("end_card_tagline", "Know the money behind the headlines"))
-    serif = _r().get("end_card_font", "DM Serif Display")
-    s = 1.0 if not fmt.is_short else 0.9
-    cy = H // 2
-    return [
-        _dlg(40, t0, t1, "Box", f"{{\\an7\\pos(0,0)\\fad(350,0)\\1c{BLACK}\\p1}}m 0 0 l {W} 0 l {W} {H} l 0 {H}{{\\p0}}"),
-        _dlg(41, t0 + 0.25, t1, "End", f"{{\\an5\\pos({W // 2},{cy - int(18 * s)})\\fn{serif}\\fs{int(124 * s)}"
-                                       f"\\1c{_gold()}\\fad(400,300)\\blur0.6\\fscx94\\fscy94"
-                                       f"\\t(0,900,0.5,\\fscx100\\fscy100)}}{name}"),
-        _dlg(41, t0 + 0.7, t1, "End", f"{{\\an5\\pos({W // 2},{cy + int(70 * s)})\\fn{serif}\\fs{int(34 * s)}"
-                                      f"\\1c&H00B4C8D8&\\fsp1\\fad(400,300)}}{tag}"),
-    ]
-
-
 # ── entry point ──────────────────────────────────────────────
 def build(fmt: Format, out: Path, *, words: list[Word], hook_text: str, callouts: list[tuple[float, str]],
           section_marks: list[tuple[float, str]], cards: list[tuple[float, float, dict]],
-          end_card_at: float | None) -> Path:
+          end_card_at: float | None, leak_times: list[float] | None = None,
+          events: list[tuple[str, float]] | None = None) -> Path:
+    """end_card_at: time the (separately rendered) end card starts; nothing is drawn after it.
+    events: filled with (sfx_kind, time) for text moments that deserve a sound."""
+    events = events if events is not None else []
+    limit = end_card_at if end_card_at is not None else 1e9
     r = _r()
     font = r.get("sub_font", "Poppins")
     if not (ROOT / r.get("sub_font_file", "assets/fonts/Poppins-Bold.ttf")).exists():
@@ -374,20 +368,18 @@ Style: End,{font},120,&H004AA6D4,&H004AA6D4,&H00000000,&H00000000,0,0,0,0,100,10
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines: list[str] = []
+    cards = [(t0, min(t1, limit), c) for t0, t1, c in cards if t0 < limit - 1.5]
     busy = [(t0, t1) for t0, t1, _ in cards]
     for t0, t1, card in cards:
         lines += _card(fmt, t0, t1, card)
     if words:
-        lines += _subtitles(fmt, words, busy)
+        lines += _subtitles(fmt, words, busy, limit, events)
     else:
         lines += _callouts(fmt, callouts, 2.7 if hook_text else 0.0)
     if hook_text:
         lines += _hook(fmt, hook_text)
-    lines += _sections(fmt, section_marks)
-    total_end = end_card_at if end_card_at is not None else (words[-1].end + 5 if words else 3600)
-    if r.get("watermark", True):
-        lines += _watermark(fmt, total_end)
-    if end_card_at is not None:
-        lines += _end_card(fmt, end_card_at, float(r.get("end_card_seconds", 3.0)))
+    lines += _sections(fmt, [m for m in section_marks if m[0] < limit - 3])
+    lines += _light_leaks(fmt, [t for t in (leak_times or []) if t < limit - 0.5])
+    # the corner logo/wordmark and the end card are video layers now (brand.py)
     out.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
     return out

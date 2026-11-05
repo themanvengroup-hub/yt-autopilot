@@ -56,13 +56,14 @@ def _db(x: float) -> float:
     return 10 ** (x / 20)
 
 
-def mix_with_music(voice: Path, dst: Path, sfx_times: list[float] | None = None, tail: float = 0.0) -> Path:
-    """Voice at 0 dB (already -14 LUFS), music ~-20 dB ducking under speech,
-    a soft synthesized whoosh (~-18 dB) on each transition, gentle music fade-out."""
+def mix_with_music(voice: Path, dst: Path, events: list[tuple[float, Path, float]] | None = None,
+                   tail: float = 0.0) -> Path:
+    """Voice at 0 dB (already -14 LUFS), music ~-20 dB ducking under speech, timed sound
+    effects (`events` = [(time, wav, level_db)]), and a music tail under the end card."""
     r = cfg()["render"]
     music = pick_music()
-    sfx_times = [t for t in (sfx_times or []) if t > 0.3]
     total = duration(voice) + tail      # tail = end card: music keeps playing under it
+    events = [e for e in (events or []) if 0 <= e[0] < total]
 
     inputs = ["-i", str(voice)]
     parts = [f"[0:a]aresample=48000,aformat=channel_layouts=mono,apad=whole_dur={total:.3f},asplit=2[v1][v2]"]
@@ -79,17 +80,12 @@ def mix_with_music(voice: Path, dst: Path, sfx_times: list[float] | None = None,
     else:
         log.info("no music in assets/music — voice + sfx only")
         parts.append("[v1]anullsink")
-    if sfx_times:
-        # whoosh = pink noise through a sweeping band, swelled in/out (peaks at the cut)
-        inputs += ["-f", "lavfi", "-i", "anoisesrc=d=0.6:c=pink:a=0.6:r=48000"]
-        vol = _db(float(r.get("sfx_db", -18)))
-        parts.append(f"[{n}:a]highpass=f=250,lowpass=f=5000,afade=t=in:d=0.35:curve=exp,"
-                     f"afade=t=out:st=0.35:d=0.25,volume={vol:.4f},asplit={len(sfx_times)}"
-                     + "".join(f"[w{i}]" for i in range(len(sfx_times))))
-        for i, t in enumerate(sfx_times):
-            ms = max(int((t - 0.2) * 1000), 0)     # swell lands as the transition happens
-            parts.append(f"[w{i}]adelay={ms}|{ms}[d{i}]")
-            mix_labels.append(f"[d{i}]")
+    for t, wav, level in events:
+        inputs += ["-i", str(wav)]
+        ms = max(int(t * 1000), 0)
+        parts.append(f"[{n}:a]aresample=48000,aformat=channel_layouts=mono,volume={_db(level):.4f},"
+                     f"adelay={ms}|{ms}[e{n}]")
+        mix_labels.append(f"[e{n}]")
         n += 1
     parts.append("".join(mix_labels) + f"amix=inputs={len(mix_labels)}:duration=first:normalize=0,"
                  "alimiter=limit=0.95[out]")

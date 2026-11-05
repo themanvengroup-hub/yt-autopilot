@@ -147,7 +147,8 @@ def build_overlay(fmt: Format, out: Path, *, words: list[Word] | None = None, ho
                   callouts: list[tuple[float, str]] | None = None,
                   section_marks: list[tuple[float, str]] | None = None,
                   cards: list[tuple[float, float, dict]] | None = None,
-                  end_card_at: float | None = None) -> Path | None:
+                  end_card_at: float | None = None, leak_times: list[float] | None = None,
+                  events: list[tuple[str, float]] | None = None) -> Path | None:
     """Return an .ass file, or None when there is nothing to draw.
 
     Motion follows the usual kinetic-type rules: elements enter fast with an ease-out
@@ -159,10 +160,11 @@ def build_overlay(fmt: Format, out: Path, *, words: list[Word] | None = None, ho
     r = cfg()["render"]
     if words and r.get("caption_style", "two_tone") == "karaoke":  # legacy karaoke captions
         return build_ass(words, fmt, out, hook_text=hook_text, section_marks=section_marks)
-    if words or cards or end_card_at is not None or r.get("watermark", True):
+    if words or cards or leak_times or hook_text:
         from . import styled  # two-tone subtitles + cards (reference "Citylights" look)
         return styled.build(fmt, out, words=words or [], hook_text=hook_text, callouts=callouts,
-                            section_marks=section_marks, cards=cards or [], end_card_at=end_card_at)
+                            section_marks=section_marks, cards=cards or [], end_card_at=end_card_at,
+                            leak_times=leak_times, events=events)
     if not (hook_text or callouts or section_marks):
         return None
 

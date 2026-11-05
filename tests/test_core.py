@@ -96,4 +96,18 @@ def test_two_tone_overlay_has_subs_card_and_end_card(tmp_path):
     text = out.read_text(encoding="utf-8")
     assert "THE MATH" in text and "₹200" in text
     assert "Zepto" in text and "money doing it" in text      # phrase subtitles, punctuation stripped
-    assert "Know the money" in text                          # end card tagline
+
+
+def test_transition_plan_varies_per_video_and_is_stable():
+    a = render._transition_plan(12, render._seed("2026-11-05-short"))
+    b = render._transition_plan(12, render._seed("2026-11-06-short"))
+    assert a == render._transition_plan(12, render._seed("2026-11-05-short"))
+    assert a[0] != b[0]
+    assert a[0][0] != render.FLASH
+
+
+def test_sfx_pack_generates_variants(tmp_path):
+    from autopilot import sfx
+    pk = sfx.pack(7, tmp_path)
+    w1, w2 = pk.get("whoosh")[0], pk.get("whoosh")[0]
+    assert w1 != w2 and w1.stat().st_size > 10_000 and w2.exists()
