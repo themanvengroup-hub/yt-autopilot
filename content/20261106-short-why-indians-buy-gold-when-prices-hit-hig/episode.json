@@ -1,0 +1,111 @@
+{
+  "id": "20261106-short-why-indians-buy-gold-when-prices-hit-hig",
+  "ref": "S1106",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-06T07:58:50+05:30",
+  "script": {
+    "title": "Why Indians Buy Gold When Prices Hit Highs #shorts",
+    "hook_text": "Gold Demand Up 12% Today?",
+    "segments": [
+      {
+        "text": "Gold prices just hit a two-week high in India.",
+        "broll": "close up gold coins stack",
+        "broll_alt": [
+          "gold bars lighting close up",
+          "shiny gold jewelry macro"
+        ],
+        "callout": "2-WEEK HIGH"
+      },
+      {
+        "text": "Yet, gold demand this festive season is expected to surge by 12%.",
+        "broll": "wide shot crowded street market",
+        "broll_alt": [
+          "indian market store exterior wide",
+          "busy city shopping street"
+        ],
+        "callout": "+12% DEMAND"
+      },
+      {
+        "text": "Why do Indians buy more gold when it gets expensive, instead of less?",
+        "broll": "hands counting Indian currency notes",
+        "broll_alt": [
+          "hand withdrawing money wallet",
+          "person counting paper cash"
+        ]
+      },
+      {
+        "text": "First, festive FOMO kicks in. Buyers worry prices will rise even higher tomorrow.",
+        "broll": "medium shot digital stock screen",
+        "broll_alt": [
+          "financial line chart moving screen",
+          "glowing financial data display"
+        ]
+      },
+      {
+        "text": "Second, jewelers offer heavy discounts on making charges during Dhanteras to lock in volume.",
+        "broll": "close up goldsmith crafting jewelry",
+        "broll_alt": [
+          "jeweler inspecting gold bracelet",
+          "hands polishing shiny gold"
+        ]
+      },
+      {
+        "text": "Remember, buying festival gold isn't financial advice, but a deep cultural habit.",
+        "broll": "aerial view illuminated indian festival",
+        "broll_alt": [
+          "diwali oil lamps night shot",
+          "festive lights city night"
+        ],
+        "callout": "NOT FINANCIAL ADVICE"
+      },
+      {
+        "text": "So every year, regardless of record rates...",
+        "broll": "close up gold necklace box opening",
+        "broll_alt": [
+          "hand placing gold coin display",
+          "luxury jewelry box showcase"
+        ]
+      }
+    ],
+    "loop_line": "...Gold prices just hit a two-week high in India.",
+    "description": "Gold prices hit a two-week high, yet festive demand is set to rise by 12%. Here is the consumer psychology behind why Indians buy more gold during Dhanteras even when prices surge. #PaisaDecoded #Dhanteras #GoldPrices",
+    "tags": [
+      "dhanteras gold buying",
+      "gold prices india",
+      "indian gold market",
+      "gold demand surge",
+      "festive gold buying",
+      "why indians buy gold",
+      "dhanteras 2026",
+      "paisa decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "12% demand surge awaits Indian gold market even as prices hit two-week high",
+        "source_url": "https://m.economictimes.com/industry/cons-products/fashion-/-cosmetics-/-jewellery/dhanteras-2026-a-12-demand-surge-awaits-indian-gold-market-even-as-prices-hit-two-week-high/articleshow/135562417.cms"
+      }
+    ],
+    "chosen_candidate": "today silver price — Dhanteras 2026: A 12% demand surge awaits Indian gold market even as prices hit two-week high",
+    "why_it_will_work": "Gold and festive economics deeply resonate with young Indian consumers right around Dhanteras, tapping into price psychology and viral search interest."
+  },
+  "sources": [
+    {
+      "title": "today silver price — Dhanteras 2026: A 12% demand surge awaits Indian gold market even as prices hit two-week high",
+      "source": "google_trends",
+      "url": "https://m.economictimes.com/industry/cons-products/fashion-/-cosmetics-/-jewellery/dhanteras-2026-a-12-demand-surge-awaits-indian-gold-market-even-as-prices-hit-two-week-high/articleshow/135562417.cms",
+      "signal": "2000+ searches"
+    }
+  ],
+  "telegram_message_ids": [
+    106,
+    107,
+    108
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
