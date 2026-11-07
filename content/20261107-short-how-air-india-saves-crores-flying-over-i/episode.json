@@ -1,0 +1,107 @@
+{
+  "id": "20261107-short-how-air-india-saves-crores-flying-over-i",
+  "ref": "S1107",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-07T07:39:27+05:30",
+  "script": {
+    "title": "How Air India Saves Crores Flying Over Iraq #shorts",
+    "hook_text": "Air India's Iraq Shortcut",
+    "segments": [
+      {
+        "text": "Flying through Iraq is saving Air India crores in jet fuel.",
+        "broll": "airplane flying above clouds golden hour wide",
+        "broll_alt": [
+          "commercial jetliner flying high altitude wide",
+          "passenger airplane cruising above ocean"
+        ],
+        "callout": "CRORES SAVED"
+      },
+      {
+        "text": "Direct flights to New York and Newark are taking this shorter route.",
+        "broll": "flight navigation display cockpit close up",
+        "broll_alt": [
+          "glowing digital world map route lines",
+          "airplane cockpit instruments night shot close up"
+        ]
+      },
+      {
+        "text": "Jet fuel makes up nearly forty percent of an airline's operating expenses.",
+        "broll": "airport tarmac fuel truck aerial shot",
+        "broll_alt": [
+          "jet engine turbine rotating slow motion",
+          "airport runway refueling truck daylight"
+        ],
+        "callout": "40% OF COSTS"
+      },
+      {
+        "text": "By cutting flight time, Air India expects a ten percent drop in fuel burn.",
+        "broll": "pilot hands operating cockpit controls close up",
+        "broll_alt": [
+          "pilot side profile looking out window",
+          "airplane wing flap adjusting mid flight"
+        ],
+        "callout": "10% FUEL SAVINGS"
+      },
+      {
+        "text": "That means saving lakhs of rupees on every single flight, yaar.",
+        "broll": "busy airport terminal passengers walking wide",
+        "broll_alt": [
+          "delhi airport departure hall timelapse",
+          "travelers rolling suitcases inside terminal"
+        ]
+      },
+      {
+        "text": "Will ticket prices get cheaper, or will airlines keep the extra profit?",
+        "broll": "passenger looking out airplane window medium shot",
+        "broll_alt": [
+          "person booking flight on smartphone close up",
+          "airplane landing on runway sunset wide"
+        ]
+      }
+    ],
+    "loop_line": "That is why...",
+    "description": "Air India is using Iraq airspace for direct flights to New York and Newark, aiming for 10% fuel savings. Here is how airline route economics impact flight costs and profitability. #AirIndia #AviationIndia #PaisaDecoded",
+    "tags": [
+      "Air India",
+      "Air India New York flight",
+      "Iraq airspace Air India",
+      "airline fuel cost",
+      "how airlines make money",
+      "aviation economics India",
+      "Air India news",
+      "flight route savings"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Air India starts using Iraq airspace for New York and Newark direct flights, likely expecting 10% fuel savings.",
+        "source_url": "https://www.ptinews.com/story/business/air-india-starts-using-iraq-airspace-for-new-york-newark-direct-flights;-likely-to-see-10-pc-fuel-savings=/4238232"
+      },
+      {
+        "claim": "Jet fuel (Aviation Turbine Fuel) typically accounts for around 30-40% of an airline's total operating costs in India.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "air india us direct flights — Air India starts using Iraq airspace for New York, Newark direct flights; likely to see 10 pc fuel savings",
+    "why_it_will_work": "It taps into everyday curiosity about long-haul international flights while explaining airline unit economics using straightforward numbers."
+  },
+  "sources": [
+    {
+      "title": "air india us direct flights — Air India starts using Iraq airspace for New York, Newark direct flights; likely to see 10 pc fuel savings",
+      "source": "google_trends",
+      "url": "https://www.ptinews.com/story/business/air-india-starts-using-iraq-airspace-for-new-york-newark-direct-flights;-likely-to-see-10-pc-fuel-savings=/4238232",
+      "signal": "100+ searches"
+    }
+  ],
+  "telegram_message_ids": [
+    110,
+    111,
+    112
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
