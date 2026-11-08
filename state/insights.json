@@ -1,11 +1,36 @@
 {
-  "updated": "2026-11-01T10:40:15+05:30",
-  "top": [],
+  "updated": "2026-11-08T10:43:46+05:30",
+  "top": [
+    {
+      "id": "2-OAvKUJyQk",
+      "title": "How Indian Oil Made ₹22,500 Cr Profit in 90 Days #shorts",
+      "views": 335,
+      "avg_view_pct": 46.8,
+      "subs": 0,
+      "minutes": 38
+    },
+    {
+      "id": "iGQfD-Zu9e4",
+      "title": "How Ambani’s Jio Hit a $137B Valuation #shorts",
+      "views": 248,
+      "avg_view_pct": 44.7,
+      "subs": 2,
+      "minutes": 23
+    },
+    {
+      "id": "g0wyQq2IwOw",
+      "title": "How Ambani’s Jio Hit a $137B Valuation #shorts",
+      "views": 51,
+      "avg_view_pct": 36.1,
+      "subs": 1,
+      "minutes": 2
+    }
+  ],
   "bottom": [],
   "stats": {
-    "subscribers": 4,
-    "views": 134,
-    "videos": 3
+    "subscribers": 6,
+    "views": 740,
+    "videos": 12
   },
-  "longform_hours": 0.0
+  "longform_hours": 0.1
 }
