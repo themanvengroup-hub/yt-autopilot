@@ -1,0 +1,116 @@
+{
+  "id": "20261108-short-who-actually-makes-your-coca-cola-shorts",
+  "ref": "S1108",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-08T07:46:07+05:30",
+  "script": {
+    "title": "Who Actually Makes Your Coca-Cola? #shorts",
+    "hook_text": "Coke Doesn't Make Your Drink",
+    "segments": [
+      {
+        "text": "Coca-Cola doesn’t actually make your cold drink.",
+        "broll": "close up soda glass pouring ice",
+        "broll_alt": [
+          "cold drink glass bubbling slow motion",
+          "person drinking soda can close up"
+        ]
+      },
+      {
+        "text": "In India, most Coke, Sprite, and Thums Up come from a bottling company called HCCB.",
+        "broll": "automated factory conveyor bottles moving",
+        "broll_alt": [
+          "bottling plant machinery operating",
+          "rows of beverage bottles factory"
+        ],
+        "callout": "HCCB"
+      },
+      {
+        "text": "The American parent company only sells the secret syrup formula, completely dodging heavy factory and transport costs.",
+        "broll": "laboratory beaker pouring dark liquid",
+        "broll_alt": [
+          "dark syrup dripping slow motion",
+          "chemist testing liquid beaker"
+        ]
+      },
+      {
+        "text": "HCCB does the hard work: purifying water, packing glass bottles, and trucking crates to millions of kirana stores.",
+        "broll": "indian grocery kirana store front",
+        "broll_alt": [
+          "delivery truck driving city highway",
+          "stacking beverage crates warehouse"
+        ],
+        "callout": "MILLIONS OF SHOPS"
+      },
+      {
+        "text": "Now, HCCB is going public, filing papers to sell nearly one hundred crore shares.",
+        "broll": "stock market trading board glowing",
+        "broll_alt": [
+          "businessman reviewing printed financial document",
+          "hands typing on financial terminal"
+        ],
+        "callout": "99.75 CR SHARES"
+      },
+      {
+        "text": "It’s a low-margin game, but owning the chilled fridge space in Indian heat prints serious money.",
+        "broll": "commercial glass door refrigerator supermarket",
+        "broll_alt": [
+          "open refrigerator stocked beverages night",
+          "hands opening drink chiller store"
+        ]
+      },
+      {
+        "text": "Not financial advice, but next time you crack open a chilled bottle, remember...",
+        "broll": "person paying rupee cash market",
+        "broll_alt": [
+          "hands exchanging rupee notes street",
+          "close up holding chilled bottle"
+        ]
+      }
+    ],
+    "loop_line": "Not financial advice, but next time you crack open a chilled bottle, remember...",
+    "description": "Ever wondered why Coca-Cola doesn't manufacture its own soda in India? Here is the secret bottling model behind Hindustan Coca-Cola Beverages (HCCB) and its mega IPO. #business #ipo #money",
+    "tags": [
+      "coca cola india",
+      "hccb ipo",
+      "business model decoded",
+      "paisa decoded",
+      "indian business",
+      "how companies make money",
+      "thums up",
+      "kirana store economics",
+      "stock market news"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Coca-Cola India bottler HCCB has filed for an IPO with 99.75 crore shares up for sale.",
+        "source_url": "https://www.business-standard.com"
+      },
+      {
+        "claim": "Coca-Cola operates via a bottling franchise model selling syrup concentrate while bottlers manage production and distribution.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Coca-Cola's Indian bottling business files for IPO; 99.75 crore shares up for sale - The Times of India",
+    "why_it_will_work": "Every Indian drinks Coke or Thums Up, but almost nobody realizes a separate bottling partner actually manufactures and distributes every single bottle."
+  },
+  "sources": [
+    {
+      "title": "Coca-Cola's Indian bottling business files for IPO; 99.75 crore shares up for sale - The Times of India",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxONFJrX0Q2V2VkbzZHbnE1NHNNc1YyNTdtWjByUkhicGtVeFZaT0hrcVFxY3ZNNmlvTi1nN2lGdmtUajBjSWhxRGVqQ2xDTEZ4SkctMk0yVUd1LW1KWDAyeV8waEhvVjlOYjUyVkZPYm1EdkhFS1FRMzVLV3VNcU1rZXh4bVlYblctcEZKZF91T0Z3bFg3aDY5SmxxMVRYNFFuclVYUF9BM1NzZXhXMnFQNzI5Nk9reWQ2ZGtlUnk2ME8xRDdkM2hGVDNxRnhyT3FmaHVMaWNCVTZLb1JhbTdHMW9RVFAxOUhSaFRmVVp1ZndUZ05aV1R6ZXZR0gH_AUFVX3lxTE1FZ0lmbmRPdHFWa2pyQUJXSVcwQWM3R0hubEQ1VVFEeGtFN2pvc3FwSUVVS3FOVjFmeTZsQ2JCQW5tSTcwOEc5M0tkZUNIZkVJQk85OUpmX0JIYkRjZVJqbDNlc1dxQThHbEdFVUVqSWpWeXRxdXVQd1ZGSkVYZ2lLaWd5d1RmZ0VsY2hBN1M0R3hnX1M5MEpxRjIxRUppUE9JdW1SVFdtMXlrQlV0cHE3eHppdHdweXdyVG9YTkNmNW1yWWJpWm9xM1FMa2JTUEQ0UzhjbVBVTTRUMWZjU0Z5SVNvQ0pJZWR3X0FYOXZhZ0hKVjhWbGltSzdBVEZISQ?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    114,
+    115,
+    116
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
