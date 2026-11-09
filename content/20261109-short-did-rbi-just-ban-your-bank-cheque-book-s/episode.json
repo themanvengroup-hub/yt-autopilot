@@ -1,0 +1,116 @@
+{
+  "id": "20261109-short-did-rbi-just-ban-your-bank-cheque-book-s",
+  "ref": "S1109",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-09T07:56:14+05:30",
+  "script": {
+    "title": "Did RBI Just Ban Your Bank Cheque Book? #shorts",
+    "hook_text": "RBI Banning Cheque Books?",
+    "segments": [
+      {
+        "text": "Is RBI really cancelling your bank cheque book?",
+        "broll": "person holding cheque book pen",
+        "broll_alt": [
+          "bank customer signing cheque",
+          "hand writing check desk"
+        ],
+        "callout": "FAKE NEWS?"
+      },
+      {
+        "text": "Viral posts claim your CTS cheque book becomes totally invalid from January 2027.",
+        "broll": "smartphone glowing green text chat",
+        "broll_alt": [
+          "hand typing smart phone screen",
+          "close up mobile screen scroll"
+        ],
+        "callout": "JAN 2027"
+      },
+      {
+        "text": "Millions of bank customers got worried about losing access to their money.",
+        "broll": "worried man looking phone office",
+        "broll_alt": [
+          "stress indian man bank counter",
+          "aerial busy mumbai street"
+        ]
+      },
+      {
+        "text": "But the Reserve Bank of India just stepped in with a clear response.",
+        "broll": "classic bank building facade",
+        "broll_alt": [
+          "financial institution pillars",
+          "grand architecture building columns"
+        ],
+        "callout": "RBI CLARIFIES"
+      },
+      {
+        "text": "RBI confirmed these claims are fake, and your current cheque book remains completely valid.",
+        "broll": "stamp approved on paper document",
+        "broll_alt": [
+          "official seal document stamp",
+          "hand checking green tick box"
+        ]
+      },
+      {
+        "text": "Cheques still clear huge business payments across India every single day.",
+        "broll": "hands counting rupee bank notes",
+        "broll_alt": [
+          "stacks of rupee cash table",
+          "banker counting paper money"
+        ],
+        "callout": "STILL VALID"
+      },
+      {
+        "text": "So before you panic over viral WhatsApp messages, ask yourself...",
+        "broll": "thinking young man coffee cup",
+        "broll_alt": [
+          "person looking out window thinking",
+          "side profile young man dusk"
+        ]
+      }
+    ],
+    "loop_line": "So before you panic over viral WhatsApp messages, ask yourself... Is RBI really cancelling your bank cheque book?",
+    "description": "Viral rumors claimed that RBI is invalidating cheque books from 2027. Here is the official truth straight from RBI's clarification. Not financial advice. #RBI #BankingIndia #PaisaDecoded",
+    "tags": [
+      "RBI cheque book rules",
+      "RBI clarification fake news",
+      "CTS cheque book invalid",
+      "Indian banking news",
+      "RBI news today",
+      "Reserve Bank of India",
+      "cheque book rule 2027",
+      "Paisa Decoded shorts"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Viral messages claimed CTS cheque books will become invalid from January 1, 2027.",
+        "source_url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPTVRvRDlvODR5S1pmZWJ2S20xdkNIXzlIVi1TbDZHX3N2Q0NwUWZ0emhGeUlKQ1o1dHRaLXd2cERUR1V3WFA2V2Y4b0c4ZVZWYUxYdWxUcDREWjJubWUtUmxsUEFNaGpQQ2FTQngxZlB3YnUzTmFhZUJjcUNmXzJneFlrZTBmcEVSUElybThsQjg0VTc0UENqNEs4TmpJdDM5TkRXQW1pZ3htY3pwcnp6UDYzcEIzb3d6dXZiOTFnZmNwYWt6ZzR2d1FrTWp3TFI2cVdERjR0LWdWb0YzODBaSFNXZWZ4V0NGYnk2MWtiUdIB9AFBVV95cUxQMWxkMG9QeGpQSUtxNmVjWlZXZ05pTVFCOGw4Y2J1ZFNsWm1FVUh4bmIyLWZLNGxrU3lZdEtacV9EWUhLMkVqQWVmRTl3QWtkOFRtU1A5R29NZkU1M3NzT0VoZTJxQWFDaFBSWE9Ya1c4VEVCcmYyN3h1cW9BaDZYd1N5JndjZ3RIUHVINEFxWmZOeDZVV3ZyWW8zYmpNaHA2ZnUyM3pMTmdmTHg2OHRsTVBHOV9vamRHMGd6dE42YXpEOGdlak9Hd1FuQzVKTGViY1pqcDhHTk8xUzZVN2VnZWxxeFpSR3hydTRLYXdET3ZBR2Ro?oc=5"
+      },
+      {
+        "claim": "RBI officially dismissed claims of new cheque book rules as fake.",
+        "source_url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVWItNTFNcElYdGpsN0MyY3Znd051S2VhM1YzSVZuak1udnBCeUVPc29Fc0tiYm1yQkdOcGtHV0o0MUtxMVJDYktFNG1Yb2ZuLVhrVDlCSlBiZ0xYc2JhdVFfOEhnN2NmRXBSN3N2cGk0dzVFWl9ZNHYzaEswb2dSYkJRcy1BWEM0QkxuYzZMYjNLbU5nRXB5cDl0UTE3YUQ3eWRoZlRXd9IBrwFBVV95cUxNZHRCckRjVXZUblZnREdNNmtXU0VaRE43d3QtQXJsX2ZUWHV5bzZOOEZXcE56UC02LTYxRGVnek45Qmh5X2M3c2s3c2dCbE81U0lxSHIyaGZsSGpZbkdrTXl5SVV4eWkya0JsUEJySDY2aUZOQkRtX1dxeldJdDdoeXZtOVh0cGxVZXR0b3dtczRKMWN5ZDFRRUdYSWhLMjZ3N3JlbnJWSWVIb3RNeF93?oc=5"
+      }
+    ],
+    "chosen_candidate": "\"Fake\": RBI Dismisses Claims Of New Cheque Book Rules From January - NDTV",
+    "why_it_will_work": "Debunking viral banking rumors creates instant curiosity and high shares among Indian viewers who worry about their bank accounts."
+  },
+  "sources": [
+    {
+      "title": "\"Fake\": RBI Dismisses Claims Of New Cheque Book Rules From January - NDTV",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVWItNTFNcElYdGpsN0MyY3Znd051S2VhM1YzSVZuak1udnBCeUVPc29Fc0tiYm1yQkdPcGtHV0o0MUtxMVJDYktFNG1Yb2ZuLVhrVDlCSlBiZ0xYc2JhdVFfOEhnN2NmRXBSN3N2cGk0dzVFWl9ZNHYzaEswb2dSYkJRcy1BWEM0QkxuYzZMYjNLbU5nRXB5cDl0UTE3YUQ3eWRoZlRXd9IBrwFBVV95cUxNZHRCckRjVXZUblZnREdNNmtXU0VaRE43d3QtQXJsX2ZUWHV5bzZOOEZXcE56UC02LTYxRGVnek45Qmh5X2M3c2s3c2dCbE81U0lxSHIyaGZsSGpZbkdrTXl5SVV4eWkya0JsUEJySDY2aUZOQkRtX1dxeldJdDdoeXZtOVh0cGxVZXR0b3dtczRKMWN5ZDFRRUdYSWhLMjZ3N3JlbnJWSWVIb3RNeF93?oc=5",
+      "signal": "RBI policy"
+    }
+  ],
+  "telegram_message_ids": [
+    122,
+    123,
+    124
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
