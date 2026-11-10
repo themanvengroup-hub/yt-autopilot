@@ -1,0 +1,107 @@
+{
+  "id": "20261110-short-why-kwality-wall-s-lost-17-cr-despite-44",
+  "ref": "S1110",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-10T07:46:41+05:30",
+  "script": {
+    "title": "Why Kwality Wall's Lost ₹17 Cr Despite 44% Sales #shorts",
+    "hook_text": "Selling More Ice Cream, Losing Crores?",
+    "segments": [
+      {
+        "text": "Kwality Wall's sold 44% more ice cream recently, yet reported a ₹17 crore net loss.",
+        "broll": "hands holding ice cream cone close up",
+        "broll_alt": [
+          "ice cream scoop waffle cone",
+          "ice cream cabinet freezer shop"
+        ],
+        "callout": "44% REVENUE RISE"
+      },
+      {
+        "text": "How does a famous brand sell millions more frozen treats while profits completely melt away?",
+        "broll": "melting ice cream bar slow motion",
+        "broll_alt": [
+          "dripping ice cream cone close up",
+          "person counting Indian rupee notes"
+        ],
+        "callout": "₹17 CR NET LOSS"
+      },
+      {
+        "text": "In India, selling ice cream isn't just milk and sugar; it’s mostly expensive cold-chain logistics.",
+        "broll": "refrigerated truck driving highway aerial",
+        "broll_alt": [
+          "commercial delivery van driving street",
+          "warehouse freezer room door opening"
+        ]
+      },
+      {
+        "text": "Powering thousands of street freezers and paying heavy quick-commerce delivery commissions eats up every single rupee.",
+        "broll": "delivery rider driving scooter night street",
+        "broll_alt": [
+          "hand picking ice cream packet freezer",
+          "street vendor push cart evening aerial"
+        ],
+        "callout": "COLD CHAIN COSTS"
+      },
+      {
+        "text": "Add surging dairy prices into the mix, and massive revenue growth turns directly into deep red numbers.",
+        "broll": "pouring fresh milk pitcher close up",
+        "broll_alt": [
+          "cows eating grass farm morning",
+          "buying ice cream kiosk street"
+        ]
+      },
+      {
+        "text": "Next time you buy a cone over quick commerce, remember this crazy business puzzle of...",
+        "broll": "person eating ice cream cone sunny day",
+        "broll_alt": [
+          "young people eating ice cream park",
+          "delhi street market crowd afternoon"
+        ]
+      }
+    ],
+    "loop_line": "Kwality Wall's selling 44% more ice cream, yet losing ₹17 crore.",
+    "description": "Ever wondered why selling more ice cream leads to deeper losses? Here is the business breakdown of Kwality Wall's revenue jump versus net loss. Not financial advice. #PaisaDecoded #Business #IceCream",
+    "tags": [
+      "kwality walls loss",
+      "kwality walls business model",
+      "ice cream business india",
+      "quick commerce economics",
+      "why companies lose money",
+      "indian business decoded",
+      "cold chain logistics india",
+      "paisa decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Kwality Wall's Q2FY27 revenue rose 44%",
+        "source_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOSFd0aVhWdWlfN2ZYSVdXbUZsanFXZ1ZkWTlkaUkzY1pJYUxYRUJwc0dRb0FCVndGaWx0QlpkOWE0MzFkc1FGUmlNWlpEVDJLVHFHaHFiTDUwd2kxU1JGVGpFMkdpMnl6YXYtNGJvb2lKc2FaNzlmUjlac0hKZkxWZDNFWFFpRGs0XzFIbzRoQkdCWFcyeWhzOHNGTkdCWmwycGh5UW0yaVYtUUJWV2IyYXB6d1B3TDBDbFlhYWFVai1WX1h5NHhHVk9oZ1RZRy1Demtqd0I1S25EaXprdkc2a0RB0gHnAUFVX3lxTE1ORmk3UU5Lc3l0Qk9YLVBSR21HNmozbG1Zcm4xX3FWX2hUUHlWWEFnQUZmUFRwd3QxTm5BZUZhUVFXbWtvUnZrSFhScm5WdnVKWU1idTM2X3FpSUJFR0p0NnFZZUxuMlp2Y1N2WTM0eGk1SGZYaFVXY3d5QjM4Z1RtOTZZUW1rRUFEOEtnNEUzQVd2T3BkeGZJdG0wOW5LZk5qWC1URjNJeHNnWjhaWDhuTUJzcFkxWUJQeTRNV1I5OEtmUEFaWFVnX3lsYThIT1doVDJLUGhkLVZsVzJVUFZiSzRkdnpKbw?oc=5"
+      },
+      {
+        "claim": "Kwality Wall's reported a net loss of ₹17 crore in Q2FY27",
+        "source_url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOSFd0aVhWdWlfN2ZYSVdXbUZsanFXZ1ZkWTlkaUkzY1pJYUxYRUJwc0dRb0FCVndGaWx0QlpkOWE0MzFkc1FGUmlNWlpEVDJLVHFHaHFiTDUwd2kxU1JGVGpFMkdpMnl6YXYtNGJvb2lKc2FaNzlmUjlac0hKZkxWZDNFWFFpRGs0XzFIbzRoQkdCWFcyeWhzOHNGTkdCWmwycGh5UW0yaVYtUUJWV2IyYXB6d1B3TDBDbFlhYWFVai1WX1h5NHhHVk9oZ1RZRy1Demtqd0I1S25EaXprdkc2a0RB0gHnAUFVX3lxTE1ORmk3UU5Lc3l0Qk9YLVBSR21HNmozbG1Zcm4xX3FWX2hUUHlWWEFnQUZmUFRwd3QxTm5BZUZhUVFXbWtvUnZrSFhScm5WdnVKWU1idTM2X3FpSUJFR0p0NnFZZUxuMlp2Y1N2WTM0eGk1SGZYaFVXY3d5QjM4Z1RtOTZZUW1rRUFEOEtnNEUzQVd2T3BkeGZJdG0wOW5LZk5qWC1URjNJeHNnWjhaWDhuTUJzcFkxWUJQeTRNV1I5OEtmUEFaWFVnX3lsYThIT1doVDJLUGhkLVZsVzJVUFZiSzRkdnpKbw?oc=5"
+      }
+    ],
+    "chosen_candidate": "Kwality Wall's Q2FY27 result: Revenue rises 44%, net loss at ₹17 crore - Business Standard",
+    "why_it_will_work": "It presents a classic financial paradox (higher sales leading to deeper losses) for a household Indian brand, triggering immediate curiosity and strong audience engagement."
+  },
+  "sources": [
+    {
+      "title": "Kwality Wall's Q2FY27 result: Revenue rises 44%, net loss at ₹17 crore - Business Standard",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOSFd0aVhWdWlfN2ZYSVdXbUZsanFXZ1ZkWTlkaUkzY1pJYUxYRUJwc0dRb0FCVndGaWx0QlpkOWE0MzFkc1FGUmlNWlpEVDJLVHFHaHFiTDUwd2kxU1JGVGpFMkdpMnl6YXYtNGJvb2lKc2FaNzlmUjlac0hKZkxWZDNFWFFpRGs0XzFIbzRoQkdCWFcyeWhzOHNGTkdCWmwycGh5UW0yaVYtUUJWV2IyYXB6d1B3TDBDbFlhYWFVai1WX1h5NHhHVk9oZ1RZRy1Demtqd0I1S25EaXprdkc2a0RB0gHnAUFVX3lxTE1ORmk3UU5Lc3l0Qk9YLVBSR21HNmozbG1Zcm4xX3FWX2hUUHlWWEFnQUZmUFRwd3QxTm5BZUZhUVFXbWtvUnZrSFhScm5WdnVKWU1idTM2X3FpSUJFR0p0NnFZZUxuMlp2Y1N2WTM0eGk1SGZYaFVXY3d5QjM4Z1RtOTZZUW1rRUFEOEtnNEUzQVd2T3BkeGZJdG0wOW5LZk5qWC1URjNJeHNnWjhaWDhuTUJzcFkxWUJQeTRNV1I5OEtmUEFaWFVnX3lsYThIT1doVDJLUGhkLVZsVzJVUFZiSzRkdnpKbw?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    126,
+    127,
+    128
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
