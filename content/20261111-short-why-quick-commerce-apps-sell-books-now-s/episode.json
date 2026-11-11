@@ -1,0 +1,116 @@
+{
+  "id": "20261111-short-why-quick-commerce-apps-sell-books-now-s",
+  "ref": "S1111",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-11T07:46:32+05:30",
+  "script": {
+    "title": "Why Quick Commerce Apps Sell Books Now #shorts",
+    "hook_text": "Why Blinkit Sells Books Now?",
+    "segments": [
+      {
+        "text": "Why is Blinkit delivering books and slippers in ten minutes?",
+        "broll": "delivery scooter driving fast street",
+        "broll_alt": [
+          "courier rider city night",
+          "motorcycle delivering package road"
+        ],
+        "callout": "10 MINUTES"
+      },
+      {
+        "text": "Delivering a fifty rupee milk packet earns apps barely two rupees.",
+        "broll": "hand holding milk packet close up",
+        "broll_alt": [
+          "grocery items supermarket shelf",
+          "glass bottle milk pouring"
+        ],
+        "callout": "₹2 PROFIT"
+      },
+      {
+        "text": "That does not even cover the delivery rider's fuel paisa.",
+        "broll": "gas station fuel pump nozzle filling",
+        "broll_alt": [
+          "motorcycle fuel tank fill up",
+          "delhi traffic jam aerial"
+        ]
+      },
+      {
+        "text": "So quick commerce platforms are adding books, electronics, and footwear.",
+        "broll": "person turning book pages close up",
+        "broll_alt": [
+          "reading hardcover book table",
+          "modern bookstore library shelves"
+        ]
+      },
+      {
+        "text": "These categories bring up to thirty percent margins instead of five percent.",
+        "broll": "hands counting indian rupee notes",
+        "broll_alt": [
+          "cash register opening money",
+          "calculator on financial documents"
+        ],
+        "callout": "30% MARGIN"
+      },
+      {
+        "text": "It turns a tiny two hundred rupee order into an eight hundred rupee checkout.",
+        "broll": "credit card swiping payment terminal",
+        "broll_alt": [
+          "mobile phone scan upi code",
+          "shopping bag handed over counter"
+        ],
+        "callout": "₹800 ORDER"
+      },
+      {
+        "text": "And that high margin strategy is the main reason...",
+        "broll": "delhi city skyline dusk aerial",
+        "broll_alt": [
+          "mumbai highway traffic night aerial",
+          "busy indian street market day"
+        ]
+      }
+    ],
+    "loop_line": "And that high margin strategy is the main reason...",
+    "description": "Ever wondered why Blinkit and Instamart sell books and footwear along with milk? Here is the economics behind quick commerce moving beyond groceries. #PaisaDecoded #QuickCommerce #BusinessStrategy",
+    "tags": [
+      "Blinkit book delivery",
+      "Quick commerce economics",
+      "Zepto business model",
+      "Swiggy Instamart profit",
+      "Indian startups",
+      "Quick commerce margins",
+      "Paisa Decoded",
+      "Business news India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Blinkit and quick commerce platforms entered book retail delivering books in 10 minutes.",
+        "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT0tYa0Y3Wk5yaUVhZDFpQ0NXQTlKM05yWExKV0JaQlV6ZkIzUDBCY3JjNU5zcjNrRnc0NUJkcGtvWWtVMEMzOHkzc0VzNnFPRjFvMENnejc1cDJ3TWJLYUoxOHJnMndCbmVtSlQ4RWtPY3VJR3dXQWliMEFFLTY5VFlWRnhhNTNmSmpxaFNVQ1FrUzUxbnUwMmR3VHFmVC16QmRHMXVUMmVNTmoxTzAtc2p2QUFqdmfSAbwBQVVfeXFMTVZYeGQ2NXJ5UDE1MUxUTURLREFyaU9fNFRUOVlsa2xGa0t2bFU5Sl9UWC00Mi16M01Yc3g4RXI2aXYycFhyQWpZNmw2bGlGdmFMSUY1dVBTTLWZa2hpUWNlWndhM241Yk1iRHFRNlR6WHFDR2NjRUoyNUh5dldBaGFNSXJfeHdOOUY4RERGbkNxR21Fak9KVWZENkpkNWY4TXVSRm5JeXR1aDhXSWVKTjZDdzFKUGhjaG5RZ3U?oc=5"
+      },
+      {
+        "claim": "Grocery deliver margins are 3-5% while lifestyle and book categories offer 20-30% margins.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Sonia Gandhi Memoir on Blinkit: Quick-Commerce Enters Book Retail - Rediff MoneyWiz",
+    "why_it_will_work": "It directly explains a weird consumer trend everyone is noticing in India right now using simple order economics and margins."
+  },
+  "sources": [
+    {
+      "title": "Sonia Gandhi Memoir on Blinkit: Quick-Commerce Enters Book Retail - Rediff MoneyWiz",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQT0tYa0Y3Wk5yaUVhZDFpQ0NXQTlKM05yWExKV0JaQlV6ZkIzUDBCY3JjNU5zcjNrRnc0NUJkcGtvWWtVMEMzOHkzc0VzNnFPRjFvMENnejc1cDJ3TWJLYUoxOHJnMndCbmVtSlQ4RWtPY3VJR3dXQWliMEFFLTY5VFlWRnhhNTNmSmpxaFNVQ1FrUzUxbnUwMmR3VHFmVC16QmRHMXVUMmVNTmoxTzAtc2p2QUFqdmfSAbwBQVVfeXFMTVZYeGQ2NXJ5UDE1MUxUTURLREFyaU9fNFRUOVlsa2xGa0t2bFU5Sl9UWC00Mi16M01Yc3g4RXI2aXYycFhyQWpZNmw2bGlGdmFMSUY1dVBTTFdZa2hpUWNlWndhM241Yk1iRHFRNlR6WHFDR2NjRUoyNUh5dldBaGFNSXJfeHdOOUY4RERGbkNxR21Fak9KVWVENkpkNWY4TXVSRm5JeXR1aDhXSWVKTjZDdzFKUGhjaG5RZ3U?oc=5",
+      "signal": "quick commerce India"
+    }
+  ],
+  "telegram_message_ids": [
+    133,
+    134,
+    135
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
