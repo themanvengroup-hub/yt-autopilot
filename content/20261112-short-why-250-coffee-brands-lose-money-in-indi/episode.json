@@ -1,0 +1,112 @@
+{
+  "id": "20261112-short-why-250-coffee-brands-lose-money-in-indi",
+  "ref": "S1112",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-12T07:54:15+05:30",
+  "script": {
+    "title": "Why ₹250 Coffee Brands Lose Money in India #shorts",
+    "hook_text": "Why ₹250 Coffee Loses Money",
+    "segments": [
+      {
+        "text": "Blue Tokai's losses jumped 54% despite charging ₹250 per cup.",
+        "broll": "close up pouring espresso shot into glass cup",
+        "broll_alt": [
+          "steaming coffee cup on wooden table",
+          "barista preparing cappuccino in cafe"
+        ],
+        "callout": "54% LOSS RISE"
+      },
+      {
+        "text": "Wait, isn't specialty coffee in India printing pure profit right now?",
+        "broll": "wide shot modern aesthetic cafe interior empty tables",
+        "broll_alt": [
+          "people sitting in modern coffee shop aerial",
+          "young professionals chatting in cafe"
+        ]
+      },
+      {
+        "text": "Blue Tokai saw strong revenue growth as young Indians embraced artisanal coffee.",
+        "broll": "hands roasting coffee beans in machine close up",
+        "broll_alt": [
+          "coffee beans falling into sack slow motion",
+          "barista holding fresh roasted coffee beans"
+        ]
+      },
+      {
+        "text": "So why the loss? Opening dozens of new cafes eats huge upfront capital.",
+        "broll": "aerial view bengaluru commercial street night",
+        "broll_alt": [
+          "mumbai luxury shopping street traffic",
+          "delhi high end mall street view"
+        ],
+        "callout": "EXPANSION TRAP"
+      },
+      {
+        "text": "Prime metro rent, imported espresso machines, and skilled baristas quickly drain margins.",
+        "broll": "close up shining metal espresso machine steam nozzle",
+        "broll_alt": [
+          "barista wiping stainless steel cafe counter",
+          "cashier operating touch screen bill counter"
+        ]
+      },
+      {
+        "text": "In coffee, rapid expansion burns cash today to secure market dominance tomorrow.",
+        "broll": "wide shot bustling city sidewalk evening lights",
+        "broll_alt": [
+          "modern coffee shop storefront evening wide",
+          "aerial view city financial district night"
+        ]
+      },
+      {
+        "text": "Which explains the crazy mystery of...",
+        "broll": "close up person holding takeaway paper coffee cup",
+        "broll_alt": [
+          "hand placing rupee note on wooden table",
+          "person taking sip of iced latte"
+        ]
+      }
+    ],
+    "loop_line": "...why Blue Tokai's losses jumped 54% despite charging ₹250 per cup.",
+    "description": "Ever wondered why fancy coffee cafes burn cash even when lattes cost ₹250? We break down the unit economics behind Blue Tokai's growing revenue and expanding losses. Educational breakdown only. #BlueTokai #IndianStartups #BusinessDecoded",
+    "tags": [
+      "Blue Tokai",
+      "Blue Tokai coffee",
+      "Indian coffee business",
+      "startup economics",
+      "why startups lose money",
+      "Paisa Decoded",
+      "cafe business model India",
+      "D2C brands India",
+      "coffee startup funding",
+      "Indian business breakdown"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Blue Tokai revenue grew but FY26 losses rose 54%",
+        "source_url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPS0NNM19sQWFWN0pnNUZINDJjS0lqY0wxbVhVOGI4NnFuajY1R0VOVEJHMFdncW04bURrUnRBYklxLXFZVWVxVUI2LWFHMlp1RG1TZVc2YXdwclUwODFUVzFWVkNINUZOZ1YyOE1sN0ZVWVVNelpqbzZkZUJOYVMydktTaTJwai1vZm1LbjZWR19XZC1BZ245cXdCQUZYMFZlMlZQQkQtU0N1V2N6MVhvVDFEWFNWMEE"
+      }
+    ],
+    "chosen_candidate": "Blue Tokai Reports Strong Revenue Growth in FY26; Losses Rise 54% - Entrepreneur India",
+    "why_it_will_work": "Target audience buys ₹250 lattes daily, making the paradox of high prices combined with rising company losses an instant curiosity gap."
+  },
+  "sources": [
+    {
+      "title": "Blue Tokai Reports Strong Revenue Growth in FY26; Losses Rise 54% - Entrepreneur India",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPS0NNM19sQWFWN0pnNUZINDJjS0lqY0wxbVhVOGI4NnFuajY1R0VOVEJHMFdncW04bURrUnRBYklxLXFZVWVxVUI2LWFHMlp1RG1TZVc2YXdwclUwODFUVzFWVkNINUZOZ1YyOE1sN0ZVWVVNelpqbzZkZUJOYVMydktTaTJwai1vZm1LbjZWR19XZC1BZ245cXdCQUZYMFZlMlZQQkQtU0N1V2N6MVhvVDFEWFNWMEE?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    137,
+    138,
+    139
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
