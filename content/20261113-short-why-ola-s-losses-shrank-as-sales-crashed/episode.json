@@ -1,0 +1,105 @@
+{
+  "id": "20261113-short-why-ola-s-losses-shrank-as-sales-crashed",
+  "ref": "S1113",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-13T07:48:46+05:30",
+  "script": {
+    "title": "Why Ola’s Losses Shrank As Sales Crashed #shorts",
+    "hook_text": "Ola Sales Down 41%?",
+    "segments": [
+      {
+        "text": "Ola Electric’s revenue crashed by 41%, but surprisingly, their net loss shrank by 13%.",
+        "broll": "electric scooter charging station",
+        "broll_alt": [
+          "scooter riding on city street",
+          "person plugging charging cable vehicle"
+        ],
+        "callout": "41% REVENUE DROP"
+      },
+      {
+        "text": "Sounds crazy, right? How does a brand burn less paisa when sales drop?",
+        "broll": "man drinking chai street stall",
+        "broll_alt": [
+          "thinking man looking at laptop",
+          "hands calculating on notebook"
+        ]
+      },
+      {
+        "text": "First, government subsidies were reduced, forcing EV makers to stop offering insane discounts.",
+        "broll": "hands counting rupee bank notes",
+        "broll_alt": [
+          "calculator on financial paper",
+          "indian rupee cash bills"
+        ],
+        "callout": "NO MORE DISCOUNTS"
+      },
+      {
+        "text": "Second, Ola aggressively cut marketing spending and tightened factory expenses to save every rupee.",
+        "broll": "robotic arm welding factory floor",
+        "broll_alt": [
+          "manufacturing plant worker machinery",
+          "empty corporate office corridor"
+        ]
+      },
+      {
+        "text": "So even with fewer buyers, they stopped losing heavy cash on every scooter sold.",
+        "broll": "row of parked scooters street",
+        "broll_alt": [
+          "motorcycle parking lot outdoor",
+          "urban street motorcycle traffic"
+        ],
+        "callout": "13% LESS LOSS"
+      },
+      {
+        "text": "In India's tough EV race, it leads to one strange question:",
+        "broll": "traffic timelapse night city aerial",
+        "broll_alt": [
+          "delhi street highway traffic sunset",
+          "city street night lights"
+        ]
+      }
+    ],
+    "loop_line": "In India's tough EV race, it leads to one strange question:",
+    "description": "Ola Electric reported a 41% drop in revenue, yet managed to narrow its net loss by 13%. Here is the business breakdown of how cutting subsidies and operational costs altered their EV unit economics in India. #OlaElectric #BusinessDecoded #PaisaDecoded",
+    "tags": [
+      "ola electric",
+      "ola electric losses",
+      "ev market india",
+      "ola scooter sales",
+      "indian business breakdown",
+      "paisa decoded",
+      "ev subsidies india",
+      "ola revenue crash",
+      "business strategy india",
+      "startup news india"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Ola Electric loss narrowed 13% while revenue fell 41%",
+        "source_url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNV3lDQjBVazcyX2ptcnRJZ3JMZWJPWUgxci1Cekw1T1BGRktmLUNlaGNXc093OEVOQXpBODhtWExwaDFoZmYzeVJDQ1k2RWJVd3RnNk84SWlBTWtVR2pJTWxQZVpJZ0JqRjdmaFNOS0RPSlllbWxoajdDekN5T2dyTTU2bDNBRlMxSFlvaGpWN2pxRFhUeFlFbkFFcEhrbmtUZTJoZk4xcU9UTEZ2anhhZExUd0QzYmFyM2dwaVctZGVGRW5iVU5BVFdWQWwtcC0t0gHQAUFVX3lxTE1XeUNCMBVrNzJfam1ydElnckxlYk9ZSDFyLUJ6TDVPUEZGS2YtQ2VoY1dzT3c4RU5TekE4OG1YTHBoMWhmZjN5UkNDWTZFYlV3dGc2TzhJaUFNa1VHaklNbFBlWklnQmpGN2ZoU05LRE9KWWVtbGhqN0N6Q3lOZ3JNNTZsM0FGUzFIWW9oalY3anFEWFR4WUVuQUVwSGtua1RlMmhmTjFxT1RMRnZqeGFkTFR3RDNiYXIzZ3BpVy1kZUZFbmJVTkFUV1ZBbC1wLS0?oc=5"
+      }
+    ],
+    "chosen_candidate": "Ola Electric loss narrows 13%, revenue falls 41% - The Times of India",
+    "why_it_will_work": "High viewer interest in EV scooters and Ola's recent financial results creates instant curiosity around how crashing sales led to smaller losses."
+  },
+  "sources": [
+    {
+      "title": "Ola Electric loss narrows 13%, revenue falls 41% - The Times of India",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNV3lDQjBVazcyX2ptcnRJZ3JMZWJPWUgxci1Cekw1T1BGRktmLUNlaGNXc093OEVOQXpBODhtWExwaDFoZmYzeVJDQ1k2RWJVd3RnNk84SWlBTWtVR2pJTWxQZVpJZ0JqRjdmaFNOS0RPSlllbWxoajdDekN5T2dyTTU2bDNBRlMxSFlvaGpWN2pxRFhUeFlFbkFFcEhrbmtUZTJoZk4xcU9UTEZ2anhhZExUd0QzYmFyM2dwaVctZGVGRW5iVU5BVFdWQWwtcC0t0gHQAUFVX3lxTE1XeUNCMFVrNzJfam1ydElnckxlYk9ZSDFyLUJ6TDVPUEZGS2YtQ2VoY1dzT3c4RU5BekE4OG1YTHBoMWhmZjN5UkNDWTZFYlV3dGc2TzhJaUFNa1VHaklNbFBlWklnQmpGN2ZoU05LRE9KWWVtbGhqN0N6Q3lPZ3JNNTZsM0FGUzFIWW9oalY3anFEWFR4WUVuQUVwSGtua1RlMmhmTjFxT1RMRnZqeGFkTFR3RDNiYXIzZ3BpVy1kZUZFbmJVTkFUV1ZBbC1wLS0?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    144,
+    145,
+    146
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
