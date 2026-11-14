@@ -1,0 +1,109 @@
+{
+  "id": "20261114-short-why-tata-motors-lost-5-531-crore-shorts",
+  "ref": "S1114",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-14T07:46:23+05:30",
+  "script": {
+    "title": "Why Tata Motors Lost ₹5,531 Crore #shorts",
+    "hook_text": "Tata's ₹5,531 Cr Loss Secret",
+    "segments": [
+      {
+        "text": "Tata sold more cars, yet lost 5,500 crore rupees. Revenue jumped 34%, but profits completely vanished.",
+        "broll": "traffic jam cars aerial",
+        "broll_alt": [
+          "highway traffic timelapse",
+          "cars on road overhead"
+        ],
+        "callout": "₹5,531 CR LOSS"
+      },
+      {
+        "text": "Every Indian road is packed with Nexons and Punches. So where did all that customer cash go?",
+        "broll": "mumbai street traffic cars",
+        "broll_alt": [
+          "busy city road cars",
+          "delhi traffic intersection wide"
+        ]
+      },
+      {
+        "text": "First, the brutal EV price war. Tata rolled out heavy discounts to protect its market share from aggressive rivals.",
+        "broll": "charging electric car cable",
+        "broll_alt": [
+          "electric vehicle charging plug",
+          "car dashboard display interior"
+        ],
+        "callout": "PRICE WAR"
+      },
+      {
+        "text": "Second, gigantic investments into next-generation battery platforms and factory tooling crushed their quarterly margins.",
+        "broll": "robotic arm car factory",
+        "broll_alt": [
+          "automobile factory assembly line",
+          "welding car frame workshop"
+        ]
+      },
+      {
+        "text": "In the auto industry, selling more metal at deep discounts turns surging revenue into red ink.",
+        "broll": "hands counting rupee notes",
+        "broll_alt": [
+          "calculator and cash desk",
+          "hands exchanging cash bill"
+        ],
+        "callout": "MARGIN CRUSH"
+      },
+      {
+        "text": "Showrooms were packed, but discounts burned the bottom line. That is the exact reason why...",
+        "broll": "car showroom glass exterior",
+        "broll_alt": [
+          "new cars parked lot",
+          "modern automobile dealership evening"
+        ]
+      }
+    ],
+    "loop_line": "That is the exact reason why...",
+    "description": "Tata's passenger vehicle sales jumped 34%, yet the unit reported a ₹5,531 crore loss. Here is how aggressive EV price cuts and heavy plant investments flipped their margins upside down. Educational breakdown, not financial advice. #TataMotors #IndianBusiness #PaisaDecoded",
+    "tags": [
+      "Tata Motors",
+      "Tata Motors loss",
+      "Tata EV",
+      "Indian auto industry",
+      "business decoded",
+      "Paisa Decoded",
+      "Tata Nexon",
+      "stock market India",
+      "car business",
+      "automotive economics"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Tata Motors Passenger Vehicles swung to a ₹5,531 crore Q2 loss despite 34% revenue growth",
+        "source_url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNLTNuQVc5WTBCY0lWZnQ5MDFvdDBsR0NhczlrUlg4M1VWLUlfMDFOYnpQZFEtVmhsWlVKRjBJYlNCXzdUNi1QU0ZKa0pxVFBuTE4wdVgzUTJTUnh4cTdTV0lSbUFGSE05TEdrMS14Wm1QZlU2X2cwN1ZtUGdkNl8wQ1NEeUZHWXAyc3NzNG5VUjR2QkJjUW1sRXdUMDJvcHFwbWFlX2R1M2tha2VQc1k2Y0I0QUxUajBYYUNPeTJGYjBWZl93enNJ?oc=5"
+      },
+      {
+        "claim": "Aggressive EV discounting and capital expenditure on tooling/platforms squeeze automotive operating margins",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Tata Motors Passenger Vehicles Swings to ₹5,531 Crore Q2 Loss Despite 34% Revenue Growth - India Business Trade",
+    "why_it_will_work": "Tata cars are visible on every Indian street, making a shocking ₹5,531 crore loss on 34% sales growth an irresistible curiosity gap."
+  },
+  "sources": [
+    {
+      "title": "Tata Motors Passenger Vehicles Swings to ₹5,531 Crore Q2 Loss Despite 34% Revenue Growth - India Business Trade",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNLTNuQVc5WTBCY0lWZnQ5MDFvdDBsR0NhczlrUlg4M1VWLUlfMDFOYnpQZFEtVmhsWlVKRjBJYlNCXzdUNi1QU0ZKa0pxVFBuTE4wdVgzUTJTUnh4cTdTV0lSbUFGSE05TEdrMS14Wm1QZlU2X2cwN1ZtUGdkNl8wQ1NEeUZHWXAyc3NzNG5VUjR2QkJjUW1sRXdUMDJvcHFwbWFlX2R1M2tha2VQc1k2Y0I0QUxUajBYYUNPeTJGYjBWZl93enNJ?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    148,
+    149,
+    150
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
