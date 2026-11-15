@@ -1,0 +1,100 @@
+{
+  "id": "20261115-short-why-popcorn-costs-500-at-the-movies-shor",
+  "ref": "S1115",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-15T07:50:15+05:30",
+  "script": {
+    "title": "Why Popcorn Costs ₹500 at the Movies #shorts",
+    "hook_text": "Why ₹500 Cinema Popcorn?",
+    "segments": [
+      {
+        "text": "Why does popcorn cost ₹500 when your ticket is ₹200?",
+        "broll": "cinema ticket counter line",
+        "broll_alt": [
+          "crowded movie theater lobby",
+          "hand holding cinema ticket"
+        ],
+        "callout": "₹500 VS ₹200"
+      },
+      {
+        "text": "Movie tickets look cheap, but theatres keep less than half that money.",
+        "broll": "movie projector light beam",
+        "broll_alt": [
+          "cinema screen glowing dark",
+          "projector lens close up"
+        ],
+        "callout": "< 50% KEPT"
+      },
+      {
+        "text": "Up to 50% goes directly to movie producers and distributors.",
+        "broll": "shopping mall interior wide",
+        "broll_alt": [
+          "escalator in modern mall",
+          "air conditioner fan roof"
+        ]
+      },
+      {
+        "text": "Add heavy mall rents and cooling costs, and ticket profits vanish.",
+        "broll": "fresh popcorn machine scooping",
+        "broll_alt": [
+          "butter popcorn box closeup",
+          "multiplex food counter"
+        ]
+      },
+      {
+        "text": "That is where food comes in, with popcorn yielding 75% gross margins.",
+        "broll": "hands holding popcorn bucket",
+        "broll_alt": [
+          "cinema seats row red",
+          "people watching cinema screen"
+        ],
+        "callout": "75% MARGIN"
+      },
+      {
+        "text": "You aren't buying corn; you are keeping the cinema lights on.",
+        "broll": "empty cinema auditorium lights",
+        "broll_alt": [
+          "audience watching movie dark",
+          "multiplex lobby interior"
+        ]
+      }
+    ],
+    "loop_line": "And that explains the ultimate movie mystery...",
+    "description": "Ever wondered why popcorn costs more than your cinema ticket in India? Here is the hidden business model behind multiplexes like PVR Inox and how food keeps movie screens running. Not financial advice. #pvr #business #money",
+    "tags": [
+      "pvr popcorn price",
+      "multiplex economics india",
+      "why popcorn is expensive",
+      "pvr inox business model",
+      "cinema box office split",
+      "indian business decoded",
+      "paisa decoded",
+      "movie theater business"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Multiplexes share roughly 50% of ticket revenue with film distributors in the first week.",
+        "source_url": "common knowledge"
+      },
+      {
+        "claim": "Food & Beverage (F&B) gross margins in Indian cinema chains average around 70-75%.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Evergreen topic: Why Cinema Popcorn Costs ₹500 in India (Selected because trending candidates were non-business sports news).",
+    "why_it_will_work": "Every young Indian moviegoer complains about expensive cinema snacks, making the breakdown of distributor splits vs F&B margins instantly relatable and shareable."
+  },
+  "sources": [],
+  "telegram_message_ids": [
+    152,
+    153,
+    154
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
