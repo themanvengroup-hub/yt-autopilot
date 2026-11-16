@@ -1,0 +1,107 @@
+{
+  "id": "20261116-short-why-your-loan-emi-won-t-drop-soon-shorts",
+  "ref": "S1116",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-16T07:58:56+05:30",
+  "script": {
+    "title": "Why Your Loan EMI Won’t Drop Soon #shorts",
+    "hook_text": "YOUR EMI IS NOT DROPPING",
+    "segments": [
+      {
+        "text": "Your home loan EMI is not dropping anytime soon.",
+        "broll": "modern apartment building exterior wide",
+        "broll_alt": [
+          "suburban residential houses wide",
+          "hands reviewing bank loan documents"
+        ]
+      },
+      {
+        "text": "Millions of borrowers were betting the Reserve Bank would finally cut interest rates this season.",
+        "broll": "hands using calculator close up",
+        "broll_alt": [
+          "young man checking smartphone screen",
+          "indian bank entrance wide shot"
+        ]
+      },
+      {
+        "text": "Instead, retail inflation just punched straight through the danger mark of six point two percent.",
+        "broll": "indian vegetable market stall wide",
+        "broll_alt": [
+          "fresh red tomatoes wooden crate",
+          "delhi street market crowd"
+        ],
+        "callout": "6.2%"
+      },
+      {
+        "text": "By law, the central bank must keep consumer inflation anchored around four percent.",
+        "broll": "hands counting indian rupee notes",
+        "broll_alt": [
+          "rupee currency notes slow motion",
+          "bank vault metal door close up"
+        ],
+        "callout": "4% TARGET"
+      },
+      {
+        "text": "Cutting rates right now pumps more easy cash into the economy, making your daily chai and sabzi even costlier.",
+        "broll": "boiling indian street chai close up",
+        "broll_alt": [
+          "supermarket grocery aisle medium shot",
+          "street food vendor cooking night"
+        ]
+      },
+      {
+        "text": "So until grocery bills chill out, banks will not shave a single rupee off your monthly payment.",
+        "broll": "mumbai traffic night aerial timelapse",
+        "broll_alt": [
+          "urban commuter train evening wide",
+          "office worker sitting at desk night"
+        ],
+        "callout": "₹0 RELIEF"
+      }
+    ],
+    "loop_line": "And as long as inflation stays hot...",
+    "description": "Hoping for an RBI interest rate cut to lower your home loan EMI? With retail inflation breaching the 6% upper limit, the central bank has hit pause on rate cuts. Educational breakdown only. Not financial advice. #personalfinance #inflation #homeloan",
+    "tags": [
+      "rbi repo rate",
+      "home loan emi",
+      "rbi interest rates",
+      "inflation india",
+      "personal finance india",
+      "cpi inflation",
+      "interest rate cut",
+      "paisa decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "India's retail inflation breached 6%, straining the RBI's easing cycle.",
+        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSDA0QzlmbW0xZm9KdDhYeDZObEkxckdoRjFyNjNCemNoMmtUZEFIZWZqWDV2TXZsWFNGc0YzUGVzWXBjekxfTkVvZHB4SlZxMDBPTl9XQ2hjNDh4SWFqRzdnMW80aFo1MjFTMGxsT04xNk5FOGpVZ01HQTN6bEZ2YjlfQTNhWTF0Z2U0bVZiT1gwOV9RN09ReERfTkw1SlA5V2E0SWhnajluY2pyajZTcEVMWdIBwAFBVV95cUxNREF4bk5sRENBQWFrY3dwYXR4S3VvQzhuWE9JTFB4TnhiRnpaS1YzLTAxNDcxckV6enVfYm51MmRVelZobVJjMUdTd29CZU94VEw4MkZXRUE2X01yQWx5X2gyNnNZWWxVMGtNLVBqcng5YkF4T1JmYmkwNzl5bWxlV1BHYk1jNXFPWFRyVlpBWDI4U1NNUlVTV3pyNW9mSFA1QnRDU2xVbkNHWFZVb0hRTDJoX0FSY3pRU3RaY0djOUw?oc=5"
+      },
+      {
+        "claim": "The RBI inflation mandate targets 4% with an upper tolerance limit of 6%.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Inflation above 6%, and RBI's easing cycle comes under strain - The New Indian Express",
+    "why_it_will_work": "Every middle-class borrower is eagerly awaiting lower EMIs, and tying high vegetable prices directly to delayed loan relief creates instant relatable curiosity."
+  },
+  "sources": [
+    {
+      "title": "Inflation above 6%, and RBI's easing cycle comes under strain - The New Indian Express",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSDA0QzlmbW0xZm9KdDhYeDZObEkxckdoRjFyNjNCemNoMmtUZEFIZWZqWDV2TXZsWFNGc0YzUGVzWXBjekxfTkVvZHB4SlZxMDBPTl9XQ2hjNDh4SWFqRzdnMW80aFo1MjFTMGxsT04xNk5FOGpVZ01HQTN6bEZ2YjlfQTNhWTF0Z2U0bVZiT1gwOV9RN09ReERfTkw1SlA5V2E0SWhnajluY2pyajZTcEVMWdIBwAFBVV95cUxNREF4bk5sRENBQWFrY3dwYXR4S3VvQzhuWE9JTFB4TnhiRnpaS1YzLTAxNDcxckV6enVfYm51MmRVelZobVJjMUdTd29CZU94VEw4MkZXRUE2X01yQWx5X2gyNnNZWWxVMGtNLVBqcng5YkF4T1JmYmkwNzl5bWxlV1BHYk1jNXFPWFRyVlpBWDI4U1NNUlVTV3pyNW9mSFA1QnRDU2xVbkNHWFZVb0hRTDJoX0FSY3pRU3RaY0djOUw?oc=5",
+      "signal": "RBI policy"
+    }
+  ],
+  "telegram_message_ids": [
+    161,
+    162,
+    163
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
