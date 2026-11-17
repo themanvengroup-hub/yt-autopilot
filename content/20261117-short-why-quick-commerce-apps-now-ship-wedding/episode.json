@@ -1,0 +1,107 @@
+{
+  "id": "20261117-short-why-quick-commerce-apps-now-ship-wedding",
+  "ref": "S1117",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-17T07:57:11+05:30",
+  "script": {
+    "title": "Why Quick Commerce Apps Now Ship Wedding Gear #shorts",
+    "hook_text": "10-Minute Wedding Shopping in India",
+    "segments": [
+      {
+        "text": "Forgot your wedding safa? Quick commerce apps will deliver it in ten minutes.",
+        "broll": "indian wedding turban red",
+        "broll_alt": [
+          "hands tying groom turban",
+          "indian wedding festive venue"
+        ],
+        "callout": "10-MIN DELIVERY"
+      },
+      {
+        "text": "From shadi chunris to silver thalis, platforms like Zepto and Blinkit are now rushing into last-minute wedding shopping.",
+        "broll": "traditional indian silk saree shop",
+        "broll_alt": [
+          "gold silver jewelry display",
+          "festive wedding decoration lights"
+        ]
+      },
+      {
+        "text": "But why are grocery delivery apps betting on wedding emergencies? It all comes down to average order value.",
+        "broll": "delivery driver riding motor scooter",
+        "broll_alt": [
+          "city traffic delivery motor scooter",
+          "delivery boy riding night street"
+        ],
+        "callout": "HIGHER MARGINS"
+      },
+      {
+        "text": "A ₹50 milk packet yields barely two rupees in profit. But a ₹3,000 wedding dupatta packs massive profit margins.",
+        "broll": "hands counting indian rupee notes",
+        "broll_alt": [
+          "person holding cash money notes",
+          "paying money close up"
+        ],
+        "callout": "₹3,000 DUPATTA"
+      },
+      {
+        "text": "Desperate hosts buy without comparing prices, helping delivery apps finally cover high logistics costs.",
+        "broll": "crowded indian street market shoppers",
+        "broll_alt": [
+          "bustling outdoor market evening",
+          "shopping bags night street"
+        ]
+      },
+      {
+        "text": "So next time someone forgets a key item at the venue, remember...",
+        "broll": "hand holding smartphone screen app",
+        "broll_alt": [
+          "using mobile phone screen closeup",
+          "typing on smartphone closeup"
+        ]
+      }
+    ],
+    "loop_line": "Forgot your wedding safa? Quick commerce apps will deliver it in ten minutes.",
+    "description": "Quick commerce apps in India are moving beyond milk and veggies into high-margin wedding shopping. Here is the economic strategy behind 10-minute wedding deliveries. #business #quickcommerce #india",
+    "tags": [
+      "quick commerce india",
+      "blinkit wedding shopping",
+      "zepto instant delivery",
+      "indian business news",
+      "quick commerce unit economics",
+      "shadi shopping quick commerce",
+      "paisa decoded",
+      "indian startup strategy"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Quick-commerce platforms in India are experiencing surging demand for last-minute wedding items.",
+        "source_url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM3JVYnoxYVBjajF6QTFIYUIwc003MTR2VkxzZXpfYVB1NjJrNHplVFZDQlFDdE5SbEhuNUIweno4aVM3eVJadzFQcG1qYzlFRUUtR2tOcEZCVW5qNVdjX0ZnT2lEX0FPTWFVb1VwdlJ1eF93LUNwZ2FLQ3pYLS10cHlpSjUzRVRQem8zNHoxT2tWbnpaaWdqbS1DSVVNOXlGbHl5cUU4dHFpTjQ3Nlp1WGZ2TGc0YWh3ak1LbQ?oc=5"
+      },
+      {
+        "claim": "FMCG grocery items like milk yield low single-digit margins (around ₹2 per packet), whereas fashion and festive items offer significantly higher gross margins.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Last-Minute Wedding Shopping Gets A Quick-Commerce Makeover As Demand Surges - BW Businessworld",
+    "why_it_will_work": "It connects a relatable cultural event (Indian weddings) with the unit economics of 10-minute delivery apps."
+  },
+  "sources": [
+    {
+      "title": "Last-Minute Wedding Shopping Gets A Quick-Commerce Makeover As Demand Surges - BW Businessworld",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM3JVYnoxYVBjajF6QTFIYUIwc003MTR2VkxzZXpfYVB1NjJrNHplVFZDQlFDdE5SbEhuNUIweno4aVM3eVJadzFQcG1qYzlFRUUtR2tOcEZCVW5qNVdjX0ZnT2lEX0FPTWFVb1VwdlJ1eF93LUNwZ2FLQ3pYLS10cHlpSjUzRVRQem8zNHoxT2tWbnpaaWdqbS1DSVVNOXlGbHl5cUU4dHFpTjQ3Nlp1WGZ2TGc0YWh3ak1LbQ?oc=5",
+      "signal": "quick commerce India"
+    }
+  ],
+  "telegram_message_ids": [
+    165,
+    166,
+    167
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
