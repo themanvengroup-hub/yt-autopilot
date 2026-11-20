@@ -1,0 +1,107 @@
+{
+  "id": "20261120-short-how-indie-artists-beat-bollywood-s-music",
+  "ref": "S1120",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-20T07:58:27+05:30",
+  "script": {
+    "title": "How Indie Artists Beat Bollywood's Music Monopoly #shorts",
+    "hook_text": "Bollywood Lost Its Music Monopoly!",
+    "segments": [
+      {
+        "text": "Bollywood no longer controls what music you listen to.",
+        "broll": "young man wearing headphones dark room",
+        "broll_alt": [
+          "listening to music on smartphone close up",
+          "sound mixing audio studio close up"
+        ],
+        "callout": "43% STREAMS"
+      },
+      {
+        "text": "India's music economy just touched 1.8 billion dollars, according to a recent report.",
+        "broll": "mumbai city lights aerial night",
+        "broll_alt": [
+          "delhi metro train moving fast",
+          "hands counting Indian rupee banknotes"
+        ],
+        "callout": "$1.8 BILLION"
+      },
+      {
+        "text": "And a massive 43 percent of all streams now belong to independent artists.",
+        "broll": "close up hands playing acoustic guitar",
+        "broll_alt": [
+          "musician singing into studio microphone",
+          "close up piano keys playing"
+        ],
+        "callout": "INDEPENDENT"
+      },
+      {
+        "text": "Earlier, massive film studios decided who got heard and kept most of the profits.",
+        "broll": "vintage cinema projector spinning dark room",
+        "broll_alt": [
+          "empty movie theater hall wide shot",
+          "retro record player needle spinning vinyl"
+        ]
+      },
+      {
+        "text": "Now, audio streaming apps allow creators to publish directly without big labels.",
+        "broll": "finger scrolling music app smartphone",
+        "broll_alt": [
+          "hand holding mobile phone night light",
+          "person typing laptop keyboard close up"
+        ]
+      },
+      {
+        "text": "Instead of film budgets, musicians now earn directly every time you play their track.",
+        "broll": "steaming indian chai cup street stall",
+        "broll_alt": [
+          "pouring hot tea into glass slow motion",
+          "young adults laughing outdoors evening"
+        ]
+      }
+    ],
+    "loop_line": "And that is why...",
+    "description": "Discover how independent music creators are breaking Bollywood's traditional monopoly in India's massive music economy. Learn how streaming apps helped indie artists claim 43% of total streams. Educational breakdown of India's changing music business. #IndieMusic #MusicBusiness #PaisaDecoded",
+    "tags": [
+      "indie music india",
+      "indian music industry",
+      "music streaming business",
+      "spotify india earnings",
+      "bollywood music monopoly",
+      "independent artists revenue",
+      "paisa decoded",
+      "business case study"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "India's music economy reached $1.8 billion according to EY report",
+        "source_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObDBlQnBRLXZiZEVzVzViSVhSYS1fazBzdE5pVkhfT3IwM3V5TlJzdVdIQ195VTBsZWt0RjZsdDJFa1BEX1NVYkJDcHJRTUk5dkxYamF2OF9RekpkR2pYWmJZWDQ4OVpFM1lMME1RQl9YWDk5UFkyVmRiWEJlWm5mUFFLQkpGcVhXX1F3Q0R3cjljYmNHTUJlbmN3?oc=5"
+      },
+      {
+        "claim": "Independent music claims 43% of total streams in India",
+        "source_url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObDBlQnBRLXZiZEVzVzViSVhSYS1fazBzdE5pVkhfT3IwM3V5TlJzdVdIQ195VTBsZWt0RjZsdDJFa1BEX1NVYkJDcHJRTUk5dkxYamF2OF9RekpkR2pYWmJZWDQ4OVpFM1lMME1RQl9YWDk5UFkyVmRiWEJlWm5mUFFLQkpGcVhXX1F3Q0R3cjljYmNHTUJlbmN3?oc=5"
+      }
+    ],
+    "chosen_candidate": "India’s Music Economy Hits $1.8 Billion as Independent Music Claims 43% of Streams, EY Report Finds - Yahoo Finance",
+    "why_it_will_work": "It taps into the massive cultural shift among young Indians consuming non-Bollywood indie music on Spotify, revealing the eye-opening revenue numbers behind their everyday listening habits."
+  },
+  "sources": [
+    {
+      "title": "India’s Music Economy Hits $1.8 Billion as Independent Music Claims 43% of Streams, EY Report Finds - Yahoo Finance",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObDBlQnBRLXZiZEVzVzViSVhSYS1fazBzdE5pVkhfT3IwM3V5TlJzdVdIQ195VTBsZWt0RjZsdDJFa1BEX1NVYkJDcHJRTUk5dkxYamF2OF9RekpkR2pYWmJZWDQ4OVpFM1lMME1RQl9YWDk5UFkyVmRiWEJlWm5mUFFLQkpGcVhXX1F3Q0R3cjljYmNHTUJlbmN3?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    177,
+    178,
+    179
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
