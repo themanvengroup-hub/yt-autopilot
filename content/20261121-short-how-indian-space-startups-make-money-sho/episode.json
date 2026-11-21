@@ -1,0 +1,115 @@
+{
+  "id": "20261121-short-how-indian-space-startups-make-money-sho",
+  "ref": "S1121",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-21T07:49:47+05:30",
+  "script": {
+    "title": "How Indian Space Startups Make Money #shorts",
+    "hook_text": "₹60 Cr For Space Tech",
+    "segments": [
+      {
+        "text": "Space startups in India are no longer just rocket science experiments.",
+        "broll": "rocket launching night sky aerial",
+        "broll_alt": [
+          "night sky stars timelapse",
+          "satellite in space orbit"
+        ]
+      },
+      {
+        "text": "Indian satellite startup SatSure just raised sixty crore rupees from a government space fund.",
+        "broll": "hands counting rupee notes close up",
+        "broll_alt": [
+          "financial graphs on laptop night",
+          "mumbai office building exterior wide"
+        ],
+        "callout": "₹60 CRORE"
+      },
+      {
+        "text": "But how do space startups actually make paisa? They don't build rockets.",
+        "broll": "young engineer working on laptop close up",
+        "broll_alt": [
+          "glowing earth satellite map display",
+          "technician in high tech lab"
+        ]
+      },
+      {
+        "text": "Instead, they sell high-tech satellite data to Indian banks and crop insurance firms.",
+        "broll": "indian farmer in green field wide",
+        "broll_alt": [
+          "bank building exterior daytime",
+          "hands using tablet outdoors close up"
+        ],
+        "callout": "SATELLITE DATA"
+      },
+      {
+        "text": "By scanning farms from space, banks can verify crop health before issuing loans.",
+        "broll": "aerial view of green agricultural field",
+        "broll_alt": [
+          "tractor farming field morning wide",
+          "digital scan overlay on green landscape"
+        ]
+      },
+      {
+        "text": "This cuts manual verification costs for banks while giving startups massive recurring revenue.",
+        "broll": "banker typing on computer close up",
+        "broll_alt": [
+          "person signing document on desk",
+          "indian rupee notes on table"
+        ],
+        "callout": "RECURRING REVENUE"
+      },
+      {
+        "text": "That's why deep-tech is turning into serious business in India. Not financial advice.",
+        "broll": "bengaluru city modern skyline sunset aerial",
+        "broll_alt": [
+          "delhi business district traffic night",
+          "glowing futuristic city skyline render"
+        ]
+      }
+    ],
+    "loop_line": "That’s why investor money is flooding in, because...",
+    "description": "Indian space tech startups are transforming from research projects into profitable B2B businesses. Here is how satellite data companies like SatSure make money by selling crop intelligence to banks and insurers. #SpaceTech #IndianStartups #PaisaDecoded",
+    "tags": [
+      "SatSure funding",
+      "Indian space startups",
+      "how space startups make money",
+      "deep tech India",
+      "isro space fund",
+      "indian business decoded",
+      "paisa decoded",
+      "agritech startups india"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Indian space startup SatSure raised ₹60 crore from government-backed space fund",
+        "source_url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPd2w5SkpEdU5TVFFoTlBQUDdob0plSE0ya2lSZno2VkVDOVhIQVF0LTNVdHl4NFd5V2dhOHZXZGY2cDcybzdLRml1cHkxSTVwXzBHbUE3MVZocGE0ZHRJYU1UdENqeEFlQ1FPb0JWVmpRbWFBNndkVFBUWVk1Wlg1R1NmWFo4djJuWVZtbXJ3dHshkQD...?"
+      },
+      {
+        "claim": "Satellite imagery startups sell data to banks for agricultural loan verification",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Indian space startup SatSure raises ₹60 crore from govt-backed space fund - Business Standard",
+    "why_it_will_work": "It demystifies how 'cool' space tech actually turns a profit in India by connecting futuristic satellites to relatable everyday bank loans."
+  },
+  "sources": [
+    {
+      "title": "Indian space startup SatSure raises ₹60 crore from govt-backed space fund - Business Standard",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQd2w5SkpEdU5TVFFoTlBQUDdob0plSE0ya2lSZno2VkVDOVhIQVF0LTNVdHl4NFd5V2dhOHZXZGY2cDcybzdLRml1cHkxSTVwXzBHbUE3MVZocGE0ZHRJYU1UdENqeEFlQ1FPb0JWVmpRbWFBNndkVFBUWVk1Wlg1R1NmWFo4djJuWVZtbXJ3dHNoa1FEUllTUFctU20yLTZlWUFNQlB2MzUwcDQwUW1EVEFtaVVpZ3V3bG14dUphQUFucjBIYWVTVDlpdldqb0wzS2xDMERPWkNYNUVfSk5r0gHkAUFVX3lxTFB4dW1mWl9HSGlPRWxYZTZNWnRYNlBlOVdod19xMnlOYzQwMzN2eDJER3RuQ05NRnhnU0owR3M0ZURSdW5Ja1B4WGFJXzlhVWdGLXIwX0o5Tng4UHpUN3M3eUs1d1owMEQzYW5aWEtiSDZZYzhEZ3M5dFB4a3g0TF9rcGljcXQyTmZ2UDZQcW9mSGxBT3IyWWdubWlMWXBSdms1a3FubDhKalNXQktNQnJLeTdGaXdpTEUwazNpb3c1Vm1jYkpFMG1hZ0lxX080Z3JVUXNPeVhWRFJ5dzJBck9wVHFoZA?oc=5",
+      "signal": "India startup funding"
+    }
+  ],
+  "telegram_message_ids": [
+    181,
+    182,
+    183
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
