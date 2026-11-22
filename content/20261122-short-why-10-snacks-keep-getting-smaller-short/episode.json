@@ -1,0 +1,117 @@
+{
+  "id": "20261122-short-why-10-snacks-keep-getting-smaller-short",
+  "ref": "S1122",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-22T07:51:53+05:30",
+  "script": {
+    "title": "Why ₹10 Snacks Keep Getting Smaller #shorts",
+    "hook_text": "The ₹10 Snack Trap",
+    "segments": [
+      {
+        "text": "Your ten-rupee snack packet is not full of air by accident.",
+        "broll": "person opening snack bag close up",
+        "broll_alt": [
+          "hands holding potato chips packet",
+          "snack food aisle supermarket"
+        ]
+      },
+      {
+        "text": "In India, brands know you will stop buying if the price jumps to eleven rupees.",
+        "broll": "indian street market vendor wide",
+        "broll_alt": [
+          "local grocery store exterior india",
+          "customer paying cash cashier"
+        ],
+        "callout": "₹10 PRICE POINT"
+      },
+      {
+        "text": "That single extra coin breaks our hardwired mental budget.",
+        "broll": "hand holding five rupee coin macro",
+        "broll_alt": [
+          "counting indian rupee notes",
+          "wallet empty hands slow motion"
+        ]
+      },
+      {
+        "text": "So instead of raising the price tag, companies secretly slash the packet weight.",
+        "broll": "food factory packaging line conveyor",
+        "broll_alt": [
+          "automated biscuit packaging factory",
+          "cardboard boxes shipping warehouse"
+        ],
+        "callout": "SHRINKFLATION"
+      },
+      {
+        "text": "This sneaky trick is shrinkflation, and it hits your biscuits, namkeen, and soaps.",
+        "broll": "indian supermarket grocery shelves tracking",
+        "broll_alt": [
+          "colorful packaged food rows retail",
+          "person picking biscuit packet store"
+        ]
+      },
+      {
+        "text": "You still hand over a ten-rupee coin, but get twenty percent less food inside.",
+        "broll": "digital kitchen scale weighing close up",
+        "broll_alt": [
+          "hands counting loose rupee coins",
+          "pouring potato chips onto plate"
+        ],
+        "callout": "-20% FOOD"
+      },
+      {
+        "text": "You feel like inflation spared you, until you wonder why...",
+        "broll": "delhi street market evening aerial",
+        "broll_alt": [
+          "busy indian market crowd night",
+          "person walking down city sidewalk"
+        ]
+      }
+    ],
+    "loop_line": "You feel like inflation spared you, until you wonder why...",
+    "description": "Ever wonder why your favorite biscuit or chips packet feels lighter even though you still pay ₹10? FMCG brands use a pricing trick called shrinkflation to protect their margins without scaring buyers away. Here is the hidden retail economics behind magic price points in India. #BusinessStrategy #IndianEconomy #PaisaDecoded",
+    "tags": [
+      "shrinkflation",
+      "shrinkflation in india",
+      "fmcg pricing strategy",
+      "why chips packets are small",
+      "magic price point india",
+      "business decoded",
+      "paisa decoded",
+      "indian retail economics",
+      "fmcg tricks india",
+      "parle g pricing"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "FMCG brands in India maintain fixed price points (₹5, ₹10) and reduce packet weight (shrinkflation) instead of raising headline prices.",
+        "source_url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYU5YZzNhV1RycGNleFp0YUYwZlY4UTZTNGh6NHhlbWNmS0ZkOUpVQjFCY1FTbS1hRHFOYWY5bWJPMmIxWkd1Mi1lYzZZRkV5Z0NEVVJNTzdpZHI2ZmU4ZG1XZzUyNmFlVW9pZ2JqbnIwREpweHJWb1ZCY3FhbkpxVTdtaWRqZDZKNEJUTXM3WE9UNnPSAZoBQVVfeXFMT2NaQjB1aWpYUHVVSXRWY25xdUZxMTFlWVRPVUJsdWtTNUJibjNuN29MRExUeFZwN3FmTzZqOXdxNnV0LXZwQzBVLWlrYUZBMGNkdHNyNUxpWGE5b3lUOWFzWVAwdTljaF8wamo0TGFSRE5yMm5nOUFGNFpTWTZaU2FvcXc3LTFxOC1mb2cwUktqLTR0U1ptMEw1QQ?oc=5"
+      },
+      {
+        "claim": "Shrinkflation affects fast-moving consumer goods like biscuits, snacks, and soaps.",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Shrinkflation: Why the RBI Rate Hike May Fail in 2026 - Frontline Magazine",
+    "why_it_will_work": "Every young Indian buys ₹5 and ₹10 packaged snacks daily, making this silent FMCG pricing tactic instantly relatable, debate-worthy, and visual."
+  },
+  "sources": [
+    {
+      "title": "Shrinkflation: Why the RBI Rate Hike May Fail in 2026 - Frontline Magazine",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQYU5YZzNhV1RycGNleFp0YUYwZlY4UTZTNGh6NHhlbWNmS0ZkOUpVQjFCY1FTbS1hRHFOYWY5bWJPMmIxWkd1Mi1lYzZZRkV5Z0NEVVJNTzdpZHI2ZmU4ZG1XZzUyNmFlVW9pZ2JqbnIwREpweHJWb1ZCY3FhbkpxVTdtaWRqZDZKNEJUTXM3WE9UNnPSAZoBQVVfeXFMT2NaQjB1aWpYUHVVSXRWY25xdUZxMTFlWVRPVUJsdWtTNUJibjNuN29MRExUeFZwN3FmTzZqOXdxNnV0LXZwQzBVLWlrYUZBMGNkdHNyNUxpWGE5b3lUOWFzWVAwdTljaF8wamo0TGFSRE5yMm5nOUFGNFpTWTZaU2FvcXc3LTFxOC1mb2cwUktqLTR0U1ptMEw1QQ?oc=5",
+      "signal": "RBI policy"
+    }
+  ],
+  "telegram_message_ids": [
+    185,
+    186,
+    187
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
