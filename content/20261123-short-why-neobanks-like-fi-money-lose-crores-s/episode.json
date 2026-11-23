@@ -1,0 +1,115 @@
+{
+  "id": "20261123-short-why-neobanks-like-fi-money-lose-crores-s",
+  "ref": "S1123",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-23T08:01:04+05:30",
+  "script": {
+    "title": "Why Neobanks Like Fi Money Lose Crores #shorts",
+    "hook_text": "Why Neobanks Lose Crores",
+    "segments": [
+      {
+        "text": "Indian neobanks like Fi Money don't actually hold a banking license.",
+        "broll": "young person using smartphone app street",
+        "broll_alt": [
+          "close up smartphone display scrolling",
+          "person holding credit card street"
+        ]
+      },
+      {
+        "text": "Under RBI rules, they must partner with traditional banks to hold your deposits.",
+        "broll": "bank building exterior daylight",
+        "broll_alt": [
+          "modern glass office building aerial",
+          "city financial district traffic daylight"
+        ],
+        "callout": "RBI RULES"
+      },
+      {
+        "text": "So when you park paisa, the partner bank keeps the interest margin, not the app.",
+        "broll": "hands counting Indian rupee notes",
+        "broll_alt": [
+          "coin falling into piggy bank",
+          "atm machine screen close up"
+        ]
+      },
+      {
+        "text": "They mostly earn small commissions on debit card spends and mutual fund sales.",
+        "broll": "swiping debit card payment terminal",
+        "broll_alt": [
+          "tap to pay mobile phone retail",
+          "cashier counting money at register"
+        ]
+      },
+      {
+        "text": "Even after cutting losses by 25%, Fi Money lost ₹153.3 crore as revenue fell.",
+        "broll": "financial chart downward trend red",
+        "broll_alt": [
+          "stressed office worker laptop night",
+          "calculator on desk close up"
+        ],
+        "callout": "₹153.3 CR"
+      },
+      {
+        "text": "Without their own lending license, making big money remains a tough climb.",
+        "broll": "person walking up steep hill outdoors",
+        "broll_alt": [
+          "business executive looking out window night",
+          "empty office hallway lighting"
+        ],
+        "callout": "-25% LOSS"
+      },
+      {
+        "text": "That is why Indian neobanks can't actually accept your money directly.",
+        "broll": "mobile phone screen bank app",
+        "broll_alt": [
+          "hands typing on smartphone night",
+          "person unlocking mobile phone street"
+        ]
+      }
+    ],
+    "loop_line": "That is why Indian neobanks can't actually accept your money directly.",
+    "description": "Ever wondered how banking apps like Fi Money actually make money in India? We breakdown why neobanks struggle with revenue under RBI regulations. Educational content only; not financial advice. #Fintech #StartupIndia #PaisaDecoded",
+    "tags": [
+      "fi money",
+      "neobanks india",
+      "how neobanks make money",
+      "fi money loss",
+      "indian fintech startups",
+      "rbi banking rules",
+      "startup business model",
+      "paisa decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Fi Money narrowed FY26 loss by 25% to ₹153.3 Crore as revenue fell",
+        "source_url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBobjVsN2NkTHBXME9sRnJGVHpHaFoyajFxWjNhY3RSVk5fXzNNUk9fRDFocVd0TkpKeW1TOWRrWTYyOE8zY0ZSWXo1N2RuYXNCX3pUVEd5Nm5NckVZ?oc=5"
+      },
+      {
+        "claim": "Neobanks in India do not hold direct banking licenses and must partner with RBI-registered banks to take deposits",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Fi Money Narrows FY26 Loss 25% to ₹153.3 Crore as Revenue Falls - Elets BFSI",
+    "why_it_will_work": "Neobanks like Fi are hugely popular among Gen Z and millennials, but few users understand the structural RBI limitations that prevent these apps from turning a profit."
+  },
+  "sources": [
+    {
+      "title": "Fi Money Narrows FY26 Loss 25% to ₹153.3 Crore as Revenue Falls - Elets BFSI",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBobjVsN2NkTHBXME9sRnJGVHpHaFoyajFxWjNhY3RSVk5fXzNNUk9fRDFocVd0TkpKeW1TOWRrWTYyOE8zY0ZSWXo1N2RuYXNCX3pUVEd5Nm5NckVZ?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    193,
+    194,
+    195
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
