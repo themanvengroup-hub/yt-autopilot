@@ -1,0 +1,122 @@
+{
+  "id": "20261124-short-how-zoomcar-finally-made-a-profit-shorts",
+  "ref": "S1124",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-24T07:55:35+05:30",
+  "script": {
+    "title": "How Zoomcar Finally Made a Profit #shorts",
+    "hook_text": "Zoomcar Made a Profit?",
+    "segments": [
+      {
+        "text": "Zoomcar just reported its first profit in company history.",
+        "broll": "white car driving empty highway",
+        "broll_alt": [
+          "car driving on highway aerial",
+          "suv driving asphalt road cinematic"
+        ]
+      },
+      {
+        "text": "After burning investor cash for over a decade, they pocketed nearly nine crore rupees.",
+        "broll": "hands counting rupee notes",
+        "broll_alt": [
+          "currency notes falling slow motion",
+          "person holding money closeup"
+        ],
+        "callout": "₹9 CRORE"
+      },
+      {
+        "text": "So how did India’s favorite self-drive startup finally make money?",
+        "broll": "young man driving car closeup",
+        "broll_alt": [
+          "driver hands on steering wheel",
+          "man looking in car mirror"
+        ]
+      },
+      {
+        "text": "Simple: they stopped buying cars.",
+        "broll": "cars parked parking lot aerial",
+        "broll_alt": [
+          "rows of cars dealership wide",
+          "outdoor vehicle parking lot daylight"
+        ]
+      },
+      {
+        "text": "Instead of paying massive EMIs and garage bills on their own fleet, they shifted to host cars.",
+        "broll": "hand holding modern car key",
+        "broll_alt": [
+          "pressing car remote button closeup",
+          "hand unlocking vehicle door closeup"
+        ]
+      },
+      {
+        "text": "Now, ordinary car owners bear the depreciation risk, while Zoomcar simply collects a platform cut.",
+        "broll": "person using smartphone inside car",
+        "broll_alt": [
+          "fingers tapping mobile screen closeup",
+          "phone with map navigation dashboard"
+        ],
+        "callout": "PLATFORM FEE"
+      },
+      {
+        "text": "They cut discounts, passed maintenance onto hosts, and transformed into an asset-light middleman.",
+        "broll": "city traffic fast motion night",
+        "broll_alt": [
+          "urban highway traffic timelapse",
+          "mumbai bridge night traffic aerial"
+        ]
+      },
+      {
+        "text": "That quiet business pivot is the only reason...",
+        "broll": "speeding car taillights night road",
+        "broll_alt": [
+          "car driving into sunset highway",
+          "empty road vanishing horizon cinematic"
+        ]
+      }
+    ],
+    "loop_line": "That quiet business pivot is the only reason...",
+    "description": "After years of heavy losses, Zoomcar has recorded its first-ever quarterly net profit of $1.07 million. Here is the marketplace pivot that turned the rental company around. #zoomcar #businessdecoded #startupsindia",
+    "tags": [
+      "zoomcar profit",
+      "zoomcar business model",
+      "indian startups",
+      "zoomcar turnaround",
+      "how zoomcar makes money",
+      "startup economics",
+      "paisa decoded",
+      "indian business news"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Zoomcar posted its first net profit in company history of $1.07 million",
+        "source_url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNemhVMFBHLWk5ZVhVQkVNeGhRSTQxN0N6bGlhUDdGM2FyM3VudnNiM1dLMXJMV0NYZTFBVTdrcnZmSFVXc2l3aGFqdllYc0ZFb3BUSUx0TmVkWTNITFpXa2g2UWlkQm5fYTRwcTUxYy05Qi1IZ01NbnVOdWRKNFdNQWZBMGpPdzJXUXpIeFhpYVJoN01PSjNzd0d4SGRyZ3R6WC12Q1pGMkFBcXY2UUptejIxME91bkpOWWVzNGJlYkc4RVc2X2hVSnJ3bXRKS0N6d0RFYWx0ODNOMlZKaFh0Tzh3YVZ2b2ZES002am1nUkl5MHJLSHE4R01zU3hXMWFp?oc=5"
+      },
+      {
+        "claim": "Zoomcar transitioned from owning/leasing fleets to a peer-to-peer host marketplace model",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Zoomcar Posts First Net Profit in Company History, Reporting $1.07 Million Net profits for Fiscal Second Quarter - TradingView",
+    "why_it_will_work": "Every young Indian knows Zoomcar's reputation for burning cash and service issues, making their first-ever profit an irresistible curiosity gap."
+  },
+  "sources": [
+    {
+      "title": "Zoomcar Posts First Net Profit in Company History, Reporting $1.07 Million Net profits for Fiscal Second Quarter - TradingView",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNemhVMFBHLWk5ZVhVQkVNeGhRSTQxN0N6bGlhUDdGM2FyM3VudnNiM1dLMXJMV0NYZTFBVTdrcnZmSFVXc2l3aGFqdllYc0ZFb3BUSUx0TmVkWTNITFpXa2g2UWlkQm5fYTRwcTUxYy05Qi1IZ01NbnVOdWRKNFdNQWZBMGpPdzJXUXpIeFhpYVJoN01PSjNzd0d4SGRyZ3R6WC12Q1pGMkFBcXY2UUptejIxME91bkpOWWVzNGJlYkc4RVc2X2hVSnJ3bXRKS0N6d0RFYWx0ODNOMlZKaFh0Tzh3YVZ2b2ZES002am1nUkl5MHJLSHE4R01zU3hXMWFp?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    197,
+    198,
+    199
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
