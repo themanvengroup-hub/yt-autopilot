@@ -1,0 +1,115 @@
+{
+  "id": "20261125-short-why-india-s-1-6b-ai-boom-is-a-trap-short",
+  "ref": "S1125",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-25T07:58:17+05:30",
+  "script": {
+    "title": "Why India’s $1.6B AI Boom Is a Trap #shorts",
+    "hook_text": "India's $1.6B AI Funding Trap",
+    "segments": [
+      {
+        "text": "AI funding in India jumped 96%, yet most founders are starving.",
+        "broll": "glowing server room rack night",
+        "broll_alt": [
+          "data center server corridor slow motion",
+          "futuristic tech laboratory glow"
+        ],
+        "callout": "96% JUMP"
+      },
+      {
+        "text": "How can funding nearly double when total deal counts crashed 42%?",
+        "broll": "financial bar graph downward trend",
+        "broll_alt": [
+          "stressed man staring at laptop screen",
+          "red stock market ticker display screen"
+        ],
+        "callout": "DEALS DOWN 42%"
+      },
+      {
+        "text": "Big venture capital funds are placing massive bets on just a few giants.",
+        "broll": "close up counting Indian rupee notes",
+        "broll_alt": [
+          "business executives shaking hands boardroom wide",
+          "stack of currency notes on table"
+        ],
+        "callout": "$1.6 BILLION"
+      },
+      {
+        "text": "Building core AI tech requires hundreds of crores in computing power and elite talent.",
+        "broll": "programmer coding on computer screen close up",
+        "broll_alt": [
+          "fingers typing fast on backlit keyboard",
+          "glowing microchip circuit board macro"
+        ]
+      },
+      {
+        "text": "So basic wrapper apps get zero paisa, while top players bag all the cash.",
+        "broll": "empty coffee cup on office desk",
+        "broll_alt": [
+          "young man resting head on desk tired",
+          "empty modern office cubicles night"
+        ]
+      },
+      {
+        "text": "Without proprietary data or breakthrough tech, surviving this wave is brutally hard.",
+        "broll": "drone shot glass tech park building daylight",
+        "broll_alt": [
+          "modern office skyscraper aerial night",
+          "busy city traffic timelapse wide"
+        ]
+      },
+      {
+        "text": "It turns out big money creates a winner-take-all market. Not financial advice.",
+        "broll": "young entrepreneur looking out office window sunset",
+        "broll_alt": [
+          "city skyline aerial view sunset",
+          "person walking through corporate glass hallway"
+        ]
+      }
+    ],
+    "loop_line": "Which explains why overall...",
+    "description": "India's AI funding surged 96% to $1.6 billion, but total startup deals fell by 42%. Here is why big venture funds are only backing a handful of tech giants. #IndianStartups #AIFunding #PaisaDecoded",
+    "tags": [
+      "AI funding India",
+      "Indian startups",
+      "venture capital India",
+      "AI boom India",
+      "business news India",
+      "startup funding 2026",
+      "tech economics India",
+      "Paisa Decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "India's AI funding jumped 96% to $1.6 billion",
+        "source_url": "https://www.fortuneindia.com"
+      },
+      {
+        "claim": "AI deal volume in India fell 42%",
+        "source_url": "https://www.fortuneindia.com"
+      }
+    ],
+    "chosen_candidate": "India’s AI funding nearly doubles to $1.6 billion, but a handful of deals drive the surge: Report - Fortune India",
+    "why_it_will_work": "It taps into the current hype around AI while revealing a shocking counter-intuitive business truth: funding doubled yet 42% fewer startups got funded."
+  },
+  "sources": [
+    {
+      "title": "India’s AI funding nearly doubles to $1.6 billion, but a handful of deals drive the surge: Report - Fortune India",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPN0JpR3J1X21Tc3haYy1YWXJpVVpFSnRTQ0lCQU4xTGViRjFVOWJBVl9uYVlGenpBQmRfNFdTVkZsYkxEbV80bVNxQUJIQjJhbExqWUMyLTdZZlc5WTJJUV9FNG5Mc0dHWXViU3d2UnpKUFNuS0twd0NfRVdRTHJ0a1NwYThVSV9BWHhsaE9PMnpMaDIwcjRIRk5pQmVnTEs4NExpbDdDeUxGYk05M09JLVRod3VuMVA1YkkzMWRkdzgwdGpGWWlWZnJxRGRMTm1LcHFCanVYVV9FQdIB5wFBVV95cUxObS1IRFlpMW12dUI2VlpKQjY2c0M4VWtiUHZ5azF5emkyWTRTbi10dm1YUGoxdUJTSW1ZOENxMEZsM201MzFBU0RsRkNGV2FIUnJTc0o3M1REY0hfaHlfM3AzbTQzZ2FXQTVmNlZZRl9XbVRwRTNQRVZ3c3MtX3BDNWVXVXZZVTg1T2pCLVg0MnVKYkNMZ25qRXhsa0FpWS1DeGh5Y29OS1lSem55WVlxOVVJT0JrbGxVUEFOXzlmRTN2VDZyWnVSWC1uLThNbEo1STIzN3Jfclh6QnVUd2lEclBJaXZlRjg?oc=5",
+      "signal": "India startup funding"
+    }
+  ],
+  "telegram_message_ids": [
+    204,
+    205,
+    206
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
