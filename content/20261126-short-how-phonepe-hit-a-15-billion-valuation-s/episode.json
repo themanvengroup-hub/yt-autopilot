@@ -1,0 +1,113 @@
+{
+  "id": "20261126-short-how-phonepe-hit-a-15-billion-valuation-s",
+  "ref": "S1126",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-26T07:56:18+05:30",
+  "script": {
+    "title": "How PhonePe Hit a $15 Billion Valuation #shorts",
+    "hook_text": "PhonePe's $15 Billion Secret",
+    "segments": [
+      {
+        "text": "UPI is totally free, so how is PhonePe targeting a massive fifteen billion dollar valuation?",
+        "broll": "hands scanning payment qr code",
+        "broll_alt": [
+          "smartphone payment screen outdoor market",
+          "cashier checkout retail store counter"
+        ],
+        "callout": "$15 BILLION"
+      },
+      {
+        "text": "When you scan a QR code for a twenty-rupee chai, PhonePe earns literally zero rupees.",
+        "broll": "indian street tea vendor boiling",
+        "broll_alt": [
+          "roadside chai stall clay cups",
+          "steaming hot tea pouring slow motion"
+        ]
+      },
+      {
+        "text": "Instead, the secret starts with shopkeepers. Millions of local stores pay monthly subscriptions for those audio soundboxes.",
+        "broll": "small audio payment speaker counter",
+        "broll_alt": [
+          "indian grocery store shopkeeper counter",
+          "busy retail shop entrance daytime"
+        ],
+        "callout": "SOUNDBOX RENT"
+      },
+      {
+        "text": "Once hooked, PhonePe monetizes user trust by selling insurance, mutual funds, and distributing pre-approved loans.",
+        "broll": "mumbai financial district skyline aerial",
+        "broll_alt": [
+          "person scrolling modern banking smartphone app",
+          "hands counting rupee cash bundle"
+        ]
+      },
+      {
+        "text": "Free UPI is just the bait to build India's biggest digital financial supermarket.",
+        "broll": "delhi metro crowded commuters walking",
+        "broll_alt": [
+          "busy pedestrian market street crowd",
+          "people using mobile phones outdoor"
+        ],
+        "callout": "ZERO FEE BAIT"
+      },
+      {
+        "text": "Not financial advice, but that masterstroke business model is why...",
+        "broll": "digital network server room lights",
+        "broll_alt": [
+          "night traffic timelapse indian city",
+          "modern fintech office interior wide"
+        ]
+      }
+    ],
+    "loop_line": "Not financial advice, but that masterstroke business model is why UPI is totally free, so how is PhonePe targeting a massive fifteen billion dollar valuation?",
+    "description": "UPI is free for consumers, yet Walmart-backed PhonePe is eyeing a $15 billion valuation in its upcoming IPO. Here is how fintech companies turn zero-fee payments into serious revenue. Educational breakdown only.\n\n#phonepe #fintech #businessnews",
+    "tags": [
+      "PhonePe IPO",
+      "PhonePe valuation",
+      "how PhonePe makes money",
+      "UPI business model",
+      "Indian fintech",
+      "PhonePe soundbox",
+      "startup news India",
+      "Paisa Decoded",
+      "Indian business breakdown",
+      "digital payments India"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Walmart-backed PhonePe restarts IPO process and eyes up to $15 billion valuation",
+        "source_url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbkVTQU5UZjA4Wnc3STdBc0xPZnhhdzE5VWxlbUJHTG5XWjFlRHRiZWFUcHdHeThRQTJZVkZqOXFMRWNJR0lQVnlLQkEtSllnQ1ZXVVl4ZmJhTkNxaGwwcGh6bHZIZjZDRmttX09iOU5nS3BKMDB6aWhybHNyc1BiVlRNQ1loSXBUSFB0Z1UwbXJtTW9WRW9wMVBJOU5PU3N0Ul9mT2dibTk4NXZnbVV5Ny1UZFZwdG5vc1BiZXVRemFXT0NFbmc?oc=5"
+      },
+      {
+        "claim": "UPI peer-to-peer and typical retail merchant transactions are zero-fee for consumers",
+        "source_url": "common knowledge"
+      },
+      {
+        "claim": "PhonePe generates revenue via merchant soundbox subscriptions and financial distribution like insurance and loans",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Walmart-backed PhonePe restarts IPO process, eyes up to $15 billion valuation in market debut, source says - Reuters",
+    "why_it_will_work": "Every young Indian uses PhonePe daily for free chai payments, creating instant curiosity over how a company offering free services can be worth fifteen billion dollars."
+  },
+  "sources": [
+    {
+      "title": "Walmart-backed PhonePe restarts IPO process, eyes up to $15 billion valuation in market debut, source says - Reuters",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbkVTQU5UZjA4Wnc3STdBc0xPZnhhdzE5VWxlbUJHTG5XWjFlRHRiZWFUcHdHeThRQTJZVkZqOXFMRWNJR0lQVnlLQkEtSllnQ1ZXVVl4ZmJhTkNxaGwwcGh6bHZIZjZDRmttX09iOU5nS3BKMDB6aWhybHNyc1BiVlRNQ1loSXBUSFB0Z1UwbXJtTW9WRW9wMVBJOU5PU3N0Ul9mT2dibTk4NXZnbVV5Ny1UZFZwdG5vc1BiZXVRemFXT0NFbmc?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    208,
+    209,
+    210
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
