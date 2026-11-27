@@ -1,0 +1,115 @@
+{
+  "id": "20261127-short-why-this-indian-coal-giant-is-raising-8",
+  "ref": "S1127",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-27T08:01:07+05:30",
+  "script": {
+    "title": "Why This Indian Coal Giant Is Raising ₹8,000 Cr #shorts",
+    "hook_text": "₹8,000 Crore Coal IPO?",
+    "segments": [
+      {
+        "text": "A single Indian coal firm just launched an ₹8,000 crore IPO.",
+        "broll": "aerial wide shot open pit coal mine",
+        "broll_alt": [
+          "excavator digging coal outdoor",
+          "heavy industrial quarry aerial"
+        ],
+        "callout": "₹8,000 CRORE IPO"
+      },
+      {
+        "text": "That is Mahanadi Coalfields, a massive subsidiary of government giant Coal India.",
+        "broll": "close up heavy cargo train coal",
+        "broll_alt": [
+          "train carrying raw materials railway",
+          "industrial freight train slow motion"
+        ]
+      },
+      {
+        "text": "But why does a profitable state-owned coal giant even need public money?",
+        "broll": "medium shot indian stock broker looking at screens",
+        "broll_alt": [
+          "trader analyzing charts laptop close up",
+          "hand typing on laptop financial desk"
+        ]
+      },
+      {
+        "text": "Parent companies list subsidiaries to unlock hidden value and fund green energy projects without heavy bank debt.",
+        "broll": "aerial solar panels field sunny day",
+        "broll_alt": [
+          "wind turbines countryside aerial",
+          "green energy power plant wide shot"
+        ],
+        "callout": "UNLOCK VALUE"
+      },
+      {
+        "text": "Coal still powers over seventy percent of India's electricity, keeping demand booming.",
+        "broll": "wide shot thermal power plant smoke stacks night",
+        "broll_alt": [
+          "power generation plant aerial daylight",
+          "electric power grid tower sunset"
+        ],
+        "callout": "70% POWER"
+      },
+      {
+        "text": "However, commodity profits fluctuate wildly whenever global market prices change.",
+        "broll": "close up hands holding rupee cash notes",
+        "broll_alt": [
+          "counting indian currency notes close up",
+          "rupee money stack on office table"
+        ]
+      },
+      {
+        "text": "Not financial advice, but always check real cash flows before chasing IPO hype, especially when...",
+        "broll": "medium shot young indian professional reading laptop screen",
+        "broll_alt": [
+          "person working on computer evening",
+          "office worker using tablet computer"
+        ]
+      }
+    ],
+    "loop_line": "...a single Indian coal firm just launched an ₹8,000 crore IPO.",
+    "description": "Why is Coal India subsidiary Mahanadi Coalfields launching a massive $969 million IPO? Here is the business breakdown of PSU spinoffs, energy demand, and retail IPO hype. #IndianStockMarket #MahanadiCoalfields #PaisaDecoded",
+    "tags": [
+      "Mahanadi Coalfields IPO",
+      "Coal India IPO",
+      "Indian stock market",
+      "PSU stocks India",
+      "IPO news India",
+      "how IPOs work",
+      "Paisa Decoded",
+      "Indian economy news"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Mahanadi Coalfields is launching a $969 million IPO",
+        "source_url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNUkxRd1B0NXpiTm5KM1FTeU9aQVRoV3prVFlLX3NhR0RIZUllYVdtelZzMWUwZWwtRVVUY2Z0aFVKeElIZW9HWVY2bHZ0YkZkRU1rVU5nR0JmSmQ4TTRuTnBEenVxRzFxSDhveUtIWWVjZ0twZ2NlbmxnbE5WSWxTSzlpd210LVFrVnUxYU9RcGtYWm1Za1JrRHJzZDRWbGF5c0gyMm1tTlptbzJZdTRfeWdRNA?oc=5"
+      },
+      {
+        "claim": "Coal powers over 70% of India's electricity generation",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO - Bloomberg.com",
+    "why_it_will_work": "Huge public sector IPOs generate massive retail curiosity among young Indian investors eager to understand corporate spinoff strategies and energy economics."
+  },
+  "sources": [
+    {
+      "title": "Mahanadi Coalfields Set for Mumbai Debut After $969 Million IPO - Bloomberg.com",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNUkxRd1B0NXpiTm5KM1FTeU9aQVRoV3prVFlLX3NhR0RIZUllYVdtelZzMWUwZWwtRVVUY2Z0aFVKeElIZW9HWVY2bHZ0YkZkRU1rVU5nR0JmSmQ4TTRuTnBEenVxRzFxSDhveUtIWWVjZ0twZ2NlbmxnbE5WSWxTSzlpd210LVFrVnUxYU9RcGtYWm1Za1JrRHJzZDRWbGF5c0gyMm1tTlptbzJZdTRfeWdRNA?oc=5",
+      "signal": "India IPO"
+    }
+  ],
+  "telegram_message_ids": [
+    215,
+    216,
+    217
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
