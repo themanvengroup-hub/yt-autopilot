@@ -1,0 +1,123 @@
+{
+  "id": "20261128-short-how-cult-fit-plans-to-hit-10-000-cr-shor",
+  "ref": "S1128",
+  "kind": "short",
+  "status": "scripted",
+  "created_at": "2026-11-28T07:53:45+05:30",
+  "script": {
+    "title": "How Cult.fit Plans to Hit ₹10,000 Cr #shorts",
+    "hook_text": "Cult's ₹10,000 Crore Secret",
+    "segments": [
+      {
+        "text": "Your local Cult gym cannot make ten thousand crores.",
+        "broll": "gym workout dumbell weights",
+        "broll_alt": [
+          "treadmill running gym close up",
+          "fitness class aerial view"
+        ],
+        "callout": "₹10,000 CRORE"
+      },
+      {
+        "text": "Yet, Cult.fit is targeting that exact milestone.",
+        "broll": "man looking at phone screen",
+        "broll_alt": [
+          "young professional office desk",
+          "city crowd timelapse"
+        ]
+      },
+      {
+        "text": "Here is the math: group classes cap out at thirty people per batch.",
+        "broll": "aerobics group fitness studio",
+        "broll_alt": [
+          "gym floor wide shot",
+          "boxing bag workout studio"
+        ],
+        "callout": "30 PER CLASS"
+      },
+      {
+        "text": "Between sky-high metro rent and trainer salaries, physical gym centers hit a ceiling fast.",
+        "broll": "bangalore street traffic daytime",
+        "broll_alt": [
+          "commercial building modern glass",
+          "mumbai city street aerial"
+        ]
+      },
+      {
+        "text": "So Cult flipped the playbook from selling sweat to selling sportswear.",
+        "broll": "clothing rack store display",
+        "broll_alt": [
+          "sneakers shelf store retail",
+          "running shoes close up"
+        ],
+        "callout": "CULTSPORT"
+      },
+      {
+        "text": "Apparels and gear scale across tier-two cities online without paying massive real estate deposits.",
+        "broll": "courier delivery parcel bike",
+        "broll_alt": [
+          "warehouse boxes shipping moving",
+          "cardboard boxes delivery van"
+        ]
+      },
+      {
+        "text": "Add gym franchises, and a fitness club turns into a retail juggernaut.",
+        "broll": "hands holding protein shaker gym",
+        "broll_alt": [
+          "modern gym interior empty",
+          "young indian man drinking water gym"
+        ]
+      },
+      {
+        "text": "That is why your fitness app wants to sell you shoes, because...",
+        "broll": "sports shoes running track",
+        "broll_alt": [
+          "retail store clothing rack",
+          "man typing on smartphone cafe"
+        ]
+      }
+    ],
+    "loop_line": "Because your local Cult gym cannot make ten thousand crores.",
+    "description": "Cult.fit is aiming for ₹10,000 Crore in revenue, but not just from gym memberships. Here is how expanding into sportswear and franchises changes their business economics. #cultfit #business #startups",
+    "tags": [
+      "cultfit business model",
+      "cultsport revenue",
+      "how cultfit makes money",
+      "indian startups",
+      "gym business india",
+      "fitness industry india",
+      "startup funding",
+      "paisa decoded"
+    ],
+    "facts_to_verify": [
+      {
+        "claim": "Cult.fit is targeting Rs 10,000 crore revenue through gym and Cultsport expansion",
+        "source_url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRFZzRXQxdE1wMFNnME5odlZpbHRwcGxNbzdDSWh0eXZxU0JLMVROQ2VxY1k4MWV5UFkyaDJ4UjduV0hwYi1ob2Q2QUhONkJxaDVDVDVHSXg1b290VW9BaTUtSXF0NGRZMHI1Z0JnU1gzN3lZWHVudHRRUXBSMHZYOGhvZGNXYWVmWHJfNzFvX3Mtc2JRV1Y0Y2FQUmw?oc=5"
+      },
+      {
+        "claim": "Group fitness classes face physical capacity limits and high commercial rent in Indian metros",
+        "source_url": "common knowledge"
+      }
+    ],
+    "chosen_candidate": "Cult.fit Eyes Rs 10,000 Cr Revenue with Gym and Cultsport Expansion - Indian Retailer",
+    "why_it_will_work": "Cult.fit is a household consumer brand for urban Indian youth, and decoding why a gym company shifts into sportswear to hit ₹10,000 Cr creates an immediate curiosity gap."
+  },
+  "sources": [
+    {
+      "title": "Cult.fit Eyes Rs 10,000 Cr Revenue with Gym and Cultsport Expansion - Indian Retailer",
+      "source": "google_news",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRFZzRXQxdE1wMFNnME5odlZpbHRwcGxNbzdDSWh0eXZxU0JLMVROQ2VxY1k4MWV5UFkyaDJ4UjduV0hwYi1ob2Q2QUhONkJxaDVDVDVHSXg1b290VW9BaTUtSXF0NGRZMHI1Z0JnU1gzN3lZWHVudHRRUXBSMHZYOGhvZGNXYWVmWHJfNzFvX3Mtc2JRV1Y0Y2FQUmw?oc=5",
+      "signal": "Indian company revenue loss"
+    }
+  ],
+  "telegram_message_ids": [
+    219,
+    220,
+    221
+  ],
+  "voice_file_id": null,
+  "youtube_id": null,
+  "publish_at": null,
+  "error": null,
+  "attempts": 0,
+  "history": []
+}
